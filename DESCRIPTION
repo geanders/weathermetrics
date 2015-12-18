@@ -1,10 +1,15 @@
 Package: weathermetrics
 Type: Package
-Title: Functions to Convert Between Weather Metrics
-Version: 1.2
+Title: Functions to Convert between Weather Metrics
+Version: 1.2.0
 Date: 2015-12-18
-Author: Brooke Anderson and Roger Peng
-Maintainer: Brooke Anderson <brooke.anderson@colostate.edu>
-Description: weathermetrics includes functions to convert between Celsius and Fahrenheit, to convert between dew point temperature and relative humidity, and to calculate heat index.
-License: MIT
-LazyData: TRUE
+Authors@R: c(person("Brooke", "Anderson",
+    email = "brooke.anderson@colostate.edu", role = c("aut", "cre")),
+    person("Roger", "Peng", email = "rdpeng@gmail.com", role = c("aut")))
+Description: Functions to convert between Celsius
+    and Fahrenheit, to convert between dew point temperature and relative
+    humidity, and to calculate heat index.
+URL: https://github.com/geanders/weathermetrics/
+BugReports: https://github.com/geanders/weathermetrics/issues
+License: MIT + file LICENSE
+LazyData: true
