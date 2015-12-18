@@ -1,10 +1,10 @@
 Package: weathermetrics
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1
+Title: Functions to Convert Between Weather Metrics
+Version: 1.2
 Date: 2015-12-18
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Brooke Anderson and Roger Peng
+Maintainer: Brooke Anderson <brooke.anderson@colostate.edu>
+Description: weathermetrics includes functions to convert between Celsius and Fahrenheit, to convert between dew point temperature and relative humidity, and to calculate heat index.
+License: MIT
 LazyData: TRUE
