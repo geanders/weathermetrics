@@ -49,6 +49,24 @@
 #' R. Steadman, 1979. The assessment of sultriness. Part I: A
 #'    temperature-humidity index based on human physiology and clothing
 #'    science. Journal of Applied Meteorology, 18(7):861--873.
+#'
+#' @examples # Calculate heat index from temperature (in Fahrenheit)
+#'# and relative humidity.
+#'
+#' data(suffolk)
+#'suffolk$heat.index <- heat.index(t = suffolk$TemperatureF,
+#'                                  rh = suffolk$Relative.Humidity)
+#'suffolk
+#'
+#'# Calculate heat index (in Celsius) from temperature (in
+#'# Celsius) and dew point temperature (in Celsius).
+#'
+#'data(lyon)
+#'lyon$heat.index <- heat.index(t = lyon$TemperatureC,
+#'                               dp = lyon$DewpointC,
+#'                               temperature.metric = 'celsius',
+#'                               output.metric = 'celsius')
+#'lyon
 heat.index <-
         function (t = NA, dp = c(), rh = c(), temperature.metric = "fahrenheit",
                   output.metric = NULL, round = 0)

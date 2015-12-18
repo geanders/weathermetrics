@@ -12,21 +12,22 @@ humidity.to.dewpoint(rh = NA, t = NA, temperature.metric = "fahrenheit")
 \item{t}{Numeric vector of air temperatures.}
 
 \item{temperature.metric}{Character string indicating the temperature
-metric of air temperature. Possible values are 'fahrenheit' or
-'celsius'.}
+metric of air temperature. Possible values are \code{fahrenheit} or
+\code{celsius}.}
 }
 \value{
 A numeric vector of dew point temperature, in the same metric
-   as the temperature vector (as specified by the 'temperature.metric'
+   as the temperature vector (as specified by the \code{temperature.metric}
    option).
 }
 \description{
-\code{humidity.to.dewpoint} creates a vector of dew point temperature
-   values from vectors of air temperature and relative humidity values.
+\code{humidity.to.dewpoint} creates a numeric vector of dew point
+   temperature from numeric vectors of air temperature and relative
+   humidity.
 }
 \details{
 Dew point temperature will be calculated in the same metric as
-   the temperature vector (as specified by the 'temperature.metric'
+   the temperature vector (as specified by the \code{temperature.metric}
    option). If you'd like dew point temperature in a different metric,
     use the function \code{\link{celsius.to.fahrenheit}} or
     \code{\link{fahrenheit.to.celsius}} on the output from this function.
@@ -35,6 +36,16 @@ Dew point temperature will be calculated in the same metric as
 Equations are from the source code for the US National Weather
     Service's
     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+}
+\examples{
+# Calculate dew point temperature from relative humidity and
+# air temperature.
+
+data(newhaven)
+newhaven$DP <- humidity.to.dewpoint(t = newhaven$TemperatureF,
+                                    rh = newhaven$Relative.Humidity,
+                                    temperature.metric = 'fahrenheit')
+newhaven
 }
 \references{
 National Weather Service Hydrometeorological Prediction

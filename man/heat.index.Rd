@@ -49,6 +49,25 @@ Equations are from the source code for the US National Weather
     Service's
     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
 }
+\examples{
+# Calculate heat index from temperature (in Fahrenheit)
+# and relative humidity.
+
+data(suffolk)
+suffolk$heat.index <- heat.index(t = suffolk$TemperatureF,
+                                 rh = suffolk$Relative.Humidity)
+suffolk
+
+# Calculate heat index (in Celsius) from temperature (in
+# Celsius) and dew point temperature (in Celsius).
+
+data(lyon)
+lyon$heat.index <- heat.index(t = lyon$TemperatureC,
+                              dp = lyon$DewpointC,
+                              temperature.metric = 'celsius',
+                              output.metric = 'celsius')
+lyon
+}
 \references{
 Anderson GB, Bell ML, Peng RD. 2013. Methods to calculate the heat index
    as an exposure Metric in environmental health research.

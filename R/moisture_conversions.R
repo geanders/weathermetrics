@@ -1,7 +1,7 @@
 #' Calculate relative humidity.
 #'
-#' \code{dewpoint.to.humidity} creates a vector of relative humidity values
-#'   from vectors of air temperature and dew point temperature values.
+#' \code{dewpoint.to.humidity} creates a numeric vector of relative humidity
+#'   from numerical vectors of air temperature and dew point temperature.
 #'
 #' @param dp Numeric vector of dew point temperatures.
 #' @param t Numeric vector of air temperatures.
@@ -30,6 +30,15 @@
 #' @seealso \code{\link{humidity.to.dewpoint},
 #'    \link{fahrenheit.to.celsius},
 #'    \link{celsius.to.fahrenheit}}
+#'
+#' @examples # Calculate relative humidity from air temperature and
+#' # dew point temperature.
+#'
+#' data(lyon)
+#' lyon$RH <- dewpoint.to.humidity(t = lyon$TemperatureC,
+#'                                 dp = lyon$DewpointC,
+#'                                 temperature.metric = 'celsius')
+#' lyon
 dewpoint.to.humidity <-
         function (dp = NA, t = NA,
                   temperature.metric = "fahrenheit")
@@ -55,8 +64,9 @@ dewpoint.to.humidity <-
 
 #' Calculate dew point temperature.
 #'
-#' \code{humidity.to.dewpoint} creates a vector of dew point temperature
-#'    values from vectors of air temperature and relative humidity values.
+#' \code{humidity.to.dewpoint} creates a numeric vector of dew point
+#'    temperature from numeric vectors of air temperature and relative
+#'    humidity.
 #'
 #' @param rh Numeric vector of relative humidity (in \%).
 #' @param t Numeric vector of air temperatures.
@@ -87,6 +97,15 @@ dewpoint.to.humidity <-
 #' @seealso \code{\link{dewpoint.to.humidity},
 #'    \link{fahrenheit.to.celsius},
 #'    \link{celsius.to.fahrenheit}}
+#'
+#' @examples # Calculate dew point temperature from relative humidity and
+#' # air temperature.
+#'
+#' data(newhaven)
+#' newhaven$DP <- humidity.to.dewpoint(t = newhaven$TemperatureF,
+#'                                     rh = newhaven$Relative.Humidity,
+#'                                     temperature.metric = 'fahrenheit')
+#' newhaven
 humidity.to.dewpoint <-
         function (rh = NA, t = NA, temperature.metric = "fahrenheit")
         {

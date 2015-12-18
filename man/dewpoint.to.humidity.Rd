@@ -13,14 +13,14 @@ dewpoint.to.humidity(dp = NA, t = NA, temperature.metric = "fahrenheit")
 
 \item{temperature.metric}{Character string indicating the temperature
 metric of air temperature and dew point temperature. Possible values
-are 'fahrenheit' or 'celsius'.}
+are \code{fahrenheit} or \code{celsius}.}
 }
 \value{
 A numeric vector of relative humidity (in \%)
 }
 \description{
-\code{dewpoint.to.humidity} creates a vector of relative humidity values
-  from vectors of air temperature and dew point temperature values.
+\code{dewpoint.to.humidity} creates a numeric vector of relative humidity
+  from numerical vectors of air temperature and dew point temperature.
 }
 \details{
 Dew point temperature and temperature must be in the same
@@ -33,6 +33,16 @@ Dew point temperature and temperature must be in the same
 Equations are from the source code for the US National Weather
     Service's
     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+}
+\examples{
+# Calculate relative humidity from air temperature and
+# dew point temperature.
+
+data(lyon)
+lyon$RH <- dewpoint.to.humidity(t = lyon$TemperatureC,
+                                dp = lyon$DewpointC,
+                                temperature.metric = 'celsius')
+lyon
 }
 \references{
 National Weather Service Hydrometeorological Prediction

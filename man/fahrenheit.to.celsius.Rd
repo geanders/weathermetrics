@@ -16,13 +16,19 @@ round converted value.}
 A numeric vector of temperature values in Celsius.
 }
 \description{
-\code{fahrenheit.to.celsius} creates a vector of temperatures in
-   Celsius from a vector of temperatures in Fahrenheit.
+\code{fahrenheit.to.celsius} creates a numeric vector of temperatures in
+   Celsius from a numeric vector of temperatures in Fahrenheit.
 }
 \note{
 Equations are from the source code for the US National Weather
     Service's
     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+}
+\examples{
+# Convert from Fahrenheit to Celsius.
+data(norfolk)
+norfolk$TempC <- fahrenheit.to.celsius(norfolk$TemperatureF)
+norfolk
 }
 \seealso{
 \code{\link{celsius.to.fahrenheit}}
