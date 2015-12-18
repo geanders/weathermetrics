@@ -7,11 +7,12 @@
 #' @param round Integer indicating the number of decimal places to
 #'     round converted value.
 #'
-#' @return A vector of temperature values in Fahrenheit.
+#' @return A numeric vector of temperature values in Fahrenheit.
 #'
 #' @note Equations are from the source code for the US National Weather
 #'     Service's
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+#'
 #' @seealso \code{\link{fahrenheit.to.celsius}}
 #'
 celsius.to.fahrenheit <-
@@ -31,11 +32,12 @@ celsius.to.fahrenheit <-
 #' @param round Integer indicating the number of decimal places to
 #'     round converted value.
 #'
-#' @return A vector of temperature values in Celsius.
+#' @return A numeric vector of temperature values in Celsius.
 #'
 #' @note Equations are from the source code for the US National Weather
 #'     Service's
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+#'
 #' @seealso \code{\link{celsius.to.fahrenheit}}
 #'
 fahrenheit.to.celsius <-

@@ -13,7 +13,7 @@ fahrenheit.to.celsius(T.fahrenheit, round = 2)
 round converted value.}
 }
 \value{
-A vector of temperature values in Celsius.
+A numeric vector of temperature values in Celsius.
 }
 \description{
 \code{fahrenheit.to.celsius} creates a vector of temperatures in

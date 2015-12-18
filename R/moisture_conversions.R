@@ -1,5 +1,38 @@
+#' Calculate relative humidity.
+#'
+#' \code{dewpoint.to.humidity} creates a vector of relative humidity values
+#'   from vectors of air temperature and dew point temperature values.
+#'
+#' @param dp Numeric vector of dew point temperatures.
+#' @param t Numeric vector of air temperatures.
+#' @param temperature.metric Character string indicating the temperature
+#'    metric of air temperature and dew point temperature. Possible values
+#'    are 'fahrenheit' or 'celsius'.
+#'
+#' @details Dew point temperature and temperature must be in the same
+#'    metric (i.e., either both in Celsius or both in Fahrenheit). If
+#'    necessary, use \code{\link{fahrenheit.to.celsius}} or
+#'    \code{\link{celsius.to.fahrenheit}} to convert before using this
+#'    function.
+#'
+#' @return A numeric vector of relative humidity (in \%)
+#'
+#' @note Equations are from the source code for the US National Weather
+#'     Service's
+#'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+#'
+#' @references
+#' National Weather Service Hydrometeorological Prediction
+#'    Center Web Team. Heat Index Calculator. 30 Jan 2015.
+#'    \url{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}.
+#'    Accessed 18 Dec 2015.
+#'
+#' @seealso \code{\link{humidity.to.dewpoint},
+#'    \link{fahrenheit.to.celsius},
+#'    \link{celsius.to.fahrenheit}}
 dewpoint.to.humidity <-
-        function (dp = NA, t = NA, temperature.metric = "fahrenheit")
+        function (dp = NA, t = NA,
+                  temperature.metric = "fahrenheit")
         {
                 if (!(temperature.metric %in% c("celsius", "fahrenheit"))) {
                         stop("The 'temperature.metric' option can onnly by 'celsius' or 'fahrenheit'.")
@@ -20,8 +53,42 @@ dewpoint.to.humidity <-
                 return(relative.humidity)
         }
 
+#' Calculate dew point temperature.
+#'
+#' \code{humidity.to.dewpoint} creates a vector of dew point temperature
+#'    values from vectors of air temperature and relative humidity values.
+#'
+#' @param rh Numeric vector of relative humidity (in \%).
+#' @param t Numeric vector of air temperatures.
+#' @param temperature.metric Character string indicating the temperature
+#'    metric of air temperature. Possible values are 'fahrenheit' or
+#'    'celsius'.
+#'
+#' @details Dew point temperature will be calculated in the same metric as
+#'    the temperature vector (as specified by the 'temperature.metric'
+#'    option). If you'd like dew point temperature in a different metric,
+#'     use the function \code{\link{celsius.to.fahrenheit}} or
+#'     \code{\link{fahrenheit.to.celsius}} on the output from this function.
+#'
+#' @return A numeric vector of dew point temperature, in the same metric
+#'    as the temperature vector (as specified by the 'temperature.metric'
+#'    option).
+#'
+#' @note Equations are from the source code for the US National Weather
+#'     Service's
+#'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+#'
+#' @references
+#' National Weather Service Hydrometeorological Prediction
+#'    Center Web Team. Heat Index Calculator. 30 Jan 2015.
+#'    \url{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}.
+#'    Accessed 18 Dec 2015.
+#'
+#' @seealso \code{\link{dewpoint.to.humidity},
+#'    \link{fahrenheit.to.celsius},
+#'    \link{celsius.to.fahrenheit}}
 humidity.to.dewpoint <-
-        function (t = NA, rh = NA, temperature.metric = "fahrenheit")
+        function (rh = NA, t = NA, temperature.metric = "fahrenheit")
         {
                 if (!(temperature.metric %in% c("celsius", "fahrenheit"))) {
                         stop("The 'temperature.metric' option can onnly by 'celsius' or 'fahrenheit'.")
