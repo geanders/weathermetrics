@@ -1,3 +1,19 @@
+#' Convert from Celsius to Fahrenheit.
+#'
+#' \code{celsius.to-fahrenheit} creates a vector of temperatures in
+#' Fahrenheit from a vector of temperatures in Celsius.
+#'
+#' @param T.celsius Numeric vector of temperatures in Celsius.
+#' @param round Integer indicating the number of decimal places to
+#'     round converted value.
+#'
+#' @return A vector of temperature values in Fahrenheit.
+#'
+#' @note Equations are from the source code for the US National Weather
+#'     Service's
+#'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+#' @seealso \code{\link{fahrenheit.to.celsius}}
+#'
 celsius.to.fahrenheit <-
         function (T.celsius, round = 2)
         {
