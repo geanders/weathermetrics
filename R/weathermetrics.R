@@ -6,8 +6,11 @@
 #'
 #' @section weathermetrics functions:
 #' This package includes the following functions to calculate vectors of
-#'    weather metrics: 'celsius.to.fahrenheit', 'fahrenheit.to.celsius',
-#'    'dewpoint.to.humidity', 'humidity.to.dewpoint', and 'heat.index'.
+#'    weather metrics: \link{\code{celsius.to.fahrenheit}},
+#'    \link{\code{fahrenheit.to.celsius}},
+#'    \link{\code{dewpoint.to.humidity}},
+#'    \link{\code{humidity.to.dewpoint}}, and
+#'    \link{\code{heat.index}}.
 #'
 #' @docType package
 #' @name weathermetrics

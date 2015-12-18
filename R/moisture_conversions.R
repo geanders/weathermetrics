@@ -7,7 +7,7 @@
 #' @param t Numeric vector of air temperatures.
 #' @param temperature.metric Character string indicating the temperature
 #'    metric of air temperature and dew point temperature. Possible values
-#'    are 'fahrenheit' or 'celsius'.
+#'    are \code{fahrenheit} or \code{celsius}.
 #'
 #' @details Dew point temperature and temperature must be in the same
 #'    metric (i.e., either both in Celsius or both in Fahrenheit). If
@@ -61,17 +61,17 @@ dewpoint.to.humidity <-
 #' @param rh Numeric vector of relative humidity (in \%).
 #' @param t Numeric vector of air temperatures.
 #' @param temperature.metric Character string indicating the temperature
-#'    metric of air temperature. Possible values are 'fahrenheit' or
-#'    'celsius'.
+#'    metric of air temperature. Possible values are \code{fahrenheit} or
+#'    \code{celsius}.
 #'
 #' @details Dew point temperature will be calculated in the same metric as
-#'    the temperature vector (as specified by the 'temperature.metric'
+#'    the temperature vector (as specified by the \code{temperature.metric}
 #'    option). If you'd like dew point temperature in a different metric,
 #'     use the function \code{\link{celsius.to.fahrenheit}} or
 #'     \code{\link{fahrenheit.to.celsius}} on the output from this function.
 #'
 #' @return A numeric vector of dew point temperature, in the same metric
-#'    as the temperature vector (as specified by the 'temperature.metric'
+#'    as the temperature vector (as specified by the \code{temperature.metric}
 #'    option).
 #'
 #' @note Equations are from the source code for the US National Weather
