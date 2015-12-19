@@ -142,6 +142,7 @@ heat.index <-
 #'
 #' @seealso \code{\link{heat.index}}
 #'
+#' @export
 heat.index.algorithm <-
         function (t = NA, rh = NA)
         {
