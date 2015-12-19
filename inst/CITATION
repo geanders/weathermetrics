@@ -1,0 +1,14 @@
+citHeader("To cite weathermetics in publications use:")
+
+citEntry(entry = "Article",
+  title        = "...",
+  author       = personList(as.person("Brooke Anderson"),
+                 as.person("Roger Peng")),
+
+  jounral      = "Environemtental Health Perspectives,
+  year         = "2013",
+  volume       = ...,
+  number       = ...,
+  pages        = ...,
+  url          = ...,
+textVersion = paste("..."))
