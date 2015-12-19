@@ -39,6 +39,8 @@
 #'                                 dp = lyon$DewpointC,
 #'                                 temperature.metric = 'celsius')
 #' lyon
+#'
+#' @export
 dewpoint.to.humidity <-
         function (dp = NA, t = NA,
                   temperature.metric = "fahrenheit")
@@ -106,6 +108,8 @@ dewpoint.to.humidity <-
 #'                                     rh = newhaven$Relative.Humidity,
 #'                                     temperature.metric = 'fahrenheit')
 #' newhaven
+#'
+#' @export
 humidity.to.dewpoint <-
         function (rh = NA, t = NA, temperature.metric = "fahrenheit")
         {

@@ -29,6 +29,7 @@ Equations are from the source code for the US National Weather
 data(lyon)
 lyon$TemperatureF <- celsius.to.fahrenheit(lyon$TemperatureC)
 lyon
+
 }
 \seealso{
 \code{\link{fahrenheit.to.celsius}}

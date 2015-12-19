@@ -29,6 +29,7 @@ Equations are from the source code for the US National Weather
 data(norfolk)
 norfolk$TempC <- fahrenheit.to.celsius(norfolk$TemperatureF)
 norfolk
+
 }
 \seealso{
 \code{\link{celsius.to.fahrenheit}}

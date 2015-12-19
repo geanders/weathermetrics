@@ -67,6 +67,7 @@ lyon$heat.index <- heat.index(t = lyon$TemperatureC,
                               temperature.metric = 'celsius',
                               output.metric = 'celsius')
 lyon
+
 }
 \references{
 Anderson GB, Bell ML, Peng RD. 2013. Methods to calculate the heat index

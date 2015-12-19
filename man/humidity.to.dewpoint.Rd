@@ -46,6 +46,7 @@ newhaven$DP <- humidity.to.dewpoint(t = newhaven$TemperatureF,
                                     rh = newhaven$Relative.Humidity,
                                     temperature.metric = 'fahrenheit')
 newhaven
+
 }
 \references{
 National Weather Service Hydrometeorological Prediction

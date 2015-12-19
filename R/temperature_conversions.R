@@ -19,6 +19,8 @@
 #' data(lyon)
 #' lyon$TemperatureF <- celsius.to.fahrenheit(lyon$TemperatureC)
 #' lyon
+#'
+#' @export
 celsius.to.fahrenheit <-
         function (T.celsius, round = 2)
         {
@@ -48,6 +50,8 @@ celsius.to.fahrenheit <-
 #' data(norfolk)
 #' norfolk$TempC <- fahrenheit.to.celsius(norfolk$TemperatureF)
 #' norfolk
+#'
+#' @export
 fahrenheit.to.celsius <-
         function (T.fahrenheit, round = 2)
         {

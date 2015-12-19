@@ -43,6 +43,7 @@ lyon$RH <- dewpoint.to.humidity(t = lyon$TemperatureC,
                                 dp = lyon$DewpointC,
                                 temperature.metric = 'celsius')
 lyon
+
 }
 \references{
 National Weather Service Hydrometeorological Prediction

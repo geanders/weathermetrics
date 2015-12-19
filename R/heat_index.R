@@ -67,6 +67,8 @@
 #'                               temperature.metric = 'celsius',
 #'                               output.metric = 'celsius')
 #'lyon
+#'
+#' @export
 heat.index <-
         function (t = NA, dp = c(), rh = c(), temperature.metric = "fahrenheit",
                   output.metric = NULL, round = 0)
