@@ -249,7 +249,7 @@ suffolk
 
 To cite this package, use: 
 
----
-nocite: | 
-  @anderson2013heat 
-...
+Brooke Anderson and Roger Peng (2015). weathermetrics: Functions to Convert
+  Between Weather Metrics. R package version 1.2.0.
+  https://github.com/geanders/weathermetrics/
+
