@@ -69,6 +69,10 @@ lyon$heat.index <- heat.index(t = lyon$TemperatureC,
 lyon
 
 }
+\author{
+Brooke Anderson \email{brooke.anderson@colostate.edu}
+Roger Peng \email{rdpeng@gmail.com}
+}
 \references{
 Anderson GB, Bell ML, Peng RD. 2013. Methods to calculate the heat index
    as an exposure Metric in environmental health research.

@@ -13,6 +13,10 @@
 #'     Service's
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
 #'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
+#' Roger Peng \email{rdpeng@@gmail.com}
+#'
 #' @seealso \code{\link{fahrenheit.to.celsius}}
 #'
 #' @examples # Convert from Celsius to Fahrenheit.
@@ -43,6 +47,10 @@ celsius.to.fahrenheit <-
 #' @note Equations are from the source code for the US National Weather
 #'     Service's
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+#'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
+#' Roger Peng \email{rdpeng@@gmail.com}
 #'
 #' @seealso \code{\link{celsius.to.fahrenheit}}
 #'

@@ -32,6 +32,10 @@
 #'     Service's
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
 #'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
+#' Roger Peng \email{rdpeng@@gmail.com}
+#'
 #' @references
 #' Anderson GB, Bell ML, Peng RD. 2013. Methods to calculate the heat index
 #'    as an exposure Metric in environmental health research.
@@ -121,6 +125,10 @@ heat.index <-
 #' @note Equations are from the source code for the US National Weather
 #'     Service's
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+#'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
+#' Roger Peng \email{rdpeng@@gmail.com}
 #'
 #' @references
 #' Anderson GB, Bell ML, Peng RD. 2013. Methods to calculate the heat index

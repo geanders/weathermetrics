@@ -21,6 +21,10 @@
 #'     Service's
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
 #'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
+#' Roger Peng \email{rdpeng@@gmail.com}
+#'
 #' @references
 #' National Weather Service Hydrometeorological Prediction
 #'    Center Web Team. Heat Index Calculator. 30 Jan 2015.
@@ -89,6 +93,10 @@ dewpoint.to.humidity <-
 #' @note Equations are from the source code for the US National Weather
 #'     Service's
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
+#'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
+#' Roger Peng \email{rdpeng@@gmail.com}
 #'
 #' @references
 #' National Weather Service Hydrometeorological Prediction

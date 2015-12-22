@@ -31,6 +31,10 @@ norfolk$TempC <- fahrenheit.to.celsius(norfolk$TemperatureF)
 norfolk
 
 }
+\author{
+Brooke Anderson \email{brooke.anderson@colostate.edu}
+Roger Peng \email{rdpeng@gmail.com}
+}
 \seealso{
 \code{\link{celsius.to.fahrenheit}}
 }

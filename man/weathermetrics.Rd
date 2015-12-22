@@ -19,6 +19,10 @@ This package includes the following functions to calculate vectors of
    \code{\link{humidity.to.dewpoint}}, and
    \code{\link{heat.index}}.
 }
+\author{
+Brooke Anderson \email{brooke.anderson@colostate.edu}
+Roger Peng \email{rdpeng@gmail.com}
+}
 \references{
 Anderson GB, Bell ML, Peng RD. 2013. Methods to calculate the heat index
    as an exposure Metric in environmental health research.
