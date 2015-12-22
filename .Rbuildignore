@@ -3,3 +3,4 @@
 TODO
 README.md
 cran-comments.md
+^\.travis\.yml$
