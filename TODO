@@ -1,6 +1,4 @@
 - Add citations to vignette
-- Sync up with GitHub
-- Check CITATION file
 - Add personalized checks
 - Confirm that algorithm agrees with current NWS algorithm
 - Run checks on other systems through CRAN

@@ -1,7 +1,7 @@
 citHeader("To cite weathermetics in publications use:")
 
 citEntry(entry = "Article",
-  title        = "...",
+  title        = "Methods to calculate the heat index as an exposure metric in environmental health research",
   author       = personList(as.person("G. Brooke Anderson"),
                  as.person("Michelle L. Bell"),
                  as.person("Roger D. Peng")),
@@ -11,7 +11,7 @@ citEntry(entry = "Article",
   volume       = "121",
   number       = "10",
   pages        = "1111-1119",
-  url          = "https://github.com/geanders/weathermetrics/",
+  url          = "http://ehp.niehs.nih.gov/1206273/",
   textVersion = paste("Anderson GB, Bell ML, Peng RD. 2013. ",
     "Methods to calculate the heat index ",
     "as an exposure metric in environmental health research. ",
