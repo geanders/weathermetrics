@@ -1,6 +1,6 @@
 Package: weathermetrics
 Type: Package
-Title: Functions to Convert between Weather Metrics
+Title: Functions to Convert Between Weather Metrics
 Version: 1.2.0
 Date: 2015-12-18
 Authors@R: c(person("Brooke", "Anderson",
