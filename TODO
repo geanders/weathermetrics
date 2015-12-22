@@ -3,4 +3,4 @@
 - Confirm that algorithm agrees with current NWS algorithm
 - Run checks on other systems through CRAN
 - What other tasks before submitting to CRAN?
-- Check that package loads properly from GitHub
+- Add author info to all roxygen2 documentation

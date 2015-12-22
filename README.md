@@ -1,12 +1,29 @@
 ---
 title: "`weathermetrics` package vignette"
-author: "Brooke Anderson"
+author: "G. Brooke Anderson"
 date: "2015-12-21"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{weathermetrics}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+references: 
+- id: anderson2013heat 
+  title: Methods to calculate the heat index as an exposure metric in environmental health research. 
+  author: 
+  - family: Anderson 
+    given: G. Brooke 
+  - family: Bell 
+    given: Michelle L. 
+  - family: Peng 
+    given: Roger D. 
+  container-title: Environmental Health Perspectives 
+  volume: 121 
+  URL: 'http://ehp.niehs.nih.gov/1206273/' 
+  DOI: 10.1289/ehp.1206273 
+  issue: 10 
+  pages: 1111-1119 
+  type: article-journal
 ---
 
 
@@ -282,3 +299,11 @@ suffolk
 ## 7 1998-07-18           81                78 27.22222 86.051
 ```
 
+## Citation for package
+
+To cite this package, use: 
+
+---
+nocite: | 
+  @anderson2013heat 
+...
