@@ -171,6 +171,6 @@ suffolk
 
 To cite this package, use: 
 
-Brooke Anderson and Roger Peng (2015). weathermetrics: Functions to Convert
-  Between Weather Metrics. R package version 1.2.0.
-  https://github.com/geanders/weathermetrics/
+Anderson GB, Bell ML, Peng RD. 2013.  Methods to calculate the heat
+  index as an exposure metric in environmental health research.
+  Environmental Health Perspectives 121(10):1111-1119.
