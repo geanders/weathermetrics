@@ -1,4 +1,2 @@
-- Add personalized checks
 - Confirm that algorithm agrees with current NWS algorithm
-- Run checks on other systems through CRAN
-- What other tasks before submitting to CRAN?
+- Improve README file based on suggestions in "R Packages".
