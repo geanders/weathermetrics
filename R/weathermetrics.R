@@ -16,7 +16,7 @@
 #' @name weathermetrics
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
 #' Roger Peng \email{rdpeng@@gmail.com}
 #'
 #' @references

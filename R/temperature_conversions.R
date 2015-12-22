@@ -14,7 +14,7 @@
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
 #' Roger Peng \email{rdpeng@@gmail.com}
 #'
 #' @seealso \code{\link{fahrenheit.to.celsius}}
@@ -49,7 +49,7 @@ celsius.to.fahrenheit <-
 #'     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
 #' Roger Peng \email{rdpeng@@gmail.com}
 #'
 #' @seealso \code{\link{celsius.to.fahrenheit}}
