@@ -20,7 +20,7 @@ This package includes the following functions to calculate vectors of
    \code{\link{heat.index}}.
 }
 \author{
-Brooke Anderson \email{brooke.anderson@colostate.edu}
+Brooke Anderson \email{brooke.anderson@colostate.edu},
 Roger Peng \email{rdpeng@gmail.com}
 }
 \references{

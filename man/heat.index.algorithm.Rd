@@ -30,7 +30,7 @@ Equations are from the source code for the US National Weather
     \href{http://www.wpc.ncep.noaa.gov/html/heatindex.shtml}{online heat index calculator}.
 }
 \author{
-Brooke Anderson \email{brooke.anderson@colostate.edu}
+Brooke Anderson \email{brooke.anderson@colostate.edu},
 Roger Peng \email{rdpeng@gmail.com}
 }
 \references{
