@@ -22,7 +22,7 @@ The `weathermetrics` package provides the following functions to calculate or co
 - **`heat.index`:** Calculate a vector of heat index values
 from vectors of air temperature and either dew point temperature or relative humidity
 
-All algorithms are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.hpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). 
+All algorithms are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). 
 
 ## Converting or calculating weather metrics
 
@@ -133,7 +133,7 @@ newhaven
 #> 7 2008-10-25           56                84 51.18 10.66
 ```
 
-Calculations between air temperature, relative humidity, and dew point temperature are based on algorithms used by the United States National Weather Service's [online heat index calculator](http://www.hpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). These are approximations rather than exact conversions.
+Calculations between air temperature, relative humidity, and dew point temperature are based on algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). These are approximations rather than exact conversions.
 
 ### Calculating heat index
 
@@ -182,7 +182,7 @@ lyon
 When calculating heat index from air temperature and dew point temperature, both must be in the same metric (either degrees Fahrenheit or degrees Celsius) when they are input to the `heat.index` function. If this is not the case, you can use either `celsius.to.fahrenheit` or `fahrenheit.to.celsius` to convert one of the metrics before using `heat.index`.
 
 The algorithm for the \texttt{heat.index} function is adapted for R
-from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.hpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). Therefore, results will agree with results from the US National Weather Service online calculator. However, heat index is sometimes calculated using a simpler algorithm. Therefore, heat index values from the \texttt{heat.index} function will sometimes differ by one or two degrees compared to other heat index calculators or charts.
+from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). Therefore, results will agree with results from the US National Weather Service online calculator. However, heat index is sometimes calculated using a simpler algorithm. Therefore, heat index values from the \texttt{heat.index} function will sometimes differ by one or two degrees compared to other heat index calculators or charts.
 
 ## Handling missing or impossible weather values
 
@@ -224,7 +224,7 @@ Additionally, the function returns a warning to alert the user that the input da
 
 ## Rounding output values
 
-All functions have defaults for rounding that are consistent with the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.hpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). For several of the functions, you may also specify that outputs are rounded to a different number of digits using the `round` option. For example:
+All functions have defaults for rounding that are consistent with the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). For several of the functions, you may also specify that outputs are rounded to a different number of digits using the `round` option. For example:
 
 
 ```r
