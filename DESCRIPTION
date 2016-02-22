@@ -1,11 +1,13 @@
 Package: weathermetrics
 Type: Package
 Title: Functions to Convert Between Weather Metrics
-Version: 1.2.0
+Version: 1.2.1.9000
 Date: 2015-12-18
 Authors@R: c(person("Brooke", "Anderson",
     email = "brooke.anderson@colostate.edu", role = c("aut", "cre")),
-    person("Roger", "Peng", email = "rdpeng@gmail.com", role = c("aut")))
+    person("Roger", "Peng", email = "rdpeng@gmail.com", role = c("aut")),
+    person("Joshua", "Ferreri", email = "joshua.m.ferreri@gmail.com",
+    role = c("aut")))
 Description: Functions to convert between Celsius
     and Fahrenheit, to convert between dew point temperature and relative
     humidity, and to calculate heat index.
