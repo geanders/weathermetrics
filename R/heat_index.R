@@ -12,7 +12,7 @@
 #'    are 'fahrenheit' or 'celsius'.
 #' @param output.metric Character string indicating the metric into which
 #'    heat index should be calculated. Possible values are 'fahrenheit' or
-#'    'celcius'.
+#'    'celsius'.
 #' @param round Integer indicating the number of decimal places to
 #'     round converted value.
 #'
