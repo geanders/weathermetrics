@@ -4,7 +4,8 @@
 #'   numeric vector of speed in the specified unit.
 #'
 #' @param x Numeric vector of speeds in specified unit
-#' @param round Numeric vector of decimal places to round to. Default is 1.
+#' @param round Integer indicating the number of decimal places to
+#'     round converted value. Default value is 1.
 #' @param unit Character specifying the speed unit for x. Possible values are
 #'   \code{mph}, \code{mps}, \code{ftps}, and \code{kmph} where
 #'   \code{mph} is miles per hour, \code{mps} is meters per second,
@@ -57,7 +58,8 @@ speed.to.knots <-
 #'   from a numeric vector of speed in knots.
 #'
 #' @param knots Numeric vector of speeds in knots
-#' @param round Numeric vector of decimal places to round to. Default is 1.
+#' @param round Integer indicating the number of decimal places to
+#'     round converted value. Default value is 1.
 #' @param unit Character specifying the speed unit to convert to from knots.
 #'   Possible values are \code{mph}, \code{mps}, \code{ftps}, and \code{kmph}
 #'   where \code{mph} is miles per hour, \code{mps} is meters per second,
