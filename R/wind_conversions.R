@@ -66,12 +66,12 @@ speed.to.knots <-
 #'
 #' @details Output will be in the speed units specified by unit.
 #'
-#'  @notes Equations are from the source code for the National Oceanic and
-#'    and Atmospheric Administration's
-#'    \href{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}{online wind speed
-#'    converter}
+#' @notes Equations are from the source code for the National Oceanic and
+#'   and Atmospheric Administration's
+#'   \href{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}{online wind speed
+#'   converter}
 #'
-#'    #' @author
+#' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
 #' Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
 #'
