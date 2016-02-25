@@ -4,7 +4,8 @@
 #'   numeric vector of speed in the specified unit.
 #'
 #' @param x Numeric vector of speeds in specified unit
-#' @param round Numeric vector of decimal places to round to. Default is 1.
+#' @param round Integer indicating the number of decimal places to
+#'     round converted value. Default value is 1.
 #' @param unit Character specifying the speed unit for x. Possible values are
 #'   \code{mph}, \code{mps}, \code{ftps}, and \code{kmph} where
 #'   \code{mph} is miles per hour, \code{mps} is meters per second,
@@ -12,8 +13,8 @@
 #'
 #' @return A numeric vector of speeds (in knots)
 #'
-#'@details The numeric vector specified for x must be in the units provided as a
-#'  character specified by unit.
+#' @details The numeric vector specified for x must be in the units provided as a
+#'   character specified by unit.
 #'
 #' @notes Equations are from the source code for the National Oceanic and
 #'    and Atmospheric Administration's
@@ -22,7 +23,9 @@
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#'
+#' @seealso \code{\link{knots.to.speed}}
 #'
 #' @references
 #'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
@@ -57,11 +60,13 @@ speed.to.knots <-
 #'   from a numeric vector of speed in knots.
 #'
 #' @param knots Numeric vector of speeds in knots
-#' @param round Numeric vector of decimal places to round to. Default is 1.
+#' @param round Integer indicating the number of decimal places to
+#'     round converted value. Default value is 1.
 #' @param unit Character specifying the speed unit to convert to from knots.
 #'   Possible values are \code{mph}, \code{mps}, \code{ftps}, and \code{kmph}
 #'   where \code{mph} is miles per hour, \code{mps} is meters per second,
 #'   \code{ftps} is feet per second, and \code{kmph} is kilometers per hour.
+#'
 #' @return A numeric vector of speeds (in the specified unit)
 #'
 #' @details Output will be in the speed units specified by unit.
@@ -73,7 +78,9 @@ speed.to.knots <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#'
+#' @seealso \code{\link{speed.to.knots}}
 #'
 #' @references
 #'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
