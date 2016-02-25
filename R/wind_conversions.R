@@ -13,8 +13,8 @@
 #'
 #' @return A numeric vector of speeds (in knots)
 #'
-#'@details The numeric vector specified for x must be in the units provided as a
-#'  character specified by unit.
+#' @details The numeric vector specified for x must be in the units provided as a
+#'   character specified by unit.
 #'
 #' @notes Equations are from the source code for the National Oceanic and
 #'    and Atmospheric Administration's
@@ -23,7 +23,9 @@
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#'
+#' @seealso \code{\link{knots.to.speed}}
 #'
 #' @references
 #'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
@@ -64,6 +66,7 @@ speed.to.knots <-
 #'   Possible values are \code{mph}, \code{mps}, \code{ftps}, and \code{kmph}
 #'   where \code{mph} is miles per hour, \code{mps} is meters per second,
 #'   \code{ftps} is feet per second, and \code{kmph} is kilometers per hour.
+#'
 #' @return A numeric vector of speeds (in the specified unit)
 #'
 #' @details Output will be in the speed units specified by unit.
@@ -75,7 +78,9 @@ speed.to.knots <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#'
+#' @seealso \code{\link{speed.to.knots}}
 #'
 #' @references
 #'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
