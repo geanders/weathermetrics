@@ -43,18 +43,18 @@ speed.to.knots <-
                 if(unit == "mph"){
                         knots = x * 0.8689762
                         return(round(knots, round))
-                }
-                if(unit == "mps"){
+                } else if(unit == "mps"){
                         knots = x * 1.9438445
                         return(round(knots, round))
                 }
                 if(unit == "ftps"){
                         knots = x * 0.5924838
                         return(round(knots, round))
-                }
-                if(unit == "kmph"){
+                } else if(unit == "kmph"){
                         knots = kmph * 0.539593
                         return(round(knots, round))
+                } else {
+                        stop("Unit must be one of ...")
                 }
         }
 
