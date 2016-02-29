@@ -86,7 +86,6 @@ fahrenheit.to.celsius <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Roger Peng \email{rdpeng@@gmail.com},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
 #' @seealso \code{\link{kelvin.to.celsius}}
@@ -123,7 +122,6 @@ celsius.to.kelvin <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Roger Peng \email{rdpeng@@gmail.com},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
 #' @seealso \code{\link{celsius.to.kelvin}}
@@ -157,7 +155,6 @@ kelvin.to.celsius <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Roger Peng \email{rdpeng@@gmail.com},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
 #' @seealso \code{\link{kelvin.to.fahrenheit}}
@@ -194,7 +191,6 @@ fahrenheit.to.kelvin <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Roger Peng \email{rdpeng@@gmail.com},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
 #' @seealso \code{\link{fahrenheit.to.kelvin}}

@@ -20,7 +20,7 @@ are 'fahrenheit' or 'celsius'.}
 
 \item{output.metric}{Character string indicating the metric into which
 heat index should be calculated. Possible values are 'fahrenheit' or
-'celcius'.}
+'celsius'.}
 
 \item{round}{Integer indicating the number of decimal places to
 round converted value.}
