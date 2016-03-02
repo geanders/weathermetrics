@@ -86,7 +86,6 @@ fahrenheit.to.celsius <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Roger Peng \email{rdpeng@@gmail.com},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
 #' @seealso \code{\link{kelvin.to.celsius}}
@@ -123,12 +122,15 @@ celsius.to.kelvin <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Roger Peng \email{rdpeng@@gmail.com},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
 #' @seealso \code{\link{celsius.to.kelvin}}
 #'
 #' @examples # Convert from Kelvin to Celsius.
+#' data(lyon)
+#' lyon$TemperatureK <- celsius.to.kelvin(lyon$TemperatureC)
+#' lyon$TemperatureKtoC <- kelvin.to.celsius(lyon$TemperatureK)
+#' lyon
 #'
 #' @export
 kelvin.to.celsius <-
@@ -157,7 +159,6 @@ kelvin.to.celsius <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Roger Peng \email{rdpeng@@gmail.com},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
 #' @seealso \code{\link{kelvin.to.fahrenheit}}
@@ -194,12 +195,15 @@ fahrenheit.to.kelvin <-
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Roger Peng \email{rdpeng@@gmail.com},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
 #' @seealso \code{\link{fahrenheit.to.kelvin}}
 #'
 #' @examples # Convert from Kelvin to Fahrenheit.
+#' data(norfolk)
+#' norfolk$TemperatureK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
+#' norfolk$TemperatureKtoF <- kelvin.to.fahrenheit(norfolk$TemperatureK)
+#' norfolk
 #'
 #' @export
 kelvin.to.fahrenheit <-
