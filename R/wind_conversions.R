@@ -35,7 +35,8 @@
 #'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
 #'
 #' @examples
-#'
+#' data(foco)
+#' foco$knots <- speed.to.knots(foco$MPH, 1, "mph")
 #' @export
 speed.to.knots <-
         function(x, round = 1, unit)
@@ -50,17 +51,15 @@ speed.to.knots <-
                 if(unit == "ftps"){
                         knots = x * 0.5924838
                         return(round(knots, round))
-<<<<<<< HEAD
                 }
                 if(unit == "kmph"){
                         knots = x * 0.539593
-=======
                 } else if(unit == "kmph"){
                         knots = kmph * 0.539593
->>>>>>> a9738c7ca467a3e9f3e90789e65ff8cc2b58e07c
                         return(round(knots, round))
                 } else {
-                        stop("Unit must be one of ...")
+                        stop("Unit must be one of the units of the specified
+                             wind speed")
                 }
         }
 
@@ -101,6 +100,13 @@ speed.to.knots <-
 #'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
 #'
 #' @examples
+#' data(foco)
+#' foco$knots <- speed.to.knots(foco$MPH, 1, "mph")
+#' foco$knots_to_mph <- knots.to.speed(foco$knots, 1, "mph")
+#' foco$mps <- knots.to.speed(foco$knots, 1, "mps")
+#' foco$ftps <- knots.to.speed(foco$knots, 1, "ftps")
+#' foco$kmph <- knots.to.speed(foco$knots, 1, "kmph")
+#' foco
 #'
 #' @export
 knots.to.speed <-
