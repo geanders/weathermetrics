@@ -35,8 +35,10 @@
 #'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
 #'
 #' @examples
-#' data(foco)
-#' foco$knots <- speed.to.knots(foco$MPH, 1, "mph")
+#' data(beijing)
+#' beijing$knots <- speed.to.knots(beijing$kmph, 1, "kmph")
+#' beijing
+#'
 #' @export
 speed.to.knots <-
         function(x, round = 1, unit)
