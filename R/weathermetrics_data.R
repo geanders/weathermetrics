@@ -61,7 +61,7 @@
 #' Weather in Fort Collins, CO
 #'
 #' A dataset containing daily values of mean temperature (Fahrenheit) and mean
-#' wind speed (in miles per hour) for the week of October 11, 2015, in Fort
+#' wind speed (in knots) for the week of October 11, 2015, in Fort
 #' Collins, CO.
 #'
 #' @source \href{http://www.wunderground.com}{Weather Underground}
@@ -70,7 +70,7 @@
 #'      \describe{
 #'      \item{date}{Date of weather observation}
 #'      \item{TemperatureF}{Daily mean temperature in Fahrenheit}
-#'      \item{MPH}{Daily mean wind speed in miles per hour}
+#'      \item{knots}{Daily mean wind speed in knots}
 #'      }
 "foco"
 
