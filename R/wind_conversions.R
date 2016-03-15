@@ -41,7 +41,7 @@
 #'
 #' @export
 speed.to.knots <-
-        function(x, unit, round = TRUE, y)
+        function(x, unit, round = TRUE, y = 1)
         {
                 if(unit == "mph" & round == TRUE){
                         knots = x * 0.8689762
@@ -60,14 +60,17 @@ speed.to.knots <-
                         return(round(knots, y))
                 } else if(unit == "mph" & round == FALSE){
                         knots = x * 0.8689762
+                        return(knots)
                 } else if(unit == "mps" & round == FALSE){
                         knots = x * 1.9438445
+                        return(knots)
                 } else if(unit == "ftps" & round == FALSE){
                         knots = x * 0.5924838
+                        return(knots)
                 } else if(unit == "kmph" & round == FALSE){
                         knots = x * 0.539593
-                }
-                else {
+                        return(knots)
+                } else {
                         stop("Unit must be one of the specified units for wind
                              speed")
                 }
