@@ -127,10 +127,9 @@ celsius.to.kelvin <-
 #' @seealso \code{\link{celsius.to.kelvin}}
 #'
 #' @examples # Convert from Kelvin to Celsius.
-#' data(lyon)
-#' lyon$TemperatureK <- celsius.to.kelvin(lyon$TemperatureC)
-#' lyon$TemperatureKtoC <- kelvin.to.celsius(lyon$TemperatureK)
-#' lyon
+#' data(angeles)
+#' angeles$TemperatureC <- kelvin.to.celsius(angeles$TemperatureK)
+#' angeles
 #'
 #' @export
 kelvin.to.celsius <-
@@ -165,7 +164,7 @@ kelvin.to.celsius <-
 #'
 #' @examples # Convert from Fahrenheit to Kelvin.
 #' data(norfolk)
-#' norfolk$TempK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
+#' norfolk$TempuratureK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
 #' norfolk
 #'
 #' @export
@@ -200,10 +199,9 @@ fahrenheit.to.kelvin <-
 #' @seealso \code{\link{fahrenheit.to.kelvin}}
 #'
 #' @examples # Convert from Kelvin to Fahrenheit.
-#' data(norfolk)
-#' norfolk$TemperatureK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
-#' norfolk$TemperatureKtoF <- kelvin.to.fahrenheit(norfolk$TemperatureK)
-#' norfolk
+#' data(angeles)
+#' angeles$TemperatureF <- kelvin.to.fahrenheit(angeles$TemperatureK)
+#' angeles
 #'
 #' @export
 kelvin.to.fahrenheit <-
