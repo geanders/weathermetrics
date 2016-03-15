@@ -89,18 +89,15 @@ lyon$DP_K <- celsius.to.kelvin(lyon$DewpointC)
 lyon
 ```
 
-As a second example, the `lyon` package is used. 
+As a second example, the `angeles` dataset includes temperature (`angeles$TemperatureK`) and dew point temperature (`angeles$DewpointK`) in Kelvins in Los Angeles, CA, for the week of December 19, 2010. 
 
 To convert to degress Celsius, use the `kelvin.to.celsius` function:
 
 ```{r}
-data(lyon)
-lyon$TemperatureK <- celsius.to.kelvin(lyon$TemperatureC) #create column with 
-                                                          #temperature in K
-lyon$DP_K <- celsius.to.kelvin(lyon$DewpointC)
-lyon$T_KtoC <- kelvin.to.celsius(lyon$TemperatureK)
-lyon$DP_KtoC <- kelvin.to.celsius(lyon$DP_K)
-lyon
+data(angeles)
+angeles$T_C <- kelvin.to.celsius(angeles$TemperatureK)
+angeles$DP_C <- kelvin.to.celsius(angeles$DewpointK)
+angeles
 ```
 
 ### Converting between Celcius and Kelvins
@@ -116,12 +113,15 @@ norfolk$DP_K <- fahrenheit.to.kelvin(norfolk$DewpointF)
 norfolk
 ```
 
-As a second example, the `norfolk` data set is used. 
+As a second example, the `angeles` data set is used. 
 
 To convert to degress Fahrenheit, use the `kelvin.to.fahrenheit` function:
 
 ```{r}
-
+data(angeles)
+angeles$T_F <- kelvin.to.fahrenheit(angeles$TemperatureK)
+angeles$DP_F <- kelvin.to.fahrenheit(angeles$DewpointK)
+angeles
 ```
 
 ### Calculating relative humidity and dew point temperature
@@ -218,6 +218,34 @@ df
 ```
 
 Additionally, the function returns a warning to alert the user that the input data includes impossible values for some observations. 
+
+### Wind speed: Converting to knots
+
+The `weathermetrics` package includes a function, `speed.to.knots`, that allows you to calculate a vector of wind speed values in the unit knots from vectors of wind speed values in units other than knots, including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph). For example, the `beijing` dataset gives daily values of wind speed in: miles per hour (`beijing$MPH`), meters per second (`beijing$mps`), feet per second (`beijing$ftps`), and kilometers per hour (`beijing$kmph`) for Beijing, China, for the week of January 10, 2015. To calculate daily wind speed values in knots for this dataset, use the `speed.to.knots` function: 
+
+```{r}
+data(beijing)
+beijing$knots <- speed.to.knots(beijing$MPH,
+                                unit = "mph",
+                                round = TRUE,
+                                y = 1)
+beijing
+```
+
+You must specify the unit of wind speed that you wish to convert to knots from using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). You can choose whether or not you would like the answer rounded by using the `round` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of wind speeds when converting from a wind speed other than knots to another unit that is not knots. An example of this is provided after the `knots.to.speed` function is described. The `y` option specifies the number of decimals the answer should be rounded to in the end (default value for `y` is 1, consistent with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
+
+### Wind speed: Converting from knots to other units of wind speed measure
+
+The `weathermetrics` package includes a function, `knots.to.speed`, that allows you to calculate a vector of wind speed values in a specified wind speed unit including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph), from vectors of wind speed values in knots. For example, the `foco` dataset gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. To calculate daily wind speed values in a specified unit, in this case miles per hour, from knots for this dataset, use the `knots.to.speed` function:
+
+```{r}
+data(foco)
+foco$mph <- knots.to.speed(foco$knots,
+                           unit = "mph",
+                           round = TRUE,
+                           y = 1)
+foco
+```
 
 ## Rounding output values
 
