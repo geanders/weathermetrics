@@ -74,7 +74,7 @@
 #'      }
 "foco"
 
-#' Weather in Beijing, China\
+#' Weather in Beijing, China
 #'
 #' A dataset containing daily values of mean temperature (Fahrenheit) and mean
 #' wind speed (in miles per hour, meters per second, feet per secons, and
@@ -92,3 +92,18 @@
 #'      \item{kmph}{Daily mean wind speed in kilometers per hour}
 #'      }
 "beijing"
+
+#' Weather in Los Angeles, CA
+#'
+#' Daily values of mean temperature (Kelvin) and mean dew point
+#' temperature (Kelvin) for the week of December 19, 2010, in Los Angeles, CA.
+#'
+#' @source \href{http://www.wunderground.com/}{Weather Underground}
+#'
+#' @format A data frame 7 rows and 3 variables:
+#'    \describe{
+#'    \item{date}{Date of weather observation}
+#'    \item{TemperatureK}{Daily mean temperature in Kelvin}
+#'    \item{DewpointK}{Daily mean dewpoint temperature in Kelvin}
+#'    }
+"angeles"
