@@ -48,7 +48,7 @@ from vectors of air temperature and either dew point temperature or relative hum
 - **`speed.to.knots`:** Convert a vector of wind speed values to knots
 - **`knots.to.speed`:** Convert a vector of wind speed values in knots to a specified wind speed unit
 
-All algorithms are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). 
+All algorithms are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015) and the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
 
 ## Converting or calculating weather metrics
 
@@ -74,6 +74,19 @@ data(norfolk)
 norfolk$T_C <- fahrenheit.to.celsius(norfolk$TemperatureF)
 norfolk$DP_C <- fahrenheit.to.celsius(norfolk$DewpointF)
 norfolk
+```
+
+### Converting between Celcius and Kelvins
+
+This package includes two functions to convert between Celcius and Kelvins, `celsius.to.kelvin` and `kelvin.to.celsius`. As an example of how to use these functions, the `lyon` dataset that comes with this package gives air temperature (`lyon$TemperatureC`) and dew point temperature (`lyon$DewpointC`), both in degrees Celsius, for Lyon, France, for the week of June 18, 2000.
+
+To convert to Kelvins, use the `celsius.to.kelvin` function:
+
+```{r}
+data(lyon)
+lyon$T_K <- celsius.to.kelvin(lyon$TemperatureC)
+lyon$DP_K <- celsius.to.kelvin(lyon$DewpointC)
+lyon
 ```
 
 ### Calculating relative humidity and dew point temperature
