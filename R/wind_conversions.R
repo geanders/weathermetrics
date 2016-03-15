@@ -41,27 +41,35 @@
 #'
 #' @export
 speed.to.knots <-
-        function(x, round = 1, unit)
+        function(x, unit, round = TRUE, y)
         {
-                if(unit == "mph"){
+                if(unit == "mph" & round == TRUE){
                         knots = x * 0.8689762
-                        return(round(knots, round))
-                } else if(unit == "mps"){
+                        return(round(knots, y))
+                } else if(unit == "mps" & round == TRUE){
                         knots = x * 1.9438445
-                        return(round(knots, round))
-                }
-                if(unit == "ftps"){
+                        return(round(knots, y))
+                } else if(unit == "ftps" & round == TRUE){
                         knots = x * 0.5924838
-                        return(round(knots, round))
-                }
-                if(unit == "kmph"){
+                        return(round(knots, y))
+                } else if(unit == "kmph" & round == TRUE){
                         knots = x * 0.539593
-                } else if(unit == "kmph"){
+                        return(round(knots, y))
+                } else if(unit == "kmph" & round == TRUE){
                         knots = kmph * 0.539593
-                        return(round(knots, round))
-                } else {
-                        stop("Unit must be one of the units of the specified
-                             wind speed")
+                        return(round(knots, y))
+                } else if(unit == "mph" & round == FALSE){
+                        knots = x * 0.8689762
+                } else if(unit == "mps" & round == FALSE){
+                        knots = x * 1.9438445
+                } else if(unit == "ftps" & round == FALSE){
+                        knots = x * 0.5924838
+                } else if(unit == "kmph" & round == FALSE){
+                        knots = x * 0.539593
+                }
+                else {
+                        stop("Unit must be one of the specified units for wind
+                             speed")
                 }
         }
 
@@ -103,32 +111,45 @@ speed.to.knots <-
 #'
 #' @examples
 #' data(foco)
-#' foco$knots <- speed.to.knots(foco$MPH, 1, "mph")
-#' foco$knots_to_mph <- knots.to.speed(foco$knots, 1, "mph")
-#' foco$mps <- knots.to.speed(foco$knots, 1, "mps")
-#' foco$ftps <- knots.to.speed(foco$knots, 1, "ftps")
-#' foco$kmph <- knots.to.speed(foco$knots, 1, "kmph")
+#' foco$knots <- speed.to.knots(foco$MPH, "mph", round = TRUE)
+#' foco$knots_to_mph <- knots.to.speed(foco$knots, "mph", round = TRUE)
+#' foco$mps <- knots.to.speed(foco$knots, "mps", round = TRUE)
+#' foco$ftps <- knots.to.speed(foco$knots, "ftps", round = TRUE)
+#' foco$kmph <- knots.to.speed(foco$knots, "kmph", round = TRUE)
 #' foco
 #'
 #' @export
+
 knots.to.speed <-
-        function(knots, round = 1, unit)
+        function(knots, unit, round = TRUE, y = 1)
         {
-                if(unit == "mph"){
-                        mph = round(knots * 1.1507794, round)
+                if(unit == "mph" & round ==TRUE){
+                        mph = round(knots * 1.1507794, y)
                         return(mph)
-                }
-                if(unit == "mps"){
-                        mps = round(knots * 0.5144444, round)
+                } else if(unit == "mps" & round == TRUE){
+                        mps = round(knots * 0.5144444, y)
                         return(mps)
-                }
-                if(unit == "ftps"){
-                        ftps = round(knots * 1.6878099, round)
+                } else if(unit == "ftps" & round == TRUE){
+                        ftps = round(knots * 1.6878099, y)
                         return(ftps)
-                }
-                if(unit == "kmph"){
-                        kmph = round(knots * 1.85325, round)
+                } else if(unit == "kmph" & round == TRUE){
+                        kmph = round(knots * 1.85325, y)
                         return(kmph)
+                } else if(unit == "mph" & round == FALSE){
+                        mph = knots * 1.1507794
+                        return(mph)
+                } else if(unit == "mps" & round == FALSE){
+                        mps = knots * 0.5144444
+                        return(mps)
+                } else if(unit == "ftps" & round == FALSE){
+                        ftps = knots * 1.6878099
+                        return(ftps)
+                } else if(unit == "kmph" & round == FALSE){
+                        kmph = knots * 1.85325
+                        return(kmph)
+                } else{
+                        stop("Unit must be one of the specified units for wind
+                             speed")
                 }
         }
 

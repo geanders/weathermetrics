@@ -60,8 +60,9 @@
 
 #' Weather in Fort Collins, CO
 #'
-#' A dataset containing daily values of mean temperature (Fahrenheit) and mean wind speed (in miles
-#' per hour) for the week of October 11, 2015, in Fort Collins, CO.
+#' A dataset containing daily values of mean temperature (Fahrenheit) and mean
+#' wind speed (in miles per hour) for the week of October 11, 2015, in Fort
+#' Collins, CO.
 #'
 #' @source \href{http://www.wunderground.com}{Weather Underground}
 #'
@@ -72,3 +73,22 @@
 #'      \item{MPH}{Daily mean wind speed in miles per hour}
 #'      }
 "foco"
+
+#' Weather in Beijing, China\
+#'
+#' A dataset containing daily values of mean temperature (Fahrenheit) and mean
+#' wind speed (in miles per hour, meters per second, feet per secons, and
+#' kilometers per hour) for the week of January 10, 2015, in Beijing, China.
+#'
+#' @source \href{http://www.wunderground.com}{Weather Underground}
+#'
+#' @format A data frame with 7 rows and 3 variables:
+#'      \describe{
+#'      \item{date}{Date of weather observation}
+#'      \item{TemperatureF}{Daily mean temperature in Fahrenheit}
+#'      \item{MPH}{Daily mean wind speed in miles per hour}
+#'      \item{mps}{Daily mean wind speed in meters per second}
+#'      \item{ftps}{Daily mean wind speed in feet per second}
+#'      \item{kmph}{Daily mean wind speed in kilometers per hour}
+#'      }
+"beijing"
