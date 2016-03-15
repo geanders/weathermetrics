@@ -78,7 +78,7 @@ norfolk
 
 ### Converting between Celcius and Kelvins
 
-This package includes two functions to convert between Celcius and Kelvins, `celsius.to.kelvin` and `kelvin.to.celsius`. As an example of how to use these functions, the `lyon` dataset that comes with this package gives air temperature (`lyon$TemperatureC`) and dew point temperature (`lyon$DewpointC`), both in degrees Celsius, for Lyon, France, for the week of June 18, 2000.
+This package includes two functions to convert between Celcius and Kelvins, `celsius.to.kelvin` and `kelvin.to.celsius`. As an example of how to use these functions, the `lyon` dataset that comes with this package is used. 
 
 To convert to Kelvins, use the `celsius.to.kelvin` function:
 
@@ -87,6 +87,41 @@ data(lyon)
 lyon$T_K <- celsius.to.kelvin(lyon$TemperatureC)
 lyon$DP_K <- celsius.to.kelvin(lyon$DewpointC)
 lyon
+```
+
+As a second example, the `lyon` package is used. 
+
+To convert to degress Celsius, use the `kelvin.to.celsius` function:
+
+```{r}
+data(lyon)
+lyon$TemperatureK <- celsius.to.kelvin(lyon$TemperatureC) #create column with 
+                                                          #temperature in K
+lyon$DP_K <- celsius.to.kelvin(lyon$DewpointC)
+lyon$T_KtoC <- kelvin.to.celsius(lyon$TemperatureK)
+lyon$DP_KtoC <- kelvin.to.celsius(lyon$DP_K)
+lyon
+```
+
+### Converting between Celcius and Kelvins
+
+This package includes two functions to convert between Fahrenheit and Kelvin, `fahrenheit.to.kelvin` and `kelvin.to.fahrenheit`. As an example of how to use these functions, the `norfolk` dataset that comes with this package is used. 
+
+To convert to Kelvins, use the `fahrenheit.to.kelvin` function:
+
+```{r}
+data(norfolk)
+norfolk$T_K <- fahrenheit.to.kelvin(norfolk$TemperatureF)
+norfolk$DP_K <- fahrenheit.to.kelvin(norfolk$DewpointF)
+norfolk
+```
+
+As a second example, the `norfolk` data set is used. 
+
+To convert to degress Fahrenheit, use the `kelvin.to.fahrenheit` function:
+
+```{r}
+
 ```
 
 ### Calculating relative humidity and dew point temperature
