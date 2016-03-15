@@ -4,16 +4,18 @@
 #'   numeric vector of speed in the specified unit.
 #'
 #' @param x Numeric vector of wind speeds, in units specified by \code{unit}
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value. Default value is 1.
-#' @param unit Character string specifying the speed unit for x. Possible values
-#'     are:
+#' @param unit Character specifying the speed unit to convert to from knots.
+#'   Possible values are:
 #'     \itemize{
 #'       \item \code{mph}: Miles per hour
 #'       \item \code{mps}: Meters per second
 #'       \item \code{ftps}: Feet per second
 #'       \item \code{kmph}: Kilometers per hour
 #'     }
+#' @param round Variable with the indicating whether or not to round results.
+#'     Possible values are TRUE or FALSE. Default value is TRUE.
+#' @param y Integer indicating the number of decimal places to
+#'     round converted value. Default value is 1.
 #'
 #' @return A numeric vector of speeds (in knots)
 #'
@@ -83,8 +85,6 @@ speed.to.knots <-
 #'   from a numeric vector of speed in knots.
 #'
 #' @param knots Numeric vector of speeds in knots
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value. Default value is 1.
 #' @param unit Character specifying the speed unit to convert to from knots.
 #'   Possible values are:
 #'     \itemize{
@@ -93,6 +93,10 @@ speed.to.knots <-
 #'       \item \code{ftps}: Feet per second
 #'       \item \code{kmph}: Kilometers per hour
 #'     }
+#' @param round Variable with the indicating whether or not to round results.
+#'     Possible values are TRUE or FALSE. Default value is TRUE.
+#' @param y Integer indicating the number of decimal places to
+#'     round converted value. Default value is 1.
 #'
 #' @return A numeric vector of speeds (in the specified unit)
 #'
