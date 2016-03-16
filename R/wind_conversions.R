@@ -38,7 +38,7 @@
 #'
 #' @examples
 #' data(beijing)
-#' beijing$knots <- speed.to.knots(beijing$kmph, 1, "kmph")
+#' beijing$knots <- speed.to.knots(beijing$kmph, "kmph", round = TRUE)
 #' beijing
 #'
 #' @export
@@ -118,8 +118,7 @@ speed.to.knots <-
 #'
 #' @examples
 #' data(foco)
-#' foco$knots <- speed.to.knots(foco$MPH, "mph", round = TRUE)
-#' foco$knots_to_mph <- knots.to.speed(foco$knots, "mph", round = TRUE)
+#' foco$mph <- knots.to.speed(foco$knots, "mph", round = TRUE)
 #' foco$mps <- knots.to.speed(foco$knots, "mps", round = TRUE)
 #' foco$ftps <- knots.to.speed(foco$knots, "ftps", round = TRUE)
 #' foco$kmph <- knots.to.speed(foco$knots, "kmph", round = TRUE)
