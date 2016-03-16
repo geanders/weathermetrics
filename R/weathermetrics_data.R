@@ -107,3 +107,18 @@
 #'    \item{DewpointK}{Daily mean dewpoint temperature in Kelvin}
 #'    }
 "angeles"
+
+#' Weather in San José, Costa Rica
+#'
+#' Daily values of mean temperature (Fahrenheit) and mean wind speed (miles per
+#' hour) for the week of August 02, 2015, in San José, Costa Rica.
+#'
+#' @source \href{http://www.wunderground.com/}{Weather Underground}
+#'
+#' @format A data frame 7 rows and 3 variables:
+#'    \describe{
+#'    \item{date}{Date of weather observation}
+#'    \item{TemperatureF}{Daily mean temperature in Fahrenheit}
+#'    \item{mph}{Daily mean wind speed in miles per hour}
+#'    }
+"puravida"
