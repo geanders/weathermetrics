@@ -195,30 +195,6 @@ When calculating heat index from air temperature and dew point temperature, both
 The algorithm for the \texttt{heat.index} function is adapted for R
 from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). Therefore, results will agree with results from the US National Weather Service online calculator. However, heat index is sometimes calculated using a simpler algorithm. Therefore, heat index values from the \texttt{heat.index} function will sometimes differ by one or two degrees compared to other heat index calculators or charts.
 
-## Handling missing or impossible weather values
-
-When any of the functions in this package encounter a missing value (`NA`) within any of the input vectors, the output weather metric for that observation will also be set as `NA`. For example:
-
-```{r}
-df <- data.frame(T = c(NA, 90, 85),
-                 DP = c(80, NA, 70))
-df$RH <- dewpoint.to.humidity(t = df$T, dp = df$DP,
-                              temperature.metric = "fahrenheit")
-df
-```
-
-Certain values of dew point temperature or relative humidity are impossible. Relative humidity cannot be lower than 0% or higher than 100%. Dew point temperature cannot be higher than air temperature (except in the case of supersaturation) . When any of these functions encounter an impossible weather metric in an input vector, it returns `NA` as the output weather metric for that observation. For example:
-
-```{r}
-df <- data.frame(T = c(90, 90, 85),
-                 DP = c(80, 95, 70))
-df$heat.index <- heat.index(t = df$T, dp = df$DP,
-                            temperature.metric = 'fahrenheit')
-df
-```
-
-Additionally, the function returns a warning to alert the user that the input data includes impossible values for some observations. 
-
 ### Wind speed: Converting to knots
 
 The `weathermetrics` package includes a function, `speed.to.knots`, that allows you to calculate a vector of wind speed values in the unit knots from vectors of wind speed values in units other than knots, including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph). For example, the `beijing` dataset gives daily values of wind speed in: miles per hour (`beijing$MPH`), meters per second (`beijing$mps`), feet per second (`beijing$ftps`), and kilometers per hour (`beijing$kmph`) for Beijing, China, for the week of January 10, 2015. To calculate daily wind speed values in knots for this dataset, use the `speed.to.knots` function: 
@@ -253,7 +229,7 @@ Opposite to the `speed.to.knots` function, in the `knots.to.speed` function, the
 
 The `weathermetrics` package does not have a function that allows you to convert directly from a unit other than knots (mph, mps, ftps, or kmph) to another unit other than knots. Therefore, in order to convert between these units, you must convert through knots. In order to maintain the accuracy of the wind speed measurement, it is necessary not to round until the end of your conversion. You can specify whether or not you round in the `speed.to.knots` and `knots.to.speed` functions using the `round` option. For example, in order to convert from miles per hour to meters per second, you must convert first from miles per hour to knots using the `speed.to.knots` function. You should use the argument `FALSE` for the `round` option in this step. Now, you can use the `knots.to.speed` function to convert the vector of wind speed values in knots that you just created to the specified speed, in this case meters per second. You should now use the argument `TRUE` for the `round` option to obtain your final wind speed value in compliance with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
 
-For example, the `puravida` dataset gives daily values of wind speed in miles per hour (`beijing$MPH`) for San José, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, in knots for this dataset, use the `speed.to.knots` function:
+For example, the `puravida` dataset gives daily values of wind speed in miles per hour (`puravida$mph`) for San José, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, use the `speed.to.knots` and `knots.to.speed` functions:
 
 ```{r}
 data(puravida)
@@ -266,6 +242,30 @@ puravida$mps <- knots.to.speed(puravida$knots,
                                y = 1)
 puravida
 ```
+
+## Handling missing or impossible weather values
+
+When any of the functions in this package encounter a missing value (`NA`) within any of the input vectors, the output weather metric for that observation will also be set as `NA`. For example:
+
+```{r}
+df <- data.frame(T = c(NA, 90, 85),
+                 DP = c(80, NA, 70))
+df$RH <- dewpoint.to.humidity(t = df$T, dp = df$DP,
+                              temperature.metric = "fahrenheit")
+df
+```
+
+Certain values of dew point temperature or relative humidity are impossible. Relative humidity cannot be lower than 0% or higher than 100%. Dew point temperature cannot be higher than air temperature (except in the case of supersaturation) . When any of these functions encounter an impossible weather metric in an input vector, it returns `NA` as the output weather metric for that observation. For example:
+
+```{r}
+df <- data.frame(T = c(90, 90, 85),
+                 DP = c(80, 95, 70))
+df$heat.index <- heat.index(t = df$T, dp = df$DP,
+                            temperature.metric = 'fahrenheit')
+df
+```
+
+Additionally, the function returns a warning to alert the user that the input data includes impossible values for some observations. 
 
 ## Rounding output values
 
