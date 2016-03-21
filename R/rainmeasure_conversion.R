@@ -100,7 +100,12 @@ inches.to.metric <-
 #'\url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @examples
-
+#' data(loveland)
+#' loveland$Precip.in <- metric.to.inches(loveland$Precip.mm,
+#'                                        unit.from = "mm",
+#'                                        round.out = TRUE,
+#'                                        2)
+#' loveland
 #'
 #' @export
 metric.to.inches <-
