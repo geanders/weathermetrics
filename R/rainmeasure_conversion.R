@@ -43,10 +43,10 @@ inches.to.metric <-
         {
                 if(unit == "mm" & round.out == TRUE){
                         mm <- inches * 25.4
-                        return(mm, round)
+                        return(round(mm, round))
                 } else if(unit == "cm" & round.out == TRUE){
                         cm <- inches * 2.54
-                        return(cm, round)
+                        return(round(cm, round))
                 } else if(unit == "mm" & round.out == FALSE){
                         mm <- inches * 25.4
                         return(mm)
@@ -103,10 +103,10 @@ metric.to.inches <-
         {
                 if(unit.from == "mm" & round.out == TRUE){
                         inches <- metric / 25.4
-                        return(inches, round)
+                        return(round(inches, round))
                 } else if(unit.from == "cm" & round.out == TRUE){
                         inches <- metric / 2.54
-                        return(inches, round)
+                        return(round(inches, round))
                 } else if(unit.from == "mm" & round.out == FALSE){
                         inches <- metric / 25.4
                         return(inches)
