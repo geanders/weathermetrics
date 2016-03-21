@@ -122,3 +122,31 @@
 #'    \item{mph}{Daily mean wind speed in miles per hour}
 #'    }
 "puravida"
+
+#' Precipitation in Breckenridge, CO
+#'
+#' Daily values of precipitation (inches) for the week of June 28, 2015, in
+#' Breckenridge, CO.
+#'
+#' @source \href{http://www.wunderground.com/}{Weather Underground}
+#'
+#' @format A data frame 7 rows and 2 variables:
+#'    \describe{
+#'    \item{date}{Date of weather observation}
+#'    \item{Precip.in}{Daily precipitation in inches}
+#'    }
+"breck"
+
+#' Precipitation in Loveland, CO
+#'
+#' Daily values of precipitation (millimeters) for the week of September 08,
+#' 2013, in Loveland, CO.
+#'
+#' @source \href{http://www.wunderground.com/}{Weather Underground}
+#'
+#' @format A data frame 7 rows and 2 variables:
+#'    \describe{
+#'    \item{date}{Date of weather observation}
+#'    \item{Precip.mm}{Daily precipitation in millimeters}
+#'    }
+"loveland"
