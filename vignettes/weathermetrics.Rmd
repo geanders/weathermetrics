@@ -249,9 +249,35 @@ puravida
 
 The `weathermetrics` package includes a function, `inches.to.metric`, that allows you to convert a vector of precipitation measuresment values in inches to measurement values in common metric units, millimeters (mm) or centimeters (cm). 
 
-For example, the `suffolk` dataset gives daily values of air temperature in degrees Fahrenheit (`suffolk$TemperatureF`) and relative humidity in % (`suffolk$Relative.Humidity`) for Suffolk, VA, for the week of July 12, 1998. To calculate daily heat index values for this dataset, use the `heat.index` function:
+For example, the `breck` dataset gives daily values of precipitation in inches (`breck$Precip.in`) for Breckenridge, CO, for the week of June 28, 2015. To calculate daily precipitation values in millimeters for this dataset, use the `inches.to.metric` function:
+
+```{r}
+data(breck)
+breck$Precip.mm <- inches.to.metric(breck$Precip.in,
+                                    unit = "mm",
+                                    round.out = TRUE,
+                                    round = 2)
+breck
+```
+
+You must specify the metric unit of precipitation measure you wish to convert to from inches using the `unit` option (possible values: `'mm'` and `'cm'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of precipitation measurements and user flexibility. The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 2). 
+
+### Converting between metric units and inches for precipitaiton
 
 The `weathermetrics` package includes a function, `metric.to.inches`, that allows you to convert a vector of precipitation measuresment values in common metric units to measurement values in inches. 
+
+For example, the `loveland` dataset gives daily values of precipitation in inches (`loveland$Precip.mm`) for Breckenridge, CO, for the week of June 28, 2015. To calculate daily precipitation values in inches for this dataset, use the `metric.to.inches` function:
+
+```{r}
+data(loveland)
+loveland$Precip.in <- metric.to.inches(loveland$Precip.mm,
+                                       unit.from = "mm",
+                                       round.out = TRUE,
+                                       round = 2)
+loveland
+```
+
+You must specify the metric unit of precipitation measure you wish to convert from to inches using the `unit.from` option (possible values: `'mm'` and `'cm'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of precipitation measurements and user flexibility. The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 2). 
 
 ## Handling missing or impossible weather values
 
