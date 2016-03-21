@@ -35,7 +35,12 @@
 #'\url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @examples
-
+#' data(breck)
+#' breck$Precip.mm <- inches.to.metric(breck$Precip.in,
+#'                                     unit = "mm",
+#'                                     round.out = TRUE,
+#'                                     2)
+#' breck
 #'
 #' @export
 inches.to.metric <-
