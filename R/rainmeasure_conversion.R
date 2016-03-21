@@ -39,7 +39,7 @@
 #' breck$Precip.mm <- inches.to.metric(breck$Precip.in,
 #'                                     unit = "mm",
 #'                                     round.out = TRUE,
-#'                                     2)
+#'                                     round = 2)
 #' breck
 #'
 #' @export
@@ -104,7 +104,7 @@ inches.to.metric <-
 #' loveland$Precip.in <- metric.to.inches(loveland$Precip.mm,
 #'                                        unit.from = "mm",
 #'                                        round.out = TRUE,
-#'                                        2)
+#'                                        round = 2)
 #' loveland
 #'
 #' @export
