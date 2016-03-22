@@ -16,6 +16,8 @@ BugReports: https://github.com/geanders/weathermetrics/issues
 License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 5.0.1
+Depends:
+    R (>= 2.10)
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
