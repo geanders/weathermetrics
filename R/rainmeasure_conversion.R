@@ -23,7 +23,7 @@
 #'    as a character specified by unit.
 #'
 #' @note Equations are from the source code for the National Weather Service
-#'    Forecast Office \href{http://www.srh.noaa.gov/ama/?n=conversions}
+#'    Forecast Office \url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
@@ -88,7 +88,7 @@ inches_to_metric <-
 #'    provided as a character specified by unit.from.
 #'
 #' @note Equations are from the source code for the National Weather Service
-#'    Forecast Office \href{http://www.srh.noaa.gov/ama/?n=conversions}
+#'    Forecast Office \url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},

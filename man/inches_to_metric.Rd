@@ -37,7 +37,7 @@ The numeric vector specified for unit must be in the units provided
 }
 \note{
 Equations are from the source code for the National Weather Service
-   Forecast Office \href{http://www.srh.noaa.gov/ama/?n=conversions}
+   Forecast Office \url{http://www.srh.noaa.gov/ama/?n=conversions}
 }
 \examples{
 data(breck)
