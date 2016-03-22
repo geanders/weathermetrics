@@ -60,8 +60,25 @@
 
 #' Weather in Fort Collins, CO
 #'
-#' A dataset containing daily values of mean temperature (Fahrenheit) and mean wind speed (in miles
-#' per hour) for the week of October 11, 2015, in Fort Collins, CO.
+#' A dataset containing daily values of mean temperature (Fahrenheit) and mean
+#' wind speed (in knots) for the week of October 11, 2015, in Fort
+#' Collins, CO.
+#'
+#' @source \href{http://www.wunderground.com}{Weather Underground}
+#'
+#' @format A data frame with 7 rows and 3 variables:
+#'      \describe{
+#'      \item{date}{Date of weather observation}
+#'      \item{TemperatureF}{Daily mean temperature in Fahrenheit}
+#'      \item{knots}{Daily mean wind speed in knots}
+#'      }
+"foco"
+
+#' Weather in Beijing, China
+#'
+#' A dataset containing daily values of mean temperature (Fahrenheit) and mean
+#' wind speed (in miles per hour, meters per second, feet per secons, and
+#' kilometers per hour) for the week of January 10, 2015, in Beijing, China.
 #'
 #' @source \href{http://www.wunderground.com}{Weather Underground}
 #'
@@ -70,5 +87,66 @@
 #'      \item{date}{Date of weather observation}
 #'      \item{TemperatureF}{Daily mean temperature in Fahrenheit}
 #'      \item{MPH}{Daily mean wind speed in miles per hour}
+#'      \item{mps}{Daily mean wind speed in meters per second}
+#'      \item{ftps}{Daily mean wind speed in feet per second}
+#'      \item{kmph}{Daily mean wind speed in kilometers per hour}
 #'      }
-"foco"
+"beijing"
+
+#' Weather in Los Angeles, CA
+#'
+#' Daily values of mean temperature (Kelvin) and mean dew point
+#' temperature (Kelvin) for the week of December 19, 2010, in Los Angeles, CA.
+#'
+#' @source \href{http://www.wunderground.com/}{Weather Underground}
+#'
+#' @format A data frame 7 rows and 3 variables:
+#'    \describe{
+#'    \item{date}{Date of weather observation}
+#'    \item{TemperatureK}{Daily mean temperature in Kelvin}
+#'    \item{DewpointK}{Daily mean dewpoint temperature in Kelvin}
+#'    }
+"angeles"
+
+#' Weather in San José, Costa Rica
+#'
+#' Daily values of mean temperature (Fahrenheit) and mean wind speed (miles per
+#' hour) for the week of August 02, 2015, in San José, Costa Rica.
+#'
+#' @source \href{http://www.wunderground.com/}{Weather Underground}
+#'
+#' @format A data frame 7 rows and 3 variables:
+#'    \describe{
+#'    \item{date}{Date of weather observation}
+#'    \item{TemperatureF}{Daily mean temperature in Fahrenheit}
+#'    \item{mph}{Daily mean wind speed in miles per hour}
+#'    }
+"puravida"
+
+#' Precipitation in Breckenridge, CO
+#'
+#' Daily values of precipitation (inches) for the week of June 28, 2015, in
+#' Breckenridge, CO.
+#'
+#' @source \href{http://www.wunderground.com/}{Weather Underground}
+#'
+#' @format A data frame 7 rows and 2 variables:
+#'    \describe{
+#'    \item{date}{Date of weather observation}
+#'    \item{Precip.in}{Daily precipitation in inches}
+#'    }
+"breck"
+
+#' Precipitation in Loveland, CO
+#'
+#' Daily values of precipitation (millimeters) for the week of September 08,
+#' 2013, in Loveland, CO.
+#'
+#' @source \href{http://www.wunderground.com/}{Weather Underground}
+#'
+#' @format A data frame 7 rows and 2 variables:
+#'    \describe{
+#'    \item{date}{Date of weather observation}
+#'    \item{Precip.mm}{Daily precipitation in millimeters}
+#'    }
+"loveland"
