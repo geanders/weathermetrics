@@ -43,7 +43,7 @@ Equations are from the source code for the National Oceanic and
 }
 \examples{
 data(beijing)
-beijing$knots <- speed_to_knots(beijing$kmph, "kmph", r = TRUE)
+beijing$knots <- speed_to_knots(beijing$kmph, "kmph", round.out = TRUE)
 beijing
 
 }
