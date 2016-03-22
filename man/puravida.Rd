@@ -3,7 +3,7 @@
 \docType{data}
 \name{puravida}
 \alias{puravida}
-\title{Weather in San José, Costa Rica}
+\title{Weather in San Jose, Costa Rica}
 \format{A data frame 7 rows and 3 variables:
    \describe{
    \item{date}{Date of weather observation}
@@ -18,7 +18,7 @@ puravida
 }
 \description{
 Daily values of mean temperature (Fahrenheit) and mean wind speed (miles per
-hour) for the week of August 02, 2015, in San José, Costa Rica.
+hour) for the week of August 02, 2015, in San Jose, Costa Rica.
 }
 \keyword{datasets}
 
