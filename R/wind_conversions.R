@@ -1,6 +1,6 @@
 #' Convert between standard units of measure for wind speed
 #'
-#' \code{speed.to.knots} creates a numeric vector of speed in knots from a
+#' \code{speed_to_knots} creates a numeric vector of speed in knots from a
 #'   numeric vector of speed in the specified unit.
 #'
 #' @param x Numeric vector of wind speeds, in units specified by \code{unit}
@@ -31,18 +31,18 @@
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
-#' @seealso \code{\link{knots.to.speed}}
+#' @seealso \code{\link{knots_to_speed}}
 #'
 #' @references
 #'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
 #'
 #' @examples
 #' data(beijing)
-#' beijing$knots <- speed.to.knots(beijing$kmph, "kmph", r = TRUE)
+#' beijing$knots <- speed_to_knots(beijing$kmph, "kmph", r = TRUE)
 #' beijing
 #'
 #' @export
-speed.to.knots <-
+speed_to_knots <-
         function(x, unit, round.out = TRUE, round = 1)
         {
                 if(unit == "mph" & round.out == TRUE){
@@ -80,7 +80,7 @@ speed.to.knots <-
 
 #' Convert from knots to standard units of wind speed
 #'
-#' \code{knots.to.speed} creates a numeric vector of speed, in units
+#' \code{knots_to_speed} creates a numeric vector of speed, in units
 #'    specified by \code{unit},
 #'   from a numeric vector of speed in knots.
 #'
@@ -111,22 +111,21 @@ speed.to.knots <-
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
-#' @seealso \code{\link{speed.to.knots}}
+#' @seealso \code{\link{speed_to_knots}}
 #'
 #' @references
 #'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
 #'
 #' @examples
 #' data(foco)
-#' foco$mph <- knots.to.speed(foco$knots, "mph", round.out = TRUE)
-#' foco$mps <- knots.to.speed(foco$knots, "mps", round.out = TRUE)
-#' foco$ftps <- knots.to.speed(foco$knots, "ftps", round.out = TRUE)
-#' foco$kmph <- knots.to.speed(foco$knots, "kmph", round.out = TRUE)
+#' foco$mph <- knots_to_speed(foco$knots, "mph", round.out = TRUE)
+#' foco$mps <- knots_to_speed(foco$knots, "mps", round.out = TRUE)
+#' foco$ftps <- knots_to_speed(foco$knots, "ftps", round.out = TRUE)
+#' foco$kmph <- knots_to_speed(foco$knots, "kmph", round.out = TRUE)
 #' foco
 #'
 #' @export
-
-knots.to.speed <-
+knots_to_speed <-
         function(knots, unit, round.out = TRUE, round = 1)
         {
                 if(unit == "mph" & round.out ==TRUE){

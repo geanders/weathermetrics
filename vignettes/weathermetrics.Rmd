@@ -218,7 +218,7 @@ The `weathermetrics` package includes a function, `knots.to.speed`, that allows 
 
 ```{r}
 data(foco)
-foco$mph <- knots.to.speed(foco$knots,
+foco$mph <- knots_to_speed(foco$knots,
                            unit = "mph",
                            round.out = TRUE,
                            round = 1)
@@ -235,10 +235,10 @@ For example, the `puravida` dataset gives daily values of wind speed in miles pe
 
 ```{r}
 data(puravida)
-puravida$knots <- speed.to.knots(puravida$mph, 
+puravida$knots <- speed_to_knots(puravida$mph, 
                                  "mph", 
                                  round.out = FALSE)
-puravida$mps <- knots.to.speed(puravida$knots, 
+puravida$mps <- knots_to_speed(puravida$knots, 
                                "mps",
                                round.out = TRUE,
                                round = 1)

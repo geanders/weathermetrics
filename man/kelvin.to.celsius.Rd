@@ -27,6 +27,9 @@ Equations are from the source code for the National Oceanic and
 }
 \examples{
 # Convert from Kelvin to Celsius.
+data(angeles)
+angeles$TemperatureC <- kelvin.to.celsius(angeles$TemperatureK)
+angeles
 
 }
 \author{
