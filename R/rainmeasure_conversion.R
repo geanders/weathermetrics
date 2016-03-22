@@ -120,7 +120,7 @@ metric_to_inches <-
                 } else if(unit.from == "mm" & round.out == FALSE){
                         inches <- metric / 25.4
                         return(inches)
-                } else if(unit == "cm" & round.out == FALSE){
+                } else if(unit.from == "cm" & round.out == FALSE){
                         inches <- metric / 2.54
                         return(inches)
                 } else{

@@ -58,7 +58,7 @@ speed_to_knots <-
                         knots = x * 0.539593
                         return(round(knots, round))
                 } else if(unit == "kmph" & round.out == TRUE){
-                        knots = kmph * 0.539593
+                        knots = x * 0.539593
                         return(round(knots, round))
                 } else if(unit == "mph" & round.out == FALSE){
                         knots = x * 0.8689762
