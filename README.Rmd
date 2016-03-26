@@ -25,12 +25,20 @@ The `weathermetrics` package provides the following functions to calculate or co
 
 - **`celsius.to.fahrenheit`:** Convert a vector of temperatures in degrees Celsius to degrees Fahrenheit
 - **`fahrenheit.to.celsius`:** Convert a vector of temperatures in degrees Fahrenheit to degrees Celsius
+- **`celsius.to.kelvin`:** Convert a vector of temperatures in degrees celsius to Kelvins
+- **`kelvin.to.celsius`:** Convert a vector of temperatures in Kelvins to degrees Celsius
+- **`fahrenheit.to.kelvin`:** Convert a vector of temperatures in degress Fahrenheit to Kelvins
+- **`kelvin.to.fahrenheit`:** Convert a vector of temperatures in Kelvins to degrees Fahrenheit
 - **`dewpoint.to.humidity`:** Calculate a vector of relative humidity values from vectors of air temperature and dew point temperature
 - **`humidity.to.dewpoint`:** Calculate a vector of dew point temperatures from vectors of air temperature and relative humidity 
 - **`heat.index`:** Calculate a vector of heat index values
 from vectors of air temperature and either dew point temperature or relative humidity
+- **`speed.to.knots`:** Convert a vector of wind speed values to knots
+- **`knots.to.speed`:** Convert a vector of wind speed values in knots to a specified wind speed unit
+- **`inches.to.metric`:** Convert a vector of precipitation measurements in inches to measures in metric units (millimeters or centimeters)
+- **`metric.to.inches`:** Convert a vector of precipitation measurements in metric units to measures in inches
 
-All algorithms are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). 
+All algorithms are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015) and the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
 
 ## Converting or calculating weather metrics
 
