@@ -66,6 +66,54 @@ norfolk$DP_C <- fahrenheit.to.celsius(norfolk$DewpointF)
 norfolk
 ```
 
+### Converting between Celcius and Kelvins
+
+This package includes two functions to convert between Celcius and Kelvins, `celsius.to.kelvin` and `kelvin.to.celsius`. As an example of how to use these functions, the `lyon` dataset that comes with this package is used. 
+
+To convert to Kelvins, use the `celsius.to.kelvin` function:
+
+```{r}
+data(lyon)
+lyon$T_K <- celsius.to.kelvin(lyon$TemperatureC)
+lyon$DP_K <- celsius.to.kelvin(lyon$DewpointC)
+lyon
+```
+
+As a second example, the `angeles` dataset includes temperature (`angeles$TemperatureK`) and dew point temperature (`angeles$DewpointK`) in Kelvins in Los Angeles, CA, for the week of December 19, 2010. 
+
+To convert to degress Celsius, use the `kelvin.to.celsius` function:
+
+```{r}
+data(angeles)
+angeles$T_C <- kelvin.to.celsius(angeles$TemperatureK)
+angeles$DP_C <- kelvin.to.celsius(angeles$DewpointK)
+angeles
+```
+
+### Converting between Celcius and Kelvins
+
+This package includes two functions to convert between Fahrenheit and Kelvin, `fahrenheit.to.kelvin` and `kelvin.to.fahrenheit`. As an example of how to use these functions, the `norfolk` dataset that comes with this package is used. 
+
+To convert to Kelvins, use the `fahrenheit.to.kelvin` function:
+
+```{r}
+data(norfolk)
+norfolk$T_K <- fahrenheit.to.kelvin(norfolk$TemperatureF)
+norfolk$DP_K <- fahrenheit.to.kelvin(norfolk$DewpointF)
+norfolk
+```
+
+As a second example, the `angeles` data set is used. 
+
+To convert to degress Fahrenheit, use the `kelvin.to.fahrenheit` function:
+
+```{r}
+data(angeles)
+angeles$T_F <- kelvin.to.fahrenheit(angeles$TemperatureK)
+angeles$DP_F <- kelvin.to.fahrenheit(angeles$DewpointK)
+angeles
+```
+
 ### Calculating relative humidity and dew point temperature
 
 The `weathermetrics` package includes two functions for converting between air temperature, dew point temperature, and relative humidity:
