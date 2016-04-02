@@ -81,7 +81,7 @@ speed.to.knots <-
 #' Convert from knots to standard units of wind speed
 #'
 #' \code{knots.to.speed} creates a numeric vector of speed, in units
-#'    specified by \code{unit},
+#'   specified by \code{unit},
 #'   from a numeric vector of speed in knots.
 #'
 #' @param knots Numeric vector of speeds in knots
@@ -125,7 +125,6 @@ speed.to.knots <-
 #' foco
 #'
 #' @export
-
 knots.to.speed <-
         function(knots, unit, round.out = TRUE, round = 1)
         {
