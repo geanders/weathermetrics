@@ -100,7 +100,7 @@ speed.to.knots <-
 #'
 #' @return A numeric vector of speeds (in the specified unit)
 #'
-#' @details Output will be in the speed units specified by unit.
+#' @details Output will be in the speed units specified by \code{unit}.
 #'
 #' @note Equations are from the source code for the National Oceanic and
 #'   and Atmospheric Administration's
