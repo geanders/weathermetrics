@@ -29,7 +29,7 @@ A numeric vector of speeds (in the specified unit)
 }
 \description{
 \code{knots.to.speed} creates a numeric vector of speed, in units
-   specified by \code{unit},
+  specified by \code{unit},
   from a numeric vector of speed in knots.
 }
 \details{
