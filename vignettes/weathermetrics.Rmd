@@ -46,7 +46,7 @@ The `weathermetrics` package provides the following functions to calculate or co
 - **`heat.index`:** Calculate a vector of heat index values
 from vectors of air temperature and either dew point temperature or relative humidity
 - **`speed.to.knots`:** Convert a vector of wind speed values to knots
-- **`knots.to.speed`:** Convert a vector of wind speed values in knots to a specified wind speed unit
+- **`knot.to.speed`:** Convert a vector of wind speed values in knots to a specified wind speed unit
 - **`inches.to.metric`:** Convert a vector of precipitation measurements in inches to measures in metric units (millimeters or centimeters)
 - **`metric.to.inches`:** Convert a vector of precipitation measurements in metric units to measures in inches
 
@@ -214,31 +214,31 @@ You must specify the unit of wind speed that you wish to convert to knots from u
 
 ### Wind speed: Converting from knots to other units of wind speed measure
 
-The `weathermetrics` package includes a function, `knots.to.speed`, that allows you to calculate a vector of wind speed values in a specified wind speed unit including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph), from vectors of wind speed values in knots. For example, the `foco` dataset gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. To calculate daily wind speed values in a specified unit, in this case miles per hour, from knots for this dataset, use the `knots.to.speed` function:
+The `weathermetrics` package includes a function, `knot.to.speed`, that allows you to calculate a vector of wind speed values in a specified wind speed unit including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph), from vectors of wind speed values in knots. For example, the `foco` dataset gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. To calculate daily wind speed values in a specified unit, in this case miles per hour, from knots for this dataset, use the `knots.to.speed` function:
 
 ```{r}
 data(foco)
-foco$mph <- knots.to.speed(foco$knots,
+foco$mph <- knot.to.speed(foco$knots,
                            unit = "mph",
                            round.out = TRUE,
                            round = 1)
 foco
 ```
 
-Opposite to the `speed.to.knots` function, in the `knots.to.speed` function, the unit you wish to convert to is specified using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 1). The default value for `round` is consistent with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
+Opposite to the `speed.to.knots` function, in the `knot.to.speed` function, the unit you wish to convert to is specified using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 1). The default value for `round` is consistent with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
 
 ### Wind speed: Converting from and to a unit other than knots
 
-The `weathermetrics` package does not have a function that allows you to convert directly from a unit other than knots (mph, mps, ftps, or kmph) to another unit other than knots. Therefore, in order to convert between these units, you must convert through knots. In order to maintain the accuracy of the wind speed measurement, it is necessary not to round until the end of your conversion. You can specify whether or not you round in the `speed.to.knots` and `knots.to.speed` functions using the `round.out` option. For example, in order to convert from miles per hour to meters per second, you must convert first from miles per hour to knots using the `speed.to.knots` function. You should use the argument `FALSE` for the `round.out` option in this step. Now, you can use the `knots.to.speed` function to convert the vector of wind speed values in knots that you just created to the specified speed, in this case meters per second. You should now use the argument `TRUE` for the `round.out` option to obtain your final wind speed value in compliance with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
+The `weathermetrics` package does not have a function that allows you to convert directly from a unit other than knots (mph, mps, ftps, or kmph) to another unit other than knots. Therefore, in order to convert between these units, you must convert through knots. In order to maintain the accuracy of the wind speed measurement, it is necessary not to round until the end of your conversion. You can specify whether or not you round in the `speed.to.knots` and `knot.to.speed` functions using the `round.out` option. For example, in order to convert from miles per hour to meters per second, you must convert first from miles per hour to knots using the `speed.to.knots` function. You should use the argument `FALSE` for the `round.out` option in this step. Now, you can use the `knot.to.speed` function to convert the vector of wind speed values in knots that you just created to the specified speed, in this case meters per second. You should now use the argument `TRUE` for the `round.out` option to obtain your final wind speed value in compliance with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
 
-For example, the `puravida` dataset gives daily values of wind speed in miles per hour (`puravida$mph`) for San José, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, use the `speed.to.knots` and `knots.to.speed` functions:
+For example, the `puravida` dataset gives daily values of wind speed in miles per hour (`puravida$mph`) for San José, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, use the `speed.to.knots` and `knot.to.speed` functions:
 
 ```{r}
 data(puravida)
 puravida$knots <- speed.to.knots(puravida$mph, 
                                  "mph", 
                                  round.out = FALSE)
-puravida$mps <- knots.to.speed(puravida$knots, 
+puravida$mps <- knot.to.speed(puravida$knots, 
                                "mps",
                                round.out = TRUE,
                                round = 1)

@@ -55,6 +55,6 @@ Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
 \url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
 }
 \seealso{
-\code{\link{knots.to.speed}}
+\code{\link{knot.to.speed}}
 }
 
