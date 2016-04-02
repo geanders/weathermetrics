@@ -27,6 +27,9 @@ Equations are from the source code for the National Oceanic and
 }
 \examples{
 # Convert from Kelvin to Fahrenheit.
+data(angeles)
+angeles$TemperatureF <- kelvin.to.fahrenheit(angeles$TemperatureK)
+angeles
 
 }
 \author{

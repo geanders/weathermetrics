@@ -28,7 +28,7 @@ Equations are from the source code for the National Oceanic and
 \examples{
 # Convert from Fahrenheit to Kelvin.
 data(norfolk)
-norfolk$TempK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
+norfolk$TempuratureK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
 norfolk
 
 }
