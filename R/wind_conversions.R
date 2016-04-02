@@ -81,8 +81,7 @@ speed.to.knots <-
 #' Convert from knots to standard units of wind speed
 #'
 #' \code{knots.to.speed} creates a numeric vector of speed, in units
-#'   specified by \code{unit},
-#'   from a numeric vector of speed in knots.
+#'   specified by \code{unit}, from a numeric vector of speed in knots.
 #'
 #' @param knots Numeric vector of speeds in knots
 #' @param unit Character specifying the speed unit to convert to from knots.
