@@ -1,6 +1,6 @@
 #' Convert from inches to standard metric units of measure for precipitation
 #'
-#' \code{inches.to.metric} creates a numeric vector of precipitation in
+#' \code{inches_to_metric} creates a numeric vector of precipitation in
 #'   common metric units (millimeters or centimeters) from a numeric vector of
 #'   precipitation in inches.
 #'
@@ -23,27 +23,27 @@
 #'    as a character specified by unit.
 #'
 #' @note Equations are from the source code for the National Weather Service
-#'    Forecast Office \href{http://www.srh.noaa.gov/ama/?n=conversions}
+#'    Forecast Office \url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
-#' @seealso \code{\link{metric.to.inches}}
+#' @seealso \code{\link{metric_to_inches}}
 #'
 #' @references
 #'\url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @examples
 #' data(breck)
-#' breck$Precip.mm <- inches.to.metric(breck$Precip.in,
+#' breck$Precip.mm <- inches_to_metric(breck$Precip.in,
 #'                                     unit = "mm",
 #'                                     round.out = TRUE,
 #'                                     round = 2)
 #' breck
 #'
 #' @export
-inches.to.metric <-
+inches_to_metric <-
         function(inches, unit, round.out = TRUE, round = 2)
         {
                 if(unit == "mm" & round.out == TRUE){
@@ -65,7 +65,7 @@ inches.to.metric <-
 
 #' Convert between standard metric units of measure for precipitation to inches
 #'
-#' \code{metric.to.inches} creates a numeric vector of precipitation measures in
+#' \code{metric_to_inches} creates a numeric vector of precipitation measures in
 #'   inches from a numeric vector of precipitation in common metric units
 #'   (millimeters or centimeters).
 #'
@@ -88,27 +88,27 @@ inches.to.metric <-
 #'    provided as a character specified by unit.from.
 #'
 #' @note Equations are from the source code for the National Weather Service
-#'    Forecast Office \href{http://www.srh.noaa.gov/ama/?n=conversions}
+#'    Forecast Office \url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
-#' @seealso \code{\link{inches.to.metric}}
+#' @seealso \code{\link{inches_to_metric}}
 #'
 #' @references
 #'\url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @examples
 #' data(loveland)
-#' loveland$Precip.in <- metric.to.inches(loveland$Precip.mm,
+#' loveland$Precip.in <- metric_to_inches(loveland$Precip.mm,
 #'                                        unit.from = "mm",
 #'                                        round.out = TRUE,
 #'                                        round = 2)
 #' loveland
 #'
 #' @export
-metric.to.inches <-
+metric_to_inches <-
         function(metric, unit.from, round.out = TRUE, round = 2)
         {
                 if(unit.from == "mm" & round.out == TRUE){
@@ -120,7 +120,7 @@ metric.to.inches <-
                 } else if(unit.from == "mm" & round.out == FALSE){
                         inches <- metric / 25.4
                         return(inches)
-                } else if(unit == "cm" & round.out == FALSE){
+                } else if(unit.from == "cm" & round.out == FALSE){
                         inches <- metric / 2.54
                         return(inches)
                 } else{
