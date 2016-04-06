@@ -33,7 +33,7 @@ A numeric vector of speeds (in the specified unit)
   from a numeric vector of speed in knots.
 }
 \details{
-Output will be in the speed units specified by unit.
+Output will be in the speed units specified by \code{unit}.
 }
 \note{
 Equations are from the source code for the National Oceanic and
@@ -48,6 +48,7 @@ foco$mps <- knots_to_speed(foco$knots, "mps", round.out = TRUE)
 foco$ftps <- knots_to_speed(foco$knots, "ftps", round.out = TRUE)
 foco$kmph <- knots_to_speed(foco$knots, "kmph", round.out = TRUE)
 foco
+
 }
 \author{
 Brooke Anderson \email{brooke.anderson@colostate.edu},

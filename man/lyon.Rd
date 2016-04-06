@@ -12,18 +12,11 @@
    }}
 \source{
 \href{http://www.wunderground.com/}{Weather Underground}
-
-\href{http://www.wunderground.com/}{Weather Underground}
 }
 \usage{
 lyon
-
-lyon
 }
 \description{
-Daily values of mean temperature (Celsius) and mean dew point temperature
-(Celsius) for the week of June 18, 2000, in Lyon, France.
-
 Daily values of mean temperature (Celsius) and mean dew point temperature
 (Celsius) for the week of June 18, 2000, in Lyon, France.
 }

@@ -12,18 +12,11 @@
    }}
 \source{
 \href{http://www.wunderground.com/}{Weather Underground}
-
-\href{http://www.wunderground.com/}{Weather Underground}
 }
 \usage{
 suffolk
-
-suffolk
 }
 \description{
-Daily values of mean temperature (Fahrenheit) and mean relative humidity
-(\%) for the week of July 12, 1998, in Suffolk, VA.
-
 Daily values of mean temperature (Fahrenheit) and mean relative humidity
 (\%) for the week of July 12, 1998, in Suffolk, VA.
 }

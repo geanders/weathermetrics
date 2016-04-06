@@ -12,18 +12,11 @@
    }}
 \source{
 \href{http://www.wunderground.com/}{Weather Underground}
-
-\href{http://www.wunderground.com/}{Weather Underground}
 }
 \usage{
 newhaven
-
-newhaven
 }
 \description{
-Daily values of mean temperature (Fahrenheit) and mean relative humidity
-(\%) for the week of October 19, 2008, in New Haven, CT.
-
 Daily values of mean temperature (Fahrenheit) and mean relative humidity
 (\%) for the week of October 19, 2008, in New Haven, CT.
 }
