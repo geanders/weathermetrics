@@ -108,10 +108,10 @@
 #'    }
 "angeles"
 
-#' Weather in San José, Costa Rica
+#' Weather in San Jose, Costa Rica
 #'
 #' Daily values of mean temperature (Fahrenheit) and mean wind speed (miles per
-#' hour) for the week of August 02, 2015, in San José, Costa Rica.
+#' hour) for the week of August 02, 2015, in San Jose, Costa Rica.
 #'
 #' @source \href{http://www.wunderground.com/}{Weather Underground}
 #'

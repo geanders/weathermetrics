@@ -17,6 +17,7 @@
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
 #' Roger Peng \email{rdpeng@@gmail.com}
 #'
 #' @references

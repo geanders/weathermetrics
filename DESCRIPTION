@@ -2,7 +2,7 @@ Package: weathermetrics
 Type: Package
 Title: Functions to Convert Between Weather Metrics
 Version: 1.2.1.9000
-Date: 2015-12-18
+Date: 2016-03-22
 Authors@R: c(person("Brooke", "Anderson",
     email = "brooke.anderson@colostate.edu", role = c("aut", "cre")),
     person("Roger", "Peng", email = "rdpeng@gmail.com", role = c("aut")),
@@ -16,6 +16,8 @@ BugReports: https://github.com/geanders/weathermetrics/issues
 License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 5.0.1
+Depends:
+    R (>= 2.10)
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr

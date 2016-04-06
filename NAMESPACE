@@ -8,9 +8,18 @@ export(fahrenheit.to.kelvin)
 export(heat.index)
 export(heat.index.algorithm)
 export(humidity.to.dewpoint)
+<<<<<<< HEAD
 export(inches.to.metric)
 export(kelvin.to.celsius)
 export(kelvin.to.fahrenheit)
 export(knot.to.speed)
 export(metric.to.inches)
 export(speed.to.knots)
+=======
+export(inches_to_metric)
+export(kelvin.to.celsius)
+export(kelvin.to.fahrenheit)
+export(knots_to_speed)
+export(metric_to_inches)
+export(speed_to_knots)
+>>>>>>> fb5490ec40e134247c15438f3f6f1c299693054e
