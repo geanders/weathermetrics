@@ -5,6 +5,14 @@ date: "April 10, 2016"
 output: html_document
 ---
 
+```{r}
+devtools::use_build_ignore("Speed_Precip_Compliance")
+```
+
+```{r}
+library(weathermetrics)
+```
+
 #Compliance of Wind Speed conversions:
 
 ##Knots to other speed units:
@@ -96,3 +104,7 @@ kmph
 ```
 
 The value from the above example using the `speed_to_knots` and `knots_to_speed` functions to convert from 10 mph to kmph, `r kmph` kmph, complies with that obtained using the NOAA converter, which returns a value of 16.1 kmph for a value of 10 mph.
+
+#Compliance of Precipitation Conversions
+
+
