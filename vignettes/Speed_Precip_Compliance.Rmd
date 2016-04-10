@@ -1,0 +1,46 @@
+---
+title: "Speed_Precip_Compliance"
+author: "Joshua Ferreri"
+date: "April 10, 2016"
+output: html_document
+---
+
+#Compliance of Wind Speed conversions:
+
+Testing compliance of Wind Speed conversions for knots to other units of measure using the `knots_to_speed` function in the `weathermetrics` package with the National Oceanic and Atmospheric Administration's [online wind speed converter](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
+
+The following examples convert from 10 knots to mph, mps, fps, and kmph. 
+
+```{r}
+#knots to mph
+mph <- knots_to_speed(10, "mph", round.out = TRUE)
+mph
+```
+
+The value from the above example using the `knots_to_speed` function, `r mph` mph, complies with that obtained using the NOAA converter, which returns a value of 11.5 mph for a value of 10 knots.
+
+```{r}
+#knots to mps
+mps <- knots_to_speed(10, "mps", round.out = TRUE)
+mps
+```
+
+The value from the above example using the `knots_to_speed` function, `r mps`mps, complies with that obtained using the NOAA converter, which returns a value of 5.1 mps for a value of 10 knots.
+
+```{r}
+#knots to ftps
+ftps <- knots_to_speed(10, "ftps", round.out = TRUE)
+ftps
+```
+
+The value from the above example using the `knots_to_speed` function, `r ftps` ftps, complies with that obtained using the NOAA converter, which returns a value of 16.9 ftps for a value of 10 knots.
+
+```{r}
+#knots to kmph
+kmph <- knots_to_speed(10, "kmph", round.out = TRUE)
+kmph
+```
+
+The value from the above example using the `knots_to_speed` function, `r kmph` kmph, complies with that obtained using the NOAA converter, which returns a value of 18.5 kmph for a value of 10 knots.
+
+
