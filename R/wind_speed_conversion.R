@@ -1,3 +1,59 @@
+#' Convert between standard units of measure for wind speed
+#'
+#' \code{wind_speed} creates a numeric vector of speed in a specified unit of
+#'    speed measurement from a numeric vector of speed knots or a specified unit.
+#'
+#' @param df Numeric vector of wind speeds
+#' @param unit Character specifying the speed unit to convert from to knots, or
+#'        convert to from knots.
+#'   Possible values are:
+#'     \itemize{
+#'       \item \code{mph}: Miles per hour
+#'       \item \code{mps}: Meters per second
+#'       \item \code{ftps}: Feet per second
+#'       \item \code{kmph}: Kilometers per hour
+#'     }
+#' @param to.knots Variable indicating whether values should be converted to, or
+#'     from knots. Possible values are TRUE or FALSE. A value of TRUE indicates
+#'     values designated by \code{df} should be converted to knots from the speed
+#'     unit identified by \code{unit}. A value of FALSE indicates values
+#'     designated by \code{df} should be converted from knots to the speed unit
+#'     identified by \code{unit}.
+#' @param round Variable indicating whether or not to round results. Possible
+#'     values are TRUE or FALSE. Default value is TRUE. Values are rounded to 1
+#'     decimal place.
+#'
+#' @return A numeric vector of speeds (in knots, mph, mps, ftps, or kmph)
+#'
+#' @details The numeric vector specified for df must be in the unit knots, or
+#'   as a character specified by \code{unit}.
+#'
+#' @note Equations are from the source code for the National Oceanic and
+#'    and Atmospheric Administration's
+#'    \href{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}{online wind speed
+#'    converter}
+#'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#'
+#' @references
+#'\url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
+#'
+#' @examples
+#' data(beijing)
+#' beijing$knots <- wind_speed(beijing$kmph,
+#'                      unit = "kmph",
+#'                      to.knots = TRUE,
+#'                      round = TRUE)
+#' beijing
+#' data(foco)
+#' foco$mph <- wind_speed(foco$knots,
+#'                       unit = "mph",
+#'                       to.knots = FALSE,
+#'                       round = TRUE)
+#' foco
+#' @export
 wind_speed <-
         function(df, unit, to.knots = TRUE, round = TRUE)
         {
