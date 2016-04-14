@@ -175,3 +175,37 @@ knots_to_speed <-
                 }
         }
 
+wind_speed <- function(df, unit, to.knots = TRUE, round = TRUE){
+        if(length(df[df < 0])){
+                df[df < 0] <- NA
+                warning("For some observations, wind speed was a negative value. Since wind speed cannot have a negative value, wind speed for these observations were set to 'NA'.")
+        }
+        if(unit == "mph" & to.knots == TRUE & round == TRUE){
+                knots = x * 0.8689762
+                return(round(knots, 1))
+        } else if(unit == "mps" & to.knots == TRUE & round == TRUE){
+                knots = x * 1.9438445
+                return(round(knots, 1))
+        } else if(unit == "ftps" & to.knots == TRUE & round == TRUE){
+                knots = x * 0.5924838
+                return(round(knots, 1))
+        } else if(unit == "kmph" & to.knots == TRUE & round == TRUE){
+                knots = x * 0.539593
+                return(round(knots, 1))
+        } else if(unit == "mph" & to.knots == TRUE & round == FALSE){
+                knots = x * 0.8689762
+                return(knots)
+        }
+        if(unit == "mps" & to.knots == TRUE & round.out == FALSE){
+                knots = x * 1.9438445
+                return(knots)
+        }
+        if(unit == "ftps" & to.knots == TRUE & round == FALSE){
+                knots = x * 0.5924838
+                return(knots)
+        }
+        if(unit == "kmph" & to.knots == TRUE & round == FALSE){
+                knots = x * 0.539593
+                return(knots)
+        }
+}
