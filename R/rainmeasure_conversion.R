@@ -12,10 +12,9 @@
 #'       \item \code{mm}: Millimeters
 #'       \item \code{cm}: Centimeters
 #'     }
-#' @param round.out Variable indicating whether or not to round results.
-#'     Possible values are TRUE or FALSE. Default value is TRUE.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value. Default value is 1.
+#' @param round Variable indicating whether or not to round results.
+#'     Possible values are \code{TRUE} or \code{FALSE}. Default value is
+#'     \code{TRUE}. If \code{TRUE}, then the value will be rounded 2 spaces.
 #'
 #' @return A numeric vector of precipitation (in specified metric unit)
 #'
@@ -38,28 +37,27 @@
 #' data(breck)
 #' breck$Precip.mm <- inches_to_metric(breck$Precip.in,
 #'                                     unit = "mm",
-#'                                     round.out = TRUE,
-#'                                     round = 2)
+#'                                     round = TRUE)
 #' breck
 #'
 #' @export
 inches_to_metric <-
-        function(inches, unit, round.out = TRUE, round = 2)
+        function(inches, unit, round = TRUE)
         {
                 if(length(inches[inches < 0])){
                         inches[inches < 0] <- NA
                         warning("For some observations, precipitation was a negative value. Since precipitation cannot have a negative value, precipitation for these observations were set to 'NA'.")
                 }
-                if(unit == "mm" & round.out == TRUE){
+                if(unit == "mm" & round == TRUE){
                         mm <- inches * 25.4
-                        return(round(mm, round))
-                } else if(unit == "cm" & round.out == TRUE){
+                        return(round(mm, 2))
+                } else if(unit == "cm" & round == TRUE){
                         cm <- inches * 2.54
-                        return(round(cm, round))
-                } else if(unit == "mm" & round.out == FALSE){
+                        return(round(cm, 2))
+                } else if(unit == "mm" & round == FALSE){
                         mm <- inches * 25.4
                         return(mm)
-                } else if(unit == "cm" & round.out == FALSE){
+                } else if(unit == "cm" & round == FALSE){
                         cm <- inches * 2.54
                         return(cm)
                 } else{
@@ -81,10 +79,9 @@ inches_to_metric <-
 #'       \item \code{mm}: Millimeters
 #'       \item \code{cm}: Centimeters
 #'     }
-#' @param round.out Variable indicating whether or not to round results.
-#'     Possible values are TRUE or FALSE. Default value is TRUE.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value. Default value is 1.
+#' @param round Variable indicating whether or not to round results.
+#'     Possible values are \code{TRUE} or \code{FALSE}. Default value is
+#'     \code{TRUE}. If \code{TRUE}, then the value will be rounded 2 spaces.
 #'
 #' @return A numeric vector of precipitation in inches.
 #'
@@ -107,28 +104,27 @@ inches_to_metric <-
 #' data(loveland)
 #' loveland$Precip.in <- metric_to_inches(loveland$Precip.mm,
 #'                                        unit.from = "mm",
-#'                                        round.out = TRUE,
-#'                                        round = 2)
+#'                                        round = TRUE)
 #' loveland
 #'
 #' @export
 metric_to_inches <-
-        function(metric, unit.from, round.out = TRUE, round = 2)
+        function(metric, unit.from, round = TRUE)
         {
                 if(length(metric[metric < 0])){
                         metric[metric < 0] <- NA
                         warning("For some observations, precipitation was a negative value. Since precipitation cannot have a negative value, precipitation for these observations were set to 'NA'.")
                 }
-                if(unit.from == "mm" & round.out == TRUE){
+                if(unit.from == "mm" & round == TRUE){
                         inches <- metric / 25.4
-                        return(round(inches, round))
-                } else if(unit.from == "cm" & round.out == TRUE){
+                        return(round(inches, 2))
+                } else if(unit.from == "cm" & round == TRUE){
                         inches <- metric / 2.54
-                        return(round(inches, round))
-                } else if(unit.from == "mm" & round.out == FALSE){
+                        return(round(inches, 2))
+                } else if(unit.from == "mm" & round == FALSE){
                         inches <- metric / 25.4
                         return(inches)
-                } else if(unit.from == "cm" & round.out == FALSE){
+                } else if(unit.from == "cm" & round == FALSE){
                         inches <- metric / 2.54
                         return(inches)
                 } else{
