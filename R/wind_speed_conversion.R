@@ -1,7 +1,9 @@
 #' Convert between standard units of measure for wind speed
 #'
 #' \code{wind_speed} creates a numeric vector of speed in a specified unit of
-#'    speed measurement from a numeric vector of speed knots or a specified unit.
+#'    speed measurement from a numeric vector of speed in knots or a specified
+#'    unit including miles per hour, meters per second, feet per second, or
+#'    kilometers per hour.
 #'
 #' @param df Numeric vector of wind speeds
 #' @param unit Character specifying the speed unit to convert from to knots, or
