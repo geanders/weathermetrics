@@ -45,6 +45,10 @@
 speed_to_knots <-
         function(x, unit, round.out = TRUE, round = 1)
         {
+                if(x < 0){
+                        knots = NA
+                        warning("For some observations, wind speed was a negative value. Since wind speed cannot have a negative value, wind speed for these observations were set to 'NA'.")
+                }
                 if(unit == "mph" & round.out == TRUE){
                         knots = x * 0.8689762
                         return(round(knots, round))
