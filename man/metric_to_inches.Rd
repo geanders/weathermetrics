@@ -4,7 +4,7 @@
 \alias{metric_to_inches}
 \title{Convert between standard metric units of measure for precipitation to inches}
 \usage{
-metric_to_inches(metric, unit.from, round.out = TRUE, round = 2)
+metric_to_inches(metric, unit.from, round = TRUE)
 }
 \arguments{
 \item{metric}{Numeric vector of precipitation (in millimeters or centimeters)}
@@ -17,11 +17,9 @@ Possible values are:
     \item \code{cm}: Centimeters
   }}
 
-\item{round.out}{Variable indicating whether or not to round results.
-Possible values are TRUE or FALSE. Default value is TRUE.}
-
-\item{round}{Integer indicating the number of decimal places to
-round converted value. Default value is 1.}
+\item{round}{Variable indicating whether or not to round results.
+Possible values are \code{TRUE} or \code{FALSE}. Default value is
+\code{TRUE}. If \code{TRUE}, then the value will be rounded 2 spaces.}
 }
 \value{
 A numeric vector of precipitation in inches.
@@ -43,8 +41,7 @@ Equations are from the source code for the National Weather Service
 data(loveland)
 loveland$Precip.in <- metric_to_inches(loveland$Precip.mm,
                                        unit.from = "mm",
-                                       round.out = TRUE,
-                                       round = 2)
+                                       round = TRUE)
 loveland
 
 }
