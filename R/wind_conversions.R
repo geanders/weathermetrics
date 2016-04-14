@@ -45,38 +45,47 @@
 speed_to_knots <-
         function(x, unit, round.out = TRUE, round = 1)
         {
-                if(x < 0){
-                        knots = NA
+                if(length(x[x < 0])){
+                        x[x < 0] <- NA
                         warning("For some observations, wind speed was a negative value. Since wind speed cannot have a negative value, wind speed for these observations were set to 'NA'.")
                 }
                 if(unit == "mph" & round.out == TRUE){
                         knots = x * 0.8689762
                         return(round(knots, round))
-                } else if(unit == "mps" & round.out == TRUE){
+                }
+                if(unit == "mps" & round.out == TRUE){
                         knots = x * 1.9438445
                         return(round(knots, round))
-                } else if(unit == "ftps" & round.out == TRUE){
+                }
+                if(unit == "ftps" & round.out == TRUE){
                         knots = x * 0.5924838
                         return(round(knots, round))
-                } else if(unit == "kmph" & round.out == TRUE){
+                }
+                if(unit == "kmph" & round.out == TRUE){
                         knots = x * 0.539593
                         return(round(knots, round))
-                } else if(unit == "kmph" & round.out == TRUE){
+                }
+                if(unit == "kmph" & round.out == TRUE){
                         knots = x * 0.539593
                         return(round(knots, round))
-                } else if(unit == "mph" & round.out == FALSE){
+                }
+                if(unit == "mph" & round.out == FALSE){
                         knots = x * 0.8689762
                         return(knots)
-                } else if(unit == "mps" & round.out == FALSE){
+                }
+                if(unit == "mps" & round.out == FALSE){
                         knots = x * 1.9438445
                         return(knots)
-                } else if(unit == "ftps" & round.out == FALSE){
+                }
+                if(unit == "ftps" & round.out == FALSE){
                         knots = x * 0.5924838
                         return(knots)
-                } else if(unit == "kmph" & round.out == FALSE){
+                }
+                if(unit == "kmph" & round.out == FALSE){
                         knots = x * 0.539593
                         return(knots)
-                } else {
+                }
+                else {
                         stop("Unit must be one of the specified units for wind
                              speed")
                 }
