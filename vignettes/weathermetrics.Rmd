@@ -255,7 +255,7 @@ For example, the `breck` dataset gives daily values of precipitation in inches (
 data(breck)
 breck$Precip.mm <- inches_to_metric(breck$Precip.in,
                                     unit = "mm",
-                                    round.out = TRUE)
+                                    round = TRUE)
 breck
 ```
 
@@ -277,7 +277,7 @@ loveland$Precip.in <- metric_to_inches(loveland$Precip.mm,
 loveland
 ```
 
-You must specify the metric unit of precipitation measure you wish to convert from to inches using the `unit.from` option (possible values: `'mm'` and `'cm'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of precipitation measurements and user flexibility. The `round` option has a default value of `TRUE`, and rounds the final value to 2 decimal places. 
+You must specify the metric unit of precipitation measure you wish to convert from to inches using the `unit.from` option (possible values: `'mm'` and `'cm'`). You can choose whether or not you would like the answer rounded by using the `round` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of precipitation measurements and user flexibility. The `round` option has a default value of `TRUE`, and rounds the final value to 2 decimal places. 
 
 Calculations between metric units and inches for precipitation measures are based on algorithms used by the United States National Weather Service's [Meteorological Conversions](http://www.srh.noaa.gov/ama/?n=conversions) (accessed March 20, 2016). These are approximations rather than exact conversions.
 

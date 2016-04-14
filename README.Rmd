@@ -33,8 +33,7 @@ The `weathermetrics` package provides the following functions to calculate or co
 - **`humidity.to.dewpoint`:** Calculate a vector of dew point temperatures from vectors of air temperature and relative humidity 
 - **`heat.index`:** Calculate a vector of heat index values
 from vectors of air temperature and either dew point temperature or relative humidity
-- **`speed_to_knots`:** Convert a vector of wind speed values to knots
-- **`knots_to_speed`:** Convert a vector of wind speed values in knots to a specified wind speed unit
+- **`wind_speed`:** Convert a vector of wind speed measurements (in miles per hour, meters per second, feet per second, or kilometers per hour) to or from knots
 - **`inches_to_metric`:** Convert a vector of precipitation measurements in inches to measures in metric units (millimeters or centimeters)
 - **`metric_to_inches`:** Convert a vector of precipitation measurements in metric units to measures in inches
 
@@ -187,49 +186,50 @@ from the algorithms used by the United States National Weather Service's [online
 
 ### Wind speed: Converting to knots
 
-The `weathermetrics` package includes a function, `speed_to_knots`, that allows you to calculate a vector of wind speed values in the unit knots from vectors of wind speed values in units other than knots, including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph). For example, the `beijing` dataset gives daily values of wind speed in: miles per hour (`beijing$MPH`), meters per second (`beijing$mps`), feet per second (`beijing$ftps`), and kilometers per hour (`beijing$kmph`) for Beijing, China, for the week of January 10, 2015. To calculate daily wind speed values in knots for this dataset, use the `speed_to_knots` function: 
+The `weathermetrics` package includes a function, `wind_speed`, that allows you to calculate a vector of wind speed values in the unit knots from vectors of wind speed values in units other than knots, including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph). For example, the `beijing` dataset gives daily values of wind speed in: miles per hour (`beijing$MPH`), meters per second (`beijing$mps`), feet per second (`beijing$ftps`), and kilometers per hour (`beijing$kmph`) for Beijing, China, for the week of January 10, 2015. To calculate daily wind speed values in knots for this dataset, use the `speed_to_knots` function: 
 
 ```{r}
 data(beijing)
-beijing$knots <- speed_to_knots(beijing$MPH,
+beijing$knots <- wind_speed(beijing$MPH,
                                 unit = "mph",
-                                round.out = TRUE,
-                                round = 1)
+                                to.knots = TRUE,
+                                round = TRUE)
 beijing
 ```
 
-You must specify the unit of wind speed that you wish to convert to knots from using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of wind speeds when converting from a wind speed other than knots to another unit that is not knots. An example of this is provided after the `knots_to_speed` function is described. The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 1). The default value for `round` is consistent with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
+You must specify the unit of wind speed that you wish to convert to knots from using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). Further, the `to.knots` option must be set to `TRUE` if you are converting from a specific wind speed unit to knots. You can choose whether or not you would like the answer rounded by using the `round` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of wind speeds when converting from a wind speed other than knots to another unit that is not knots. An example of this is provided later. The default for `round` is `TRUE`, and the final result will be rounded to 1 decimal place. The default value for `round` is consistent with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
 
 ### Wind speed: Converting from knots to other units of wind speed measure
 
-The `weathermetrics` package includes a function, `knots_to_speed`, that allows you to calculate a vector of wind speed values in a specified wind speed unit including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph), from vectors of wind speed values in knots. For example, the `foco` dataset gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. To calculate daily wind speed values in a specified unit, in this case miles per hour, from knots for this dataset, use the `knots_to_speed` function:
+Further, the `wind_speed` function allows you to calculate a vector of wind speed values in a specified wind speed unit including miles per hour (mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph), from vectors of wind speed values in knots. For example, the `foco` dataset gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. To calculate daily wind speed values in a specified unit, in this case miles per hour, from knots for this dataset, use the `wind_speed` function:
 
 ```{r}
 data(foco)
-foco$mph <- knot.to.speed(foco$knots,
+foco$mph <- wind_speed(foco$knots,
                            unit = "mph",
-                           round.out = TRUE,
-                           round = 1)
+                           to.knots = FALSE
+                           round = TRUE)
 foco
 ```
 
-Opposite to the `speed_to_knots` function, in the `knot.to.speed` function, the unit you wish to convert to is specified using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 1). The default value for `round` is consistent with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
+In this case, the unit you wish to convert to from knots is specified using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). Since you are converting from knots in the above example, you must set the `to.knots` option to `FALSE`. You can choose whether or not you would like the answer rounded by using the `round` option (possible values: `TRUE` or `FALSE`). The default for `round` is `TRUE`, and the final result will be rounded to 1 decimal place. The default value for `round` is consistent with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
 
 ### Wind speed: Converting from and to a unit other than knots
 
-The `weathermetrics` package does not have a function that allows you to convert directly from a unit other than knots (mph, mps, ftps, or kmph) to another unit other than knots. Therefore, in order to convert between these units, you must convert through knots. In order to maintain the accuracy of the wind speed measurement, it is necessary not to round until the end of your conversion. You can specify whether or not you round in the `speed_to_knots` and `knot.to.speed` functions using the `round.out` option. For example, in order to convert from miles per hour to meters per second, you must convert first from miles per hour to knots using the `speed_to_knots` function. You should use the argument `FALSE` for the `round.out` option in this step. Now, you can use the `knot.to.speed` function to convert the vector of wind speed values in knots that you just created to the specified speed, in this case meters per second. You should now use the argument `TRUE` for the `round.out` option to obtain your final wind speed value in compliance with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
+The `weathermetrics` package does not have a function that allows you to convert directly from a wind speed unit other than knots (mph, mps, ftps, or kmph) to another unit other than knots. Therefore, in order to convert between these units, you must convert through knots. In order to maintain the accuracy of the wind speed measurement, it is necessary not to round until the end of your conversion. You can specify whether or not you round in the `wind_speed` function using the `round` option. For example, in order to convert from miles per hour to meters per second, you must convert first from miles per hour to knots using the `wind_speed` function with the `to.knots` option set as `TRUE`. You should use the argument `FALSE` for the `round` option in this step. Now, you can use the `wind_speed` function to convert the vector of wind speed values in knots that you just created to the specified speed, in this case meters per second. You should now use the argument `FALSE` for the `to.knots` argument, and `TRUE` for the `round` option to obtain your final wind speed value in compliance with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
 
-For example, the `puravida` dataset gives daily values of wind speed in miles per hour (`puravida$mph`) for San José, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, use the `speed_to_knots` and `knot.to.speed` functions:
+For example, the `puravida` dataset gives daily values of wind speed in miles per hour (`puravida$mph`) for San José, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, use the `wind_speed` functions:
 
 ```{r}
 data(puravida)
-puravida$knots <- speed_to_knots(puravida$mph, 
-                                 "mph", 
-                                 round.out = FALSE)
-puravida$mps <- knot.to.speed(puravida$knots, 
-                               "mps",
-                               round.out = TRUE,
-                               round = 1)
+puravida$knots <- wind_speed(puravida$mph, 
+                                 unit = "mph",
+                                 to.knots = TRUE,
+                                 round = FALSE)
+puravida$mps <- wind_speed(puravida$knots,
+                               unit = "mps",
+                               to.knots = FALSE,                
+                               round = TRUE)
 puravida
 ```
 
@@ -243,12 +243,11 @@ For example, the `breck` dataset gives daily values of precipitation in inches (
 data(breck)
 breck$Precip.mm <- inches_to_metric(breck$Precip.in,
                                     unit = "mm",
-                                    round.out = TRUE,
-                                    round = 2)
+                                    round = TRUE)
 breck
 ```
 
-You must specify the metric unit of precipitation measure you wish to convert to from inches using the `unit` option (possible values: `'mm'` and `'cm'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of precipitation measurements and user flexibility. The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 2). 
+You must specify the metric unit of precipitation measure you wish to convert to from inches using the `unit` option (possible values: `'mm'` and `'cm'`). You can choose whether or not you would like the answer rounded by using the `round` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of precipitation measurements and user flexibility. The `round` option has a default value of `TRUE`, and rounds the final value to 2 decimal places. 
 
 Calculations between inches and metric units for precipitation measures are based on algorithms used by the United States National Weather Service's [Meteorological Conversions](http://www.srh.noaa.gov/ama/?n=conversions) (accessed March 20, 2016). These are approximations rather than exact conversions.
 
@@ -262,14 +261,13 @@ For example, the `loveland` dataset gives daily values of precipitation in inche
 data(loveland)
 loveland$Precip.in <- metric_to_inches(loveland$Precip.mm,
                                        unit.from = "mm",
-                                       round.out = TRUE,
-                                       round = 2)
+                                       round = TRUE)
 loveland
 ```
 
-You must specify the metric unit of precipitation measure you wish to convert from to inches using the `unit.from` option (possible values: `'mm'` and `'cm'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of precipitation measurements and user flexibility. The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 2). 
+You must specify the metric unit of precipitation measure you wish to convert from to inches using the `unit.from` option (possible values: `'mm'` and `'cm'`). You can choose whether or not you would like the answer rounded by using the `round` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of precipitation measurements and user flexibility. The `round` option has a default value of `TRUE`, and rounds the final value to 2 decimal places. 
 
-Calculations between metric units and inches for precipitation measures are based on algorithms used by the United States National Weather Service's [Meteorological Conversions](http://www.srh.noaa.gov/ama/?n=conversions) (accessed March 20, 2016). These are approximations rather than exact conversions. 
+Calculations between metric units and inches for precipitation measures are based on algorithms used by the United States National Weather Service's [Meteorological Conversions](http://www.srh.noaa.gov/ama/?n=conversions) (accessed March 20, 2016). These are approximations rather than exact conversions.
 
 ## Handling missing or impossible weather values
 
