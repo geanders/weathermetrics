@@ -22,8 +22,8 @@
 #'     \code{FALSE} indicates values designated by \code{df} should be converted
 #'     from knots to the speed unit identified by \code{unit}.
 #' @param round Variable indicating whether or not to round results. Possible
-#'     values are TRUE or FALSE. Default value is TRUE. Values are rounded to 1
-#'     decimal place.
+#'     values are \code{TRUE} or \code{FALSE}. Default value is \code{TRUE}.
+#'     Values are rounded to 1 decimal place.
 #'
 #' @return A numeric vector of speeds (in knots, mph, mps, ftps, or kmph)
 #'
