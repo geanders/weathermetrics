@@ -20,11 +20,11 @@ Possible values are:
   }}
 
 \item{to.knots}{Variable indicating whether values should be converted to, or
-from knots. Possible values are TRUE or FALSE. A value of TRUE indicates
-values designated by \code{df} should be converted to knots from the speed
-unit identified by \code{unit}. A value of FALSE indicates values
-designated by \code{df} should be converted from knots to the speed unit
-identified by \code{unit}.}
+from knots. Possible values are \code{TRUE} or \code{FALSE}. A value of
+\code{TRUE} indicates values designated by \code{df} should be converted
+to knots from the speed unit identified by \code{unit}. A value of
+\code{FALSE} indicates values designated by \code{df} should be converted
+from knots to the speed unit identified by \code{unit}.}
 
 \item{round}{Variable indicating whether or not to round results. Possible
 values are TRUE or FALSE. Default value is TRUE. Values are rounded to 1
@@ -35,7 +35,9 @@ A numeric vector of speeds (in knots, mph, mps, ftps, or kmph)
 }
 \description{
 \code{wind_speed} creates a numeric vector of speed in a specified unit of
-   speed measurement from a numeric vector of speed knots or a specified unit.
+   speed measurement from a numeric vector of speed in knots or a specified
+   unit including miles per hour, meters per second, feet per second, or
+   kilometers per hour.
 }
 \details{
 The numeric vector specified for df must be in the unit knots, or

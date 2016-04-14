@@ -16,11 +16,11 @@
 #'       \item \code{kmph}: Kilometers per hour
 #'     }
 #' @param to.knots Variable indicating whether values should be converted to, or
-#'     from knots. Possible values are TRUE or FALSE. A value of TRUE indicates
-#'     values designated by \code{df} should be converted to knots from the speed
-#'     unit identified by \code{unit}. A value of FALSE indicates values
-#'     designated by \code{df} should be converted from knots to the speed unit
-#'     identified by \code{unit}.
+#'     from knots. Possible values are \code{TRUE} or \code{FALSE}. A value of
+#'     \code{TRUE} indicates values designated by \code{df} should be converted
+#'     to knots from the speed unit identified by \code{unit}. A value of
+#'     \code{FALSE} indicates values designated by \code{df} should be converted
+#'     from knots to the speed unit identified by \code{unit}.
 #' @param round Variable indicating whether or not to round results. Possible
 #'     values are TRUE or FALSE. Default value is TRUE. Values are rounded to 1
 #'     decimal place.
