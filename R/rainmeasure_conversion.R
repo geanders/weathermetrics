@@ -46,6 +46,10 @@
 inches_to_metric <-
         function(inches, unit, round.out = TRUE, round = 2)
         {
+                if(length(inches[inches < 0])){
+                        inches[inches < 0] <- NA
+                        warning("For some observations, precipitation was a negative value. Since precipitation cannot have a negative value, precipitation for these observations were set to 'NA'.")
+                }
                 if(unit == "mm" & round.out == TRUE){
                         mm <- inches * 25.4
                         return(round(mm, round))
@@ -111,6 +115,10 @@ inches_to_metric <-
 metric_to_inches <-
         function(metric, unit.from, round.out = TRUE, round = 2)
         {
+                if(length(metric[metric < 0])){
+                        metric[metric < 0] <- NA
+                        warning("For some observations, precipitation was a negative value. Since precipitation cannot have a negative value, precipitation for these observations were set to 'NA'.")
+                }
                 if(unit.from == "mm" & round.out == TRUE){
                         inches <- metric / 25.4
                         return(round(inches, round))
