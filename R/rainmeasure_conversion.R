@@ -5,17 +5,13 @@
 #'   precipitation in inches.
 #'
 #' @param inches Numeric vector of precipitation (in inches)
-#' @param unit Character specifying the metric precipitation unit to convert to
-#'   from inches.
+#' @param unit Character specifying the metric precipitation unit besides inches.
 #'   Possible values are:
 #'     \itemize{
 #'       \item \code{mm}: Millimeters
 #'       \item \code{cm}: Centimeters
 #'     }
-#' @param round.out Variable indicating whether or not to round results.
-#'     Possible values are TRUE or FALSE. Default value is TRUE.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value. Default value is 1.
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of precipitation (in specified metric unit)
 #'
@@ -43,25 +39,19 @@
 #' breck
 #'
 #' @export
-inches_to_metric <-
-        function(inches, unit, round.out = TRUE, round = 2)
-        {
-                if(unit == "mm" & round.out == TRUE){
-                        mm <- inches * 25.4
-                        return(round(mm, round))
-                } else if(unit == "cm" & round.out == TRUE){
-                        cm <- inches * 2.54
-                        return(round(cm, round))
-                } else if(unit == "mm" & round.out == FALSE){
-                        mm <- inches * 25.4
-                        return(mm)
-                } else if(unit == "cm" & round.out == FALSE){
-                        cm <- inches * 2.54
-                        return(cm)
+inches_to_metric <- function(inches, unit, round = 2) {
+                if(unit == "mm"){
+                        metric <- inches * 25.4
+                } else if(unit == "cm"){
+                        metric <- inches * 2.54
                 } else{
-                        stop("unit must be in mm or cm")
+                        stop("`unit` must be `mm` or `cm`")
                 }
+        if(!is.null(round)){
+                metric <- round(metric, digits = round)
         }
+        return(metric)
+}
 
 #' Convert between standard metric units of measure for precipitation to inches
 #'
@@ -70,17 +60,8 @@ inches_to_metric <-
 #'   (millimeters or centimeters).
 #'
 #' @param metric Numeric vector of precipitation (in millimeters or centimeters)
-#' @param unit.from Character specifying the metric precipitation unit convert
-#'   from to inches.
-#'   Possible values are:
-#'     \itemize{
-#'       \item \code{mm}: Millimeters
-#'       \item \code{cm}: Centimeters
-#'     }
-#' @param round.out Variable indicating whether or not to round results.
-#'     Possible values are TRUE or FALSE. Default value is TRUE.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value. Default value is 1.
+#' @inheritParams inches_to_metric
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of precipitation in inches.
 #'
@@ -103,27 +84,20 @@ inches_to_metric <-
 #' data(loveland)
 #' loveland$Precip.in <- metric_to_inches(loveland$Precip.mm,
 #'                                        unit.from = "mm",
-#'                                        round.out = TRUE,
 #'                                        round = 2)
 #' loveland
 #'
 #' @export
-metric_to_inches <-
-        function(metric, unit.from, round.out = TRUE, round = 2)
-        {
-                if(unit.from == "mm" & round.out == TRUE){
+metric_to_inches <- function(metric, unit.from, round = 2) {
+               if(unit.from == "mm"){
                         inches <- metric / 25.4
-                        return(round(inches, round))
-                } else if(unit.from == "cm" & round.out == TRUE){
+                } else if(unit.from == "cm"){
                         inches <- metric / 2.54
-                        return(round(inches, round))
-                } else if(unit.from == "mm" & round.out == FALSE){
-                        inches <- metric / 25.4
-                        return(inches)
-                } else if(unit.from == "cm" & round.out == FALSE){
-                        inches <- metric / 2.54
-                        return(inches)
                 } else{
-                        stop("unit.from must be in mm or cm")
+                        stop("`unit.from` must be `mm` or `cm`")
                 }
+        if(!is.null(round)){
+                inches <- round(inches, digits = round)
         }
+        return(inches)
+}

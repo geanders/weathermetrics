@@ -4,24 +4,20 @@
 \alias{inches_to_metric}
 \title{Convert from inches to standard metric units of measure for precipitation}
 \usage{
-inches_to_metric(inches, unit, round.out = TRUE, round = 2)
+inches_to_metric(inches, unit, round = 2)
 }
 \arguments{
 \item{inches}{Numeric vector of precipitation (in inches)}
 
-\item{unit}{Character specifying the metric precipitation unit to convert to
-from inches.
+\item{unit}{Character specifying the metric precipitation unit besides inches.
 Possible values are:
   \itemize{
     \item \code{mm}: Millimeters
     \item \code{cm}: Centimeters
   }}
 
-\item{round.out}{Variable indicating whether or not to round results.
-Possible values are TRUE or FALSE. Default value is TRUE.}
-
-\item{round}{Integer indicating the number of decimal places to
-round converted value. Default value is 1.}
+\item{round}{An integer indicating the number of decimal places to
+round converted value.}
 }
 \value{
 A numeric vector of precipitation (in specified metric unit)
