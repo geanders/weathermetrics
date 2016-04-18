@@ -4,12 +4,12 @@
 \alias{knots_to_speed}
 \title{Convert from knots to standard units of wind speed}
 \usage{
-knots_to_speed(knots, unit, round.out = TRUE, round = 1)
+knots_to_speed(knots, unit, round = 1)
 }
 \arguments{
 \item{knots}{Numeric vector of speeds in knots}
 
-\item{unit}{Character specifying the speed unit to convert to from knots.
+\item{unit}{Character specifying the speed unit other than knots.
 Possible values are:
   \itemize{
     \item \code{mph}: Miles per hour
@@ -18,19 +18,15 @@ Possible values are:
     \item \code{kmph}: Kilometers per hour
   }}
 
-\item{round.out}{Variable with the indicating whether or not to round results.
-Possible values are TRUE or FALSE. Default value is TRUE.}
-
-\item{round}{Integer indicating the number of decimal places to
-round converted value. Default value is 1.}
+\item{round}{An integer indicating the number of decimal places to
+round converted value.}
 }
 \value{
 A numeric vector of speeds (in the specified unit)
 }
 \description{
 \code{knots_to_speed} creates a numeric vector of speed, in units
-   specified by \code{unit},
-  from a numeric vector of speed in knots.
+   specified by \code{unit}, from a numeric vector of speed in knots.
 }
 \details{
 Output will be in the speed units specified by \code{unit}.
@@ -43,10 +39,10 @@ Equations are from the source code for the National Oceanic and
 }
 \examples{
 data(foco)
-foco$mph <- knots_to_speed(foco$knots, "mph", round.out = TRUE)
-foco$mps <- knots_to_speed(foco$knots, "mps", round.out = TRUE)
-foco$ftps <- knots_to_speed(foco$knots, "ftps", round.out = TRUE)
-foco$kmph <- knots_to_speed(foco$knots, "kmph", round.out = TRUE)
+foco$mph <- knots_to_speed(foco$knots, unit = "mph", round = 0)
+foco$mps <- knots_to_speed(foco$knots, unit = "mps", round = NULL)
+foco$ftps <- knots_to_speed(foco$knots, unit = "ftps")
+foco$kmph <- knots_to_speed(foco$knots, unit = "kmph")
 foco
 
 }

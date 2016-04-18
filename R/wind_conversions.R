@@ -1,10 +1,68 @@
+#' Convert between wind speed metrics
+#'
+#' This function allows you to convert among the following wind speed metrics:
+#' knots,  miles per hour, meters per second, feet per second, and kilometers per
+#' hour.
+#'
+#' @param wind_speed A numerical vector of wind speeds to be converted.
+#' @param old_metric The metric from which you want to convert. Possible options
+#' are:
+#' \itemize{
+#'       \item \code{knots}: Knots
+#'       \item \code{mph}: Miles per hour
+#'       \item \code{mps}: Meters per second
+#'       \item \code{ftps}: Feet per second
+#'       \item \code{kmph}: Kilometers per hour
+#' }
+#' @inheritParams convert_temperature
+#'
+#' @return A numeric vector with temperature converted to the metric specified
+#'    by the argument \code{new_metric}.
+#'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#'
+#' @examples
+#'
+#' data(beijing)
+#' beijing$knots <- convert_wind_speed(beijing$kmph,
+#'    old_metric = "kmph", new_metric = "knots")
+#' beijing
+#'
+#' data(foco)
+#' foco$mph <- convert_wind_speed(foco$knots, old_metric = "knots",
+#'    new_metric = "mph", round = 0)
+#' foco$mph <- convert_wind_speed(foco$knots, old_metric = "knots",
+#'    new_metric = "mps", round = NULL)
+#' foco$kmph <- convert_wind_speed(foco$mph, old_metric = "mph",
+#'    new_metric = "kmph")
+#' foco
+#'
+#' @export
+convert_wind_speed <- function(wind_speed, old_metric, new_metric, round = 1){
+        if(old_metric == new_metric){
+                stop("`old_metric` and `new_metric` must be different.")
+        }
+
+        if(old_metric == "knots"){
+                out <- knots_to_speed(wind_speed, unit = new_metric, round = round)
+        } else if (new_metric == "knots"){
+                out <- speed_to_knots(wind_speed, unit = old_metric, round = round)
+        } else {
+                mid <- speed_to_knots(wind_speed, unit = old_metric, round = NULL)
+                out <- knots_to_speed(mid, unit = new_metric, round = round)
+        }
+        return(out)
+}
+
 #' Convert between standard units of measure for wind speed
 #'
 #' \code{speed_to_knots} creates a numeric vector of speed in knots from a
 #'   numeric vector of speed in the specified unit.
 #'
 #' @param x Numeric vector of wind speeds, in units specified by \code{unit}
-#' @param unit Character specifying the speed unit to convert to from knots.
+#' @param unit Character specifying the speed unit other than knots.
 #'   Possible values are:
 #'     \itemize{
 #'       \item \code{mph}: Miles per hour
@@ -12,10 +70,7 @@
 #'       \item \code{ftps}: Feet per second
 #'       \item \code{kmph}: Kilometers per hour
 #'     }
-#' @param round.out Variable with the indicating whether or not to round results.
-#'     Possible values are TRUE or FALSE. Default value is TRUE.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value. Default value is 1.
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of speeds (in knots)
 #'
@@ -38,65 +93,37 @@
 #'
 #' @examples
 #' data(beijing)
-#' beijing$knots <- speed_to_knots(beijing$kmph, "kmph", round.out = TRUE)
+#' beijing$knots <- speed_to_knots(beijing$kmph, unit = "kmph", round = 2)
 #' beijing
 #'
 #' @export
-speed_to_knots <-
-        function(x, unit, round.out = TRUE, round = 1)
-        {
-                if(unit == "mph" & round.out == TRUE){
-                        knots = x * 0.8689762
-                        return(round(knots, round))
-                } else if(unit == "mps" & round.out == TRUE){
-                        knots = x * 1.9438445
-                        return(round(knots, round))
-                } else if(unit == "ftps" & round.out == TRUE){
+speed_to_knots <- function(x, unit, round = 1) {
+                if(unit == "mph"){
+                        knots <- x * 0.8689762
+                } else if(unit == "mps"){
+                        knots <- x * 1.9438445
+                } else if(unit == "ftps"){
                         knots = x * 0.5924838
-                        return(round(knots, round))
-                } else if(unit == "kmph" & round.out == TRUE){
+                } else if(unit == "kmph"){
                         knots = x * 0.539593
-                        return(round(knots, round))
-                } else if(unit == "kmph" & round.out == TRUE){
-                        knots = x * 0.539593
-                        return(round(knots, round))
-                } else if(unit == "mph" & round.out == FALSE){
-                        knots = x * 0.8689762
-                        return(knots)
-                } else if(unit == "mps" & round.out == FALSE){
-                        knots = x * 1.9438445
-                        return(knots)
-                } else if(unit == "ftps" & round.out == FALSE){
-                        knots = x * 0.5924838
-                        return(knots)
-                } else if(unit == "kmph" & round.out == FALSE){
-                        knots = x * 0.539593
-                        return(knots)
                 } else {
                         stop("Unit must be one of the specified units for wind
                              speed")
                 }
+        if(!is.null(round)){
+                knots <- round(knots, digits = round)
         }
+        return(knots)
+}
 
 #' Convert from knots to standard units of wind speed
 #'
 #' \code{knots_to_speed} creates a numeric vector of speed, in units
-#'    specified by \code{unit},
-#'   from a numeric vector of speed in knots.
+#'    specified by \code{unit}, from a numeric vector of speed in knots.
 #'
 #' @param knots Numeric vector of speeds in knots
-#' @param unit Character specifying the speed unit to convert to from knots.
-#'   Possible values are:
-#'     \itemize{
-#'       \item \code{mph}: Miles per hour
-#'       \item \code{mps}: Meters per second
-#'       \item \code{ftps}: Feet per second
-#'       \item \code{kmph}: Kilometers per hour
-#'     }
-#' @param round.out Variable with the indicating whether or not to round results.
-#'     Possible values are TRUE or FALSE. Default value is TRUE.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value. Default value is 1.
+#' @inheritParams speed_to_knots
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of speeds (in the specified unit)
 #'
@@ -118,43 +145,29 @@ speed_to_knots <-
 #'
 #' @examples
 #' data(foco)
-#' foco$mph <- knots_to_speed(foco$knots, "mph", round.out = TRUE)
-#' foco$mps <- knots_to_speed(foco$knots, "mps", round.out = TRUE)
-#' foco$ftps <- knots_to_speed(foco$knots, "ftps", round.out = TRUE)
-#' foco$kmph <- knots_to_speed(foco$knots, "kmph", round.out = TRUE)
+#' foco$mph <- knots_to_speed(foco$knots, unit = "mph", round = 0)
+#' foco$mps <- knots_to_speed(foco$knots, unit = "mps", round = NULL)
+#' foco$ftps <- knots_to_speed(foco$knots, unit = "ftps")
+#' foco$kmph <- knots_to_speed(foco$knots, unit = "kmph")
 #' foco
 #'
 #' @export
-knots_to_speed <-
-        function(knots, unit, round.out = TRUE, round = 1)
-        {
-                if(unit == "mph" & round.out ==TRUE){
-                        mph = round(knots * 1.1507794, round)
-                        return(mph)
-                } else if(unit == "mps" & round.out == TRUE){
-                        mps = round(knots * 0.5144444, round)
-                        return(mps)
-                } else if(unit == "ftps" & round.out == TRUE){
-                        ftps = round(knots * 1.6878099, round)
-                        return(ftps)
-                } else if(unit == "kmph" & round.out == TRUE){
-                        kmph = round(knots * 1.85325, round)
-                        return(kmph)
-                } else if(unit == "mph" & round.out == FALSE){
-                        mph = knots * 1.1507794
-                        return(mph)
-                } else if(unit == "mps" & round.out == FALSE){
-                        mps = knots * 0.5144444
-                        return(mps)
-                } else if(unit == "ftps" & round.out == FALSE){
-                        ftps = knots * 1.6878099
-                        return(ftps)
-                } else if(unit == "kmph" & round.out == FALSE){
-                        kmph = knots * 1.85325
-                        return(kmph)
+knots_to_speed <- function(knots, unit, round = 1) {
+                if(unit == "mph"){
+                        x <- knots * 1.1507794
+                } else if(unit == "mps"){
+                        x <- knots * 0.5144444
+                } else if(unit == "ftps"){
+                        x <- knots * 1.6878099
+                } else if(unit == "kmph"){
+                        x <- knots * 1.85325
                 } else{
                         stop("Unit must be one of the specified units for wind
                              speed")
                 }
+        if(!is.null(round)){
+                x <- round(x, digits = round)
         }
+        return(x)
+}
 

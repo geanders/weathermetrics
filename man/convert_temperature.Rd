@@ -49,7 +49,6 @@ angeles
 }
 \author{
 Brooke Anderson \email{brooke.anderson@colostate.edu},
-Roger Peng \email{rdpeng@gmail.com},
 Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
 }
 
