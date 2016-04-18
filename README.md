@@ -68,7 +68,7 @@ norfolk
 #> 7 2006-03-18           44        16  6.67 -8.89
 ```
 
-### Converting between Celcius and Kelvins
+### Converting between Celsius and Kelvins
 
 This package includes two functions to convert between Celsius and Kelvins, `celsius.to.kelvin` and `kelvin.to.celsius`. As an example of how to use these functions, the `lyon` data set that comes with this package is used.
 
@@ -108,7 +108,7 @@ angeles
 #> 7 2010-12-25       285.93    283.15 12.78 10.00
 ```
 
-### Converting between Celcius and Kelvins
+### Converting between Celsius and Kelvins
 
 This package includes two functions to convert between Fahrenheit and Kelvin, `fahrenheit.to.kelvin` and `kelvin.to.fahrenheit`. As an example of how to use these functions, the `norfolk` data set that comes with this package is used.
 
