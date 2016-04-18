@@ -39,7 +39,6 @@ Equations are from the source code for the National Weather Service
 data(breck)
 breck$Precip.mm <- inches_to_metric(breck$Precip.in,
                                     unit = "mm",
-                                    round.out = TRUE,
                                     round = 2)
 breck
 

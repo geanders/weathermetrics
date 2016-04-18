@@ -16,7 +16,7 @@
 #' }
 #' @inheritParams convert_temperature
 #'
-#' @return A numeric vector with temperature converted to the metric specified
+#' @return A numeric vector with wind speed converted to the metric specified
 #'    by the argument \code{new_metric}.
 #'
 #' @author

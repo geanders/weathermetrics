@@ -1,3 +1,55 @@
+#' Convert between precipitation metrics
+#'
+#' This function allows you to convert among the following precipitation metrics:
+#' inches, millimeters, and centimeters.
+#'
+#' @param precip A numerical vector of precipitation to be converted.
+#' @param old_metric The metric from which you want to convert. Possible options
+#' are:
+#' \itemize{
+#'       \item \code{inches}: Inches
+#'       \item \code{mm}: Millimeters
+#'       \item \code{cm}: Centimeters
+#' }
+#' @inheritParams convert_temperature
+#'
+#' @return A numeric vector with precipitation converted to the metric specified
+#'    by the argument \code{new_metric}.
+#'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#'
+#' @examples
+#'
+#' data(breck)
+#' breck$Precip.mm <- convert_precip(breck$Precip.in,
+#'    old_metric = "inches", new_metric = "mm", round = 2)
+#' breck
+#'
+#' data(loveland)
+#' loveland$Precip.in <- convert_precip(loveland$Precip.mm,
+#'    old_metric = "mm", new_metric = "inches", round = NULL)
+#' loveland$Precip.cm <- convert_precip(loveland$Precip.mm,
+#'    old_metric = "mm", new_metric = "cm", round = 3)
+#' loveland
+#' @export
+convert_precip <- function(precip, old_metric, new_metric, round = 2){
+        if(old_metric == new_metric){
+                stop("`old_metric` and `new_metric` must be different.")
+        }
+
+        if(old_metric == "inches"){
+                out <- inches_to_metric(precip, unit = new_metric, round = round)
+        } else if (new_metric == "inches"){
+                out <- metric_to_inches(precip, unit.from = old_metric, round = round)
+        } else {
+                mid <- metric_to_inches(precip, unit.from = old_metric, round = NULL)
+                out <- inches_to_metric(precip, unit = new_metric, round = round)
+        }
+        return(out)
+}
+
 #' Convert from inches to standard metric units of measure for precipitation
 #'
 #' \code{inches_to_metric} creates a numeric vector of precipitation in
@@ -34,7 +86,6 @@
 #' data(breck)
 #' breck$Precip.mm <- inches_to_metric(breck$Precip.in,
 #'                                     unit = "mm",
-#'                                     round.out = TRUE,
 #'                                     round = 2)
 #' breck
 #'

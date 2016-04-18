@@ -26,7 +26,7 @@ are possible as for \code{old_metric}.}
 round converted value.}
 }
 \value{
-A numeric vector with temperature converted to the metric specified
+A numeric vector with wind speed converted to the metric specified
    by the argument \code{new_metric}.
 }
 \description{
