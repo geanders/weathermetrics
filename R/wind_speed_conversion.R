@@ -1,6 +1,6 @@
 #' Convert between standard units of measure for wind speed
 #'
-#' \code{wind_speed} creates a numeric vector of speed in a specified unit of
+#' \code{convert_wind_speed} creates a numeric vector of speed in a specified unit of
 #'    speed measurement from a numeric vector of speed in knots or a specified
 #'    unit including miles per hour, meters per second, feet per second, or
 #'    kilometers per hour.
@@ -44,19 +44,19 @@
 #'
 #' @examples
 #' data(beijing)
-#' beijing$knots <- wind_speed(beijing$kmph,
+#' beijing$knots <- convert_wind_speed(beijing$kmph,
 #'                      unit = "kmph",
 #'                      to.knots = TRUE,
 #'                      round = TRUE)
 #' beijing
 #' data(foco)
-#' foco$mph <- wind_speed(foco$knots,
+#' foco$mph <- convert_wind_speed(foco$knots,
 #'                       unit = "mph",
 #'                       to.knots = FALSE,
 #'                       round = TRUE)
 #' foco
 #' @export
-wind_speed <-
+convert_wind_speed <-
         function(df, unit, to.knots = TRUE, round = TRUE)
         {
                 if(length(df[df < 0])){
@@ -116,3 +116,5 @@ wind_speed <-
                              speed")
                 }
         }
+
+

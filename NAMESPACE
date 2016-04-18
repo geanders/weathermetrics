@@ -2,6 +2,7 @@
 
 export(celsius.to.fahrenheit)
 export(celsius.to.kelvin)
+export(convert_wind_speed)
 export(dewpoint.to.humidity)
 export(fahrenheit.to.celsius)
 export(fahrenheit.to.kelvin)
@@ -14,4 +15,3 @@ export(kelvin.to.fahrenheit)
 export(knots_to_speed)
 export(metric_to_inches)
 export(speed_to_knots)
-export(wind_speed)

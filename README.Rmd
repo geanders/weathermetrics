@@ -33,7 +33,7 @@ The `weathermetrics` package provides the following functions to calculate or co
 - **`humidity.to.dewpoint`:** Calculate a vector of dew point temperatures from vectors of air temperature and relative humidity 
 - **`heat.index`:** Calculate a vector of heat index values
 from vectors of air temperature and either dew point temperature or relative humidity
-- **`wind_speed`:** Convert a vector of wind speed measurements (in miles per hour, meters per second, feet per second, or kilometers per hour) to or from knots
+- **`convert_wind_speed`:** Convert a vector of wind speed measurements (in miles per hour, meters per second, feet per second, or kilometers per hour) to or from knots
 - **`inches_to_metric`:** Convert a vector of precipitation measurements in inches to measures in metric units (millimeters or centimeters)
 - **`metric_to_inches`:** Convert a vector of precipitation measurements in metric units to measures in inches
 
@@ -186,11 +186,11 @@ from the algorithms used by the United States National Weather Service's [online
 
 ### Wind speed: Converting to knots
 
-The `weathermetrics` package includes a function, `wind_speed`, that allows you to calculate a vector of wind speed values in the unit knots from vectors of wind speed values in units other than knots, including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph). For example, the `beijing` dataset gives daily values of wind speed in: miles per hour (`beijing$MPH`), meters per second (`beijing$mps`), feet per second (`beijing$ftps`), and kilometers per hour (`beijing$kmph`) for Beijing, China, for the week of January 10, 2015. To calculate daily wind speed values in knots for this dataset, use the `speed_to_knots` function: 
+The `weathermetrics` package includes a function, `convert_wind_speed`, that allows you to calculate a vector of wind speed values in the unit knots from vectors of wind speed values in units other than knots, including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph). For example, the `beijing` dataset gives daily values of wind speed in: miles per hour (`beijing$MPH`), meters per second (`beijing$mps`), feet per second (`beijing$ftps`), and kilometers per hour (`beijing$kmph`) for Beijing, China, for the week of January 10, 2015. To calculate daily wind speed values in knots for this dataset, use the `speed_to_knots` function: 
 
 ```{r}
 data(beijing)
-beijing$knots <- wind_speed(beijing$MPH,
+beijing$knots <- convert_wind_speed(beijing$MPH,
                                 unit = "mph",
                                 to.knots = TRUE,
                                 round = TRUE)
@@ -201,11 +201,11 @@ You must specify the unit of wind speed that you wish to convert to knots from u
 
 ### Wind speed: Converting from knots to other units of wind speed measure
 
-Further, the `wind_speed` function allows you to calculate a vector of wind speed values in a specified wind speed unit including miles per hour (mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph), from vectors of wind speed values in knots. For example, the `foco` dataset gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. To calculate daily wind speed values in a specified unit, in this case miles per hour, from knots for this dataset, use the `wind_speed` function:
+Further, the `convert_wind_speed` function allows you to calculate a vector of wind speed values in a specified wind speed unit including miles per hour (mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph), from vectors of wind speed values in knots. For example, the `foco` dataset gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. To calculate daily wind speed values in a specified unit, in this case miles per hour, from knots for this dataset, use the `convert_wind_speed` function:
 
 ```{r}
 data(foco)
-foco$mph <- wind_speed(foco$knots,
+foco$mph <- convert_wind_speed(foco$knots,
                            unit = "mph",
                            to.knots = FALSE
                            round = TRUE)
@@ -216,17 +216,17 @@ In this case, the unit you wish to convert to from knots is specified using the 
 
 ### Wind speed: Converting from and to a unit other than knots
 
-The `weathermetrics` package does not have a function that allows you to convert directly from a wind speed unit other than knots (mph, mps, ftps, or kmph) to another unit other than knots. Therefore, in order to convert between these units, you must convert through knots. In order to maintain the accuracy of the wind speed measurement, it is necessary not to round until the end of your conversion. You can specify whether or not you round in the `wind_speed` function using the `round` option. For example, in order to convert from miles per hour to meters per second, you must convert first from miles per hour to knots using the `wind_speed` function with the `to.knots` option set as `TRUE`. You should use the argument `FALSE` for the `round` option in this step. Now, you can use the `wind_speed` function to convert the vector of wind speed values in knots that you just created to the specified speed, in this case meters per second. You should now use the argument `FALSE` for the `to.knots` argument, and `TRUE` for the `round` option to obtain your final wind speed value in compliance with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
+The `weathermetrics` package does not have a function that allows you to convert directly from a wind speed unit other than knots (mph, mps, ftps, or kmph) to another unit other than knots. Therefore, in order to convert between these units, you must convert through knots. In order to maintain the accuracy of the wind speed measurement, it is necessary not to round until the end of your conversion. You can specify whether or not you round in the `convert_wind_speed` function using the `round` option. For example, in order to convert from miles per hour to meters per second, you must convert first from miles per hour to knots using the `convert_wind_speed` function with the `to.knots` option set as `TRUE`. You should use the argument `FALSE` for the `round` option in this step. Now, you can use the `convert_wind_speed` function to convert the vector of wind speed values in knots that you just created to the specified speed, in this case meters per second. You should now use the argument `FALSE` for the `to.knots` argument, and `TRUE` for the `round` option to obtain your final wind speed value in compliance with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016). 
 
-For example, the `puravida` dataset gives daily values of wind speed in miles per hour (`puravida$mph`) for San José, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, use the `wind_speed` functions:
+For example, the `puravida` dataset gives daily values of wind speed in miles per hour (`puravida$mph`) for San José, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, use the `convert_wind_speed` functions:
 
 ```{r}
 data(puravida)
-puravida$knots <- wind_speed(puravida$mph, 
+puravida$knots <- convert_wind_speed(puravida$mph, 
                                  unit = "mph",
                                  to.knots = TRUE,
                                  round = FALSE)
-puravida$mps <- wind_speed(puravida$knots,
+puravida$mps <- convert_wind_speed(puravida$knots,
                                unit = "mps",
                                to.knots = FALSE,                
                                round = TRUE)

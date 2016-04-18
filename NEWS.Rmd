@@ -9,7 +9,7 @@ New to `weathermetrics` package:
 
 #Added functions:
 
-- **`wind_speed`:** Convert a vector of wind speed measurements (in miles per hour, meters per second, feet per second, or kilometers per hour) to or from knots
+- **`convert_wind_speed`:** Convert a vector of wind speed measurements (in miles per hour, meters per second, feet per second, or kilometers per hour) to or from knots
 - **`inches_to_metric`:** Convert a vector of precipitation measurements in inches to measures in metric units (millimeters or centimeters)
 - **`metric_to_inches`:** Convert a vector of precipitation measurements in metric units to measures in inches
 
