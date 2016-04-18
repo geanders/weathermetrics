@@ -20,7 +20,6 @@
 #'
 #' @author
 #' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Roger Peng \email{rdpeng@@gmail.com},
 #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
 #'
 #' @examples
@@ -81,8 +80,7 @@ convert_temperature <- function(temperature, old_metric, new_metric,
 #'    Fahrenheit from a numeric vector of temperatures in Celsius.
 #'
 #' @param T.celsius Numeric vector of temperatures in Celsius.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value.
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of temperature values in Fahrenheit.
 #'
@@ -116,8 +114,7 @@ celsius.to.fahrenheit <-
 #'    Celsius from a numeric vector of temperatures in Fahrenheit.
 #'
 #' @param T.fahrenheit Numeric vector of temperatures in Fahrenheit.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value.
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of temperature values in Celsius.
 #'
@@ -151,8 +148,7 @@ fahrenheit.to.celsius <-
 #'    Kelvin from a numeric vector of temperatures in Celsius.
 #'
 #' @param T.celsius Numeric vector of temperatures in Celsius.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value.
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of temperature values in Kelvin.
 #'
@@ -187,8 +183,7 @@ celsius.to.kelvin <-
 #'    Celsius from a numeric vector of temperatures in Kelvin.
 #'
 #' @param T.kelvin Numeric vector of temperatures in Kelvin.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value.
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of temperature values in Celsius.
 #'
@@ -223,8 +218,7 @@ kelvin.to.celsius <-
 #'    Kelvin from a numeric vector of temperatures in Fahrenheit.
 #'
 #' @param T.fahrenheit Numeric vector of temperatures in Fahrenheit.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value.
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of temperature values in Kelvin.
 #'
@@ -259,8 +253,7 @@ fahrenheit.to.kelvin <-
 #'    Fahrenheit from a numeric vector of temperatures in Kelvin.
 #'
 #' @param T.kelvin Numeric vector of temperatures in Kelvin.
-#' @param round Integer indicating the number of decimal places to
-#'     round converted value.
+#' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of temperature values in Fahrenheit.
 #'
