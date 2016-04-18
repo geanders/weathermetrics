@@ -4,28 +4,33 @@ Package contents
 
 The `weathermetrics` package provides the following functions to calculate or convert between several weather metrics:
 
--   **`celsius.to.fahrenheit`:** Convert a vector of temperatures in degrees Celsius to degrees Fahrenheit
--   **`fahrenheit.to.celsius`:** Convert a vector of temperatures in degrees Fahrenheit to degrees Celsius
--   **`celsius.to.kelvin`:** Convert a vector of temperatures in degrees celsius to Kelvins
--   **`kelvin.to.celsius`:** Convert a vector of temperatures in Kelvins to degrees Celsius
--   **`fahrenheit.to.kelvin`:** Convert a vector of temperatures in degress Fahrenheit to Kelvins
--   **`kelvin.to.fahrenheit`:** Convert a vector of temperatures in Kelvins to degrees Fahrenheit
--   **`dewpoint.to.humidity`:** Calculate a vector of relative humidity values from vectors of air temperature and dew point temperature
--   **`humidity.to.dewpoint`:** Calculate a vector of dew point temperatures from vectors of air temperature and relative humidity
--   **`heat.index`:** Calculate a vector of heat index values from vectors of air temperature and either dew point temperature or relative humidity
--   **`speed.to.knots`:** Convert a vector of wind speed values to knots
--   **`knots.to.speed`:** Convert a vector of wind speed values in knots to a specified wind speed unit
--   **`inches.to.metric`:** Convert a vector of precipitation measurements in inches to measures in metric units (millimeters or centimeters)
--   **`metric.to.inches`:** Convert a vector of precipitation measurements in metric units to measures in inches
+-   Temperature conversions:
+    -   **`celsius.to.fahrenheit`:** Convert a vector of temperatures in degrees Celsius to degrees Fahrenheit
+    -   **`fahrenheit.to.celsius`:** Convert a vector of temperatures in degrees Fahrenheit to degrees Celsius
+    -   **`celsius.to.kelvin`:** Convert a vector of temperatures in degrees Celsius to Kelvins
+    -   **`kelvin.to.celsius`:** Convert a vector of temperatures in Kelvins to degrees Celsius
+    -   **`fahrenheit.to.kelvin`:** Convert a vector of temperatures in degrees Fahrenheit to Kelvins
+    -   **`kelvin.to.fahrenheit`:** Convert a vector of temperatures in Kelvins to degrees Fahrenheit
+-   Air moisture conversions
+    -   **`dewpoint.to.humidity`:** Calculate a vector of relative humidity values from vectors of air temperature and dew point temperature
+    -   **`humidity.to.dewpoint`:** Calculate a vector of dew point temperatures from vectors of air temperature and relative humidity
+-   Heat index calculation
+    -   **`heat.index`:** Calculate a vector of heat index values from vectors of air temperature and either dew point temperature or relative humidity
+-   Wind speed conversions
+    -   **`speed_to_knots`:** Convert a vector of wind speed values to knots
+    -   **`knots_to_speed`:** Convert a vector of wind speed values in knots to a specified wind speed unit
+-   Precipitation conversions
+    -   **`inches_to_metric`:** Convert a vector of precipitation measurements in inches to measures in metric units (millimeters or centimeters)
+    -   **`metric_to_inches`:** Convert a vector of precipitation measurements in metric units to measures in inches
 
-All algorithms are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015) and the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
+All algorithms for heat index and wind speed are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015) and the National Oceanic and Atmospheric Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
 
 Converting or calculating weather metrics
 -----------------------------------------
 
 ### Converting between Celsius and Fahrenheit
 
-This package includes two functions to convert between Celsius and Fahrenheit, `celsius.to.fahrenheit` and `fahrenheit.to.celsius`. As an example of how to use these functions, the `lyon` dataset that comes with this package gives air temperature (`lyon$TemperatureC`) and dew point temperature (`lyon$DewpointC`), both in degrees Celsius, for Lyon, France, for the week of June 18, 2000.
+This package includes two functions to convert between Celsius and Fahrenheit, `celsius.to.fahrenheit` and `fahrenheit.to.celsius`. As an example of how to use these functions, the `lyon` data set that comes with this package gives air temperature (`lyon$TemperatureC`) and dew point temperature (`lyon$DewpointC`), both in degrees Celsius, for Lyon, France, for the week of June 18, 2000.
 
 To convert to degrees Fahrenheit, use the `celsius.to.fahrenheit` function:
 
@@ -44,7 +49,7 @@ lyon
 #> 7 2000-06-24           16        11 60.8 51.8
 ```
 
-As a second example, the `norfolk` dataset includes temperature (`norfolk$TemperatureF`) and dew point temperature (`norfolk$TemperatureF`) in degrees Fahrenheit in Norfolk, VA, for the week of March 12, 2006.
+As a second example, the `norfolk` data set includes temperature (`norfolk$TemperatureF`) and dew point temperature (`norfolk$TemperatureF`) in degrees Fahrenheit in Norfolk, VA, for the week of March 12, 2006.
 
 To calculate temperature and dew point temperature in degrees Celsius, use the `fahrenheit.to.celsius` function:
 
@@ -65,7 +70,7 @@ norfolk
 
 ### Converting between Celcius and Kelvins
 
-This package includes two functions to convert between Celcius and Kelvins, `celsius.to.kelvin` and `kelvin.to.celsius`. As an example of how to use these functions, the `lyon` dataset that comes with this package is used.
+This package includes two functions to convert between Celsius and Kelvins, `celsius.to.kelvin` and `kelvin.to.celsius`. As an example of how to use these functions, the `lyon` data set that comes with this package is used.
 
 To convert to Kelvins, use the `celsius.to.kelvin` function:
 
@@ -84,9 +89,9 @@ lyon
 #> 7 2000-06-24           16        11 289.15 284.15
 ```
 
-As a second example, the `angeles` dataset includes temperature (`angeles$TemperatureK`) and dew point temperature (`angeles$DewpointK`) in Kelvins in Los Angeles, CA, for the week of December 19, 2010.
+As a second example, the `angeles` data set includes temperature (`angeles$TemperatureK`) and dew point temperature (`angeles$DewpointK`) in Kelvins in Los Angeles, CA, for the week of December 19, 2010.
 
-To convert to degress Celsius, use the `kelvin.to.celsius` function:
+To convert to degrees Celsius, use the `kelvin.to.celsius` function:
 
 ``` r
 data(angeles)
@@ -105,7 +110,7 @@ angeles
 
 ### Converting between Celcius and Kelvins
 
-This package includes two functions to convert between Fahrenheit and Kelvin, `fahrenheit.to.kelvin` and `kelvin.to.fahrenheit`. As an example of how to use these functions, the `norfolk` dataset that comes with this package is used.
+This package includes two functions to convert between Fahrenheit and Kelvin, `fahrenheit.to.kelvin` and `kelvin.to.fahrenheit`. As an example of how to use these functions, the `norfolk` data set that comes with this package is used.
 
 To convert to Kelvins, use the `fahrenheit.to.kelvin` function:
 
@@ -126,7 +131,7 @@ norfolk
 
 As a second example, the `angeles` data set is used.
 
-To convert to degress Fahrenheit, use the `kelvin.to.fahrenheit` function:
+To convert to degrees Fahrenheit, use the `kelvin.to.fahrenheit` function:
 
 ``` r
 data(angeles)
@@ -147,7 +152,7 @@ angeles
 
 The `weathermetrics` package includes two functions for converting between air temperature, dew point temperature, and relative humidity: `dewpoint.to.humidity` and `humidity.to.dewpoint`.
 
-For example, the `lyon` dataset includes daily values of both air temperature (`lyon\TemperatureC`) and dew point temperature (`lyon$DewpointC`) in Lyon, France, for the week of June 18, 2000. Since this dataset includes both air temperature and dew point temperature, you can calculate relative humidity using the `dewpoint.to.humidity` function:
+For example, the `lyon` data set includes daily values of both air temperature (`lyon\TemperatureC`) and dew point temperature (`lyon$DewpointC`) in Lyon, France, for the week of June 18, 2000. Since this data set includes both air temperature and dew point temperature, you can calculate relative humidity using the `dewpoint.to.humidity` function:
 
 ``` r
 data(lyon)
@@ -167,7 +172,7 @@ lyon
 
 You can specify whether air temperature and dew point temperature inputs are in degrees Fahrenheit or Celsius using the `temperature.metric` option (possible values are `'fahrenheit'` and `'celsius'`). If input values for temperature and dew point temperature are in different metrics (i.e., one is in degrees Fahrenheit and the other in degrees Celsius), you must convert one of the inputs using either `celsius.to.fahrenheit` or `fahrenheit.to.celsius` before you can input the values to the `dewpoint.to.humidity` function.
 
-As an example of calculating dew point temperature, the `newhaven` dataset gives daily values of air temperature in degrees Fahrenheit (`newhaven$TemperatureF`) and relative humidity in % (`newhaven$Relative.Humidity`) for New Haven, CT, for the week of October 19, 2008. Since this dataset includes values for both temperature and relative humidity, you can calculate dew point temperature using the `humidity.to.dewpoint` function:
+As an example of calculating dew point temperature, the `newhaven` data set gives daily values of air temperature in degrees Fahrenheit (`newhaven$TemperatureF`) and relative humidity in % (`newhaven$Relative.Humidity`) for New Haven, CT, for the week of October 19, 2008. Since this data set includes values for both temperature and relative humidity, you can calculate dew point temperature using the `humidity.to.dewpoint` function:
 
 ``` r
 data(newhaven)
@@ -208,7 +213,7 @@ Calculations between air temperature, relative humidity, and dew point temperatu
 
 ### Calculating heat index
 
-The `weathermetrics` package includes a function, `heat.index`, that allows you to calculate a vector of heat index values from vectors of air temperature and either dew point temperature or relative humidity. For example, the `suffolk` dataset gives daily values of air temperature in degrees Fahrenheit (`suffolk$TemperatureF`) and relative humidity in % (`suffolk$Relative.Humidity`) for Suffolk, VA, for the week of July 12, 1998. To calculate daily heat index values for this dataset, use the `heat.index` function:
+The `weathermetrics` package includes a function, `heat.index`, that allows you to calculate a vector of heat index values from vectors of air temperature and either dew point temperature or relative humidity. For example, the `suffolk` data set gives daily values of air temperature in degrees Fahrenheit (`suffolk$TemperatureF`) and relative humidity in % (`suffolk$Relative.Humidity`) for Suffolk, VA, for the week of July 12, 1998. To calculate daily heat index values for this data set, use the `heat.index` function:
 
 ``` r
 data(suffolk)
@@ -229,7 +234,7 @@ suffolk
 
 You must specify whether the air temperature input to the function is in degrees Celsius or Fahrenheit using the `temperature.metric` option (possible values: `'fahrenheit'` or `'celsius'`). You can choose which metric for heat index to be calculated in using using the `output.metric` option (the default is to give heat index in the same metric as the air temperature values input to the function).
 
-As another example, the `lyon` dataset gives daily values of air temperature (`lyon$TemperatureC`) and dew point temperature (`lyon$DewpointC`), both in degrees Celsius, for Lyon, France, for the week of June 18, 2000. You can use this data to calculate daily heat index values in degrees Fahrenheit using:
+As another example, the `lyon` data set gives daily values of air temperature (`lyon$TemperatureC`) and dew point temperature (`lyon$DewpointC`), both in degrees Celsius, for Lyon, France, for the week of June 18, 2000. You can use this data to calculate daily heat index values in degrees Fahrenheit using:
 
 ``` r
 data(lyon)
@@ -254,11 +259,11 @@ The algorithm for the function is adapted for R from the algorithms used by the 
 
 ### Wind speed: Converting to knots
 
-The `weathermetrics` package includes a function, `speed.to.knots`, that allows you to calculate a vector of wind speed values in the unit knots from vectors of wind speed values in units other than knots, including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph). For example, the `beijing` dataset gives daily values of wind speed in: miles per hour (`beijing$MPH`), meters per second (`beijing$mps`), feet per second (`beijing$ftps`), and kilometers per hour (`beijing$kmph`) for Beijing, China, for the week of January 10, 2015. To calculate daily wind speed values in knots for this dataset, use the `speed.to.knots` function:
+The `weathermetrics` package includes a function, `speed_to_knots`, that allows you to calculate a vector of wind speed values in the unit knots from vectors of wind speed values in units other than knots, including miles per hour(mph), meters per second (mps), feet per second (ftps), and kilometers per hour (kmph). For example, the `beijing` data set gives daily values of wind speed in: miles per hour (`beijing$MPH`), meters per second (`beijing$mps`), feet per second (`beijing$ftps`), and kilometers per hour (`beijing$kmph`) for Beijing, China, for the week of January 10, 2015. To calculate daily wind speed values in knots for this data set, use the `speed_to_knots` function:
 
 ``` r
 data(beijing)
-beijing$knots <- speed.to.knots(beijing$MPH,
+beijing$knots <- speed_to_knots(beijing$MPH,
                                 unit = "mph",
                                 round.out = TRUE,
                                 round = 1)
@@ -273,15 +278,15 @@ beijing
 #> 7 2016-01-16           27   5 2.2  7.3  8.0   4.3
 ```
 
-You must specify the unit of wind speed that you wish to convert to knots from using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of wind speeds when converting from a wind speed other than knots to another unit that is not knots. An example of this is provided after the `knots.to.speed` function is described. The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 1). The default value for `round` is consistent with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
+You must specify the unit of wind speed that you wish to convert to knots from using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). This option is useful in maintaining the accuracy of wind speeds when converting from a wind speed other than knots to another unit that is not knots. An example of this is provided after the `knots_to_speed` function is described. The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 1). The default value for `round` is consistent with the algorithms used by the National Oceanic and Atmospheric Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
 
 ### Wind speed: Converting from knots to other units of wind speed measure
 
-The `weathermetrics` package includes a function, `knots.to.speed`, that allows you to calculate a vector of wind speed values in a specified wind speed unit including miles per hour(mph), meteres per second (mps), feet per second (ftps), and kilometers per hour (kmph), from vectors of wind speed values in knots. For example, the `foco` dataset gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. To calculate daily wind speed values in a specified unit, in this case miles per hour, from knots for this dataset, use the `knots.to.speed` function:
+The `weathermetrics` package includes a function, `knot.to.speed`, that allows you to calculate a vector of wind speed values in a specified wind speed unit including miles per hour(mph), meters per second (mps), feet per second (ftps), and kilometers per hour (kmph), from vectors of wind speed values in knots. For example, the `foco` data set gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. To calculate daily wind speed values in a specified unit, in this case miles per hour, from knots for this data set, use the `knots_to_speed` function:
 
 ``` r
 data(foco)
-foco$mph <- knot.to.speed(foco$knots,
+foco$mph <- knots_to_speed(foco$knots,
                            unit = "mph",
                            round.out = TRUE,
                            round = 1)
@@ -296,20 +301,20 @@ foco
 #> 7 2015-10-17           59   3.5  4.0
 ```
 
-Opposite to the `speed.to.knots` function, in the `knot.to.speed` function, the unit you wish to convert to is specified using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 1). The default value for `round` is consistent with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
+Opposite to the `speed_to_knots` function, in the `knots_to_speed` function, the unit you wish to convert to is specified using the `unit` option (possible values: `'mph'`, `'mps'`, `'ftps'`, or `'kmph'`). You can choose whether or not you would like the answer rounded by using the `round.out` option (possible values: `TRUE` or `FALSE`). The `round` option specifies the number of decimals the answer should be rounded to in the end (default value for `round` is 1, consistent with the algorithms used by the National Oceanic and Atmospheric Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
 
 ### Wind speed: Converting from and to a unit other than knots
 
-The `weathermetrics` package does not have a function that allows you to convert directly from a unit other than knots (mph, mps, ftps, or kmph) to another unit other than knots. Therefore, in order to convert between these units, you must convert through knots. In order to maintain the accuracy of the wind speed measurement, it is necessary not to round until the end of your conversion. You can specify whether or not you round in the `speed.to.knots` and `knot.to.speed` functions using the `round.out` option. For example, in order to convert from miles per hour to meters per second, you must convert first from miles per hour to knots using the `speed.to.knots` function. You should use the argument `FALSE` for the `round.out` option in this step. Now, you can use the `knot.to.speed` function to convert the vector of wind speed values in knots that you just created to the specified speed, in this case meters per second. You should now use the argument `TRUE` for the `round.out` option to obtain your final wind speed value in compliance with the algorithms used by the National Oceanic and Atmoshperic Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
+The `weathermetrics` package does not have a function that allows you to convert directly from a unit other than knots (mph, mps, ftps, or kmph) to another unit other than knots. Therefore, in order to convert between these units, you must convert through knots. In order to maintain the accuracy of the wind speed measurement, it is necessary not to round until the end of your conversion. You can specify whether or not you round in the `speed_to_knots` and `knots_to_speed` functions using the `round.out` option. For example, in order to convert from miles per hour to meters per second, you must convert first from miles per hour to knots using the `speed_to_knots` function. You should use the argument `FALSE` for the `round.out` option in this step. Now, you can use the `knots_to_speed` function to convert the vector of wind speed values in knots that you just created to the specified speed, in this case meters per second. You should now use the argument `TRUE` for the `round.out` option to obtain your final wind speed value in compliance with the algorithms used by the National Oceanic and Atmospheric Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
 
-For example, the `puravida` dataset gives daily values of wind speed in miles per hour (`puravida$mph`) for San José, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, use the `speed.to.knots` and `knot.to.speed` functions:
+For example, the `puravida` data set gives daily values of wind speed in miles per hour (`puravida$mph`) for San Jose, Costa Rica, for the week of August 2, 2015. To convert daily wind speed values from miles per hour to meters per second, use the `speed_to_knots` and `knots_to_speed` functions:
 
 ``` r
 data(puravida)
-puravida$knots <- speed.to.knots(puravida$mph, 
+puravida$knots <- speed_to_knots(puravida$mph, 
                                  "mph", 
                                  round.out = FALSE)
-puravida$mps <- knot.to.speed(puravida$knots, 
+puravida$mps <- knots_to_speed(puravida$knots,
                                "mps",
                                round.out = TRUE,
                                round = 1)
@@ -326,13 +331,13 @@ puravida
 
 ### Converting between inches and metric units for precipitation
 
-The `weathermetrics` package includes a function, `inches.to.metric`, that allows you to convert a vector of precipitation measuresment values in inches to measurement values in common metric units, millimeters (mm) or centimeters (cm).
+The `weathermetrics` package includes a function, `inches_to_metric`, that allows you to convert a vector of precipitation measurement values in inches to measurement values in common metric units, millimeters (mm) or centimeters (cm).
 
-For example, the `breck` dataset gives daily values of precipitation in inches (`breck$Precip.in`) for Breckenridge, CO, for the week of June 28, 2015. To calculate daily precipitation values in millimeters for this dataset, use the `inches.to.metric` function:
+For example, the `breck` data set gives daily values of precipitation in inches (`breck$Precip.in`) for Breckenridge, CO, for the week of June 28, 2015. To calculate daily precipitation values in millimeters for this data set, use the `inches_to_metric` function:
 
 ``` r
 data(breck)
-breck$Precip.mm <- inches.to.metric(breck$Precip.in,
+breck$Precip.mm <- inches_to_metric(breck$Precip.in,
                                     unit = "mm",
                                     round.out = TRUE,
                                     round = 2)
@@ -353,13 +358,13 @@ Calculations between inches and metric units for precipitation measures are base
 
 ### Converting between metric units and inches for precipitaiton
 
-The `weathermetrics` package includes a function, `metric.to.inches`, that allows you to convert a vector of precipitation measuresment values in common metric units to measurement values in inches.
+The `weathermetrics` package includes a function, `metric_to_inches`, that allows you to convert a vector of precipitation measurement values in common metric units to measurement values in inches.
 
-For example, the `loveland` dataset gives daily values of precipitation in inches (`loveland$Precip.mm`) for Breckenridge, CO, for the week of June 28, 2015. To calculate daily precipitation values in inches for this dataset, use the `metric.to.inches` function:
+For example, the `loveland` data set gives daily values of precipitation in inches (`loveland$Precip.mm`) for Breckenridge, CO, for the week of June 28, 2015. To calculate daily precipitation values in inches for this data set, use the `metric_to_inches` function:
 
 ``` r
 data(loveland)
-loveland$Precip.in <- metric.to.inches(loveland$Precip.mm,
+loveland$Precip.in <- metric_to_inches(loveland$Precip.mm,
                                        unit.from = "mm",
                                        round.out = TRUE,
                                        round = 2)
@@ -441,6 +446,10 @@ suffolk
 Citation for package
 --------------------
 
-To cite this package, use:
+For conversions other than heat index, cite this package as:
+
+G. Brooke Anderson, Roger D. Peng, and Joshua M. Ferreri. 2016. `weathermetrics`: Functions to Convert Between Weather Metrics. R package version 1.2.1.9000.
+
+To cite this package when calculating the heat index, use:
 
 Anderson GB, Bell ML, Peng RD. 2013. Methods to calculate the heat index as an exposure metric in environmental health research. Environmental Health Perspectives 121(10):1111-1119.
