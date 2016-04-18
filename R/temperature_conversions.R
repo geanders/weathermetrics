@@ -1,3 +1,80 @@
+#' Convert from one temperature metric to another
+#'
+#' This function allows you to convert a vector of temperature values between
+#' Fahrenheit, Celsius, and degrees Kelvin.
+#'
+#' @param temperature A numeric vector of temperatures to be converted.
+#' @param old_metric The metric from which you want to convert. Possible options are:
+#' \itemize{
+#' \item "fahrenheit", "f"
+#' \item "kelvin", "k"
+#' \item "celsius", "c"
+#' }
+#' @param new_metric The metric to which you want to convert. The same options
+#'    are possible as for \code{old_metric}.
+#' @param round An integer indicating the number of decimal places to
+#'     round converted value.
+#'
+#' @return A numeric vector with temperature converted to the metric specified
+#'    by the argument \code{new_metric}.
+#'
+#' @author
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
+#' Roger Peng \email{rdpeng@@gmail.com},
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#'
+#' @examples
+#' data(lyon)
+#' lyon$TemperatureF <- convert_temperature(lyon$TemperatureC,
+#'    old_metric = "c", new_metric = "f")
+#' lyon
+#'
+#' data(norfolk)
+#' norfolk$TempC <- convert_temperature(norfolk$TemperatureF,
+#'    old_metric = "f", new_metric = "c")
+#' norfolk
+#'
+#' data(angeles)
+#' angeles$TemperatureC <- convert_temperature(angeles$TemperatureK,
+#'    old_metric = "kelvin", new_metric = "celsius")
+#' angeles
+#'
+#' @export
+convert_temperature <- function(temperature, old_metric, new_metric,
+                                round = 2){
+
+        possible_metrics <- c("fahrenheit", "celsius", "kelvin", "f", "c", "k")
+        if(!(old_metric %in% possible_metrics) |
+           !(new_metric %in% possible_metrics)){
+                stop(paste0("The arguments `old_metric` and `new_metric` can only ",
+                           "have one of the following values: `",
+                           paste(possible_metrics, collapse = "`, `"), "`"))
+        } else if (old_metric == new_metric){
+                stop("`old_metric` and `new_metric` must have different values.")
+        }
+
+        if(old_metric %in% c("fahrenheit", "f")){
+                if(new_metric %in% c("celsius", "c")){
+                        out <- fahrenheit.to.celsius(temperature, round = round)
+                } else if(new_metric %in% c("kelvin", "k")){
+                        out <- fahrenheit.to.kelvin(temperature, round = round)
+                }
+        } else if(old_metric %in% c("celsius", "c")){
+                if(new_metric %in% c("fahrenheit", "f")){
+                        out <- celsius.to.fahrenheit(temperature, round = round)
+                } else if (new_metric %in% c("kelvin", "k")){
+                        out <- celsius.to.kelvin(temperature, round = round)
+                }
+        } else { # Kelvin for old_metric
+                if(new_metric %in% c("fahrenheit", "f")){
+                        out <- kelvin.to.fahrenheit(temperature, round = round)
+                } else if (new_metric %in% c("celsius", "c")){
+                        out <- kelvin.to.celsius(temperature, round = round)
+                }
+        }
+        return(out)
+}
+
 #' Convert from Celsius to Fahrenheit.
 #'
 #' \code{celsius.to.fahrenheit} creates a numeric vector of temperatures in

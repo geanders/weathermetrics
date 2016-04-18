@@ -2,6 +2,7 @@
 
 export(celsius.to.fahrenheit)
 export(celsius.to.kelvin)
+export(convert_temperature)
 export(dewpoint.to.humidity)
 export(fahrenheit.to.celsius)
 export(fahrenheit.to.kelvin)
