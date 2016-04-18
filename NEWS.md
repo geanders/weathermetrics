@@ -5,9 +5,9 @@ date: "April 10, 2016"
 output: html_document
 ---
 
-New to `weathermetrics` package:
+# Version 1.2.2
 
-#Added functions:
+Added new functions to convert wind speed and precipitation:
 
 - **`speed_to_knots`:** Convert a vector of wind speed values to knots
 - **`knots_to_speed`:** Convert a vector of wind speed values in knots to a specified wind speed unit
