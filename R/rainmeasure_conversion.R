@@ -35,17 +35,23 @@
 #' loveland
 #' @export
 convert_precip <- function(precip, old_metric, new_metric, round = 2){
+        if(length(precip[precip < 0])){
+                precip[precip < 0] <- NA
+                warning(paste("Some of the observations in the data gave",
+                              "negative precipitation. Since precipitation",
+                              "cannot have a negative value, these",
+                              "observations were set to 'NA'."))
+        }
         if(old_metric == new_metric){
                 stop("`old_metric` and `new_metric` must be different.")
         }
-
         if(old_metric == "inches"){
                 out <- inches_to_metric(precip, unit = new_metric, round = round)
         } else if (new_metric == "inches"){
                 out <- metric_to_inches(precip, unit.from = old_metric, round = round)
         } else {
                 mid <- metric_to_inches(precip, unit.from = old_metric, round = NULL)
-                out <- inches_to_metric(precip, unit = new_metric, round = round)
+                out <- inches_to_metric(mid, unit = new_metric, round = round)
         }
         return(out)
 }
@@ -91,6 +97,13 @@ convert_precip <- function(precip, old_metric, new_metric, round = 2){
 #'
 #' @export
 inches_to_metric <- function(inches, unit, round = 2) {
+                if(length(inches[inches < 0])){
+                        inches[inches < 0] <- NA
+                        warning(paste("Some of the observations in the data gave",
+                                "negative precipitation. Since precipitation",
+                                "cannot have a negative value, these",
+                                "observations were set to 'NA'."))
+                }
                 if(unit == "mm"){
                         metric <- inches * 25.4
                 } else if(unit == "cm"){
@@ -140,7 +153,14 @@ inches_to_metric <- function(inches, unit, round = 2) {
 #'
 #' @export
 metric_to_inches <- function(metric, unit.from, round = 2) {
-               if(unit.from == "mm"){
+                if(length(metric[metric < 0])){
+                        metric[metric < 0] <- NA
+                        warning(paste("Some of the observations in the data gave",
+                                "negative precipitation. Since precipitation",
+                                "cannot have a negative value, these",
+                                "observations were set to 'NA'."))
+                }
+                if(unit.from == "mm"){
                         inches <- metric / 25.4
                 } else if(unit.from == "cm"){
                         inches <- metric / 2.54

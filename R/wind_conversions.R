@@ -41,10 +41,16 @@
 #'
 #' @export
 convert_wind_speed <- function(wind_speed, old_metric, new_metric, round = 1){
+        if(length(wind_speed[wind_speed < 0])){
+                wind_speed[wind_speed < 0] <- NA
+                warning(paste("Some of the observations in the data gave",
+                              "negative wind speeds. Since wind speed",
+                              "cannot have a negative value, these",
+                              "observations were set to 'NA'."))
+        }
         if(old_metric == new_metric){
                 stop("`old_metric` and `new_metric` must be different.")
         }
-
         if(old_metric == "knots"){
                 out <- knots_to_speed(wind_speed, unit = new_metric, round = round)
         } else if (new_metric == "knots"){
@@ -98,6 +104,13 @@ convert_wind_speed <- function(wind_speed, old_metric, new_metric, round = 1){
 #'
 #' @export
 speed_to_knots <- function(x, unit, round = 1) {
+                if(length(x[x < 0])){
+                        x[x < 0] <- NA
+                        warning(paste("Some of the observations in the data gave",
+                                "negative wind speeds. Since wind speed",
+                                "cannot have a negative value, these",
+                                "observations were set to 'NA'."))
+                }
                 if(unit == "mph"){
                         knots <- x * 0.8689762
                 } else if(unit == "mps"){
@@ -152,7 +165,15 @@ speed_to_knots <- function(x, unit, round = 1) {
 #' foco
 #'
 #' @export
+
 knots_to_speed <- function(knots, unit, round = 1) {
+                if(length(knots[knots < 0])){
+                        knots[knots < 0] <- NA
+                        warning(paste("Some of the observations in the data gave",
+                                "negative wind speeds. Since wind speed",
+                                "cannot have a negative value, these",
+                                "observations were set to 'NA'."))
+                }
                 if(unit == "mph"){
                         x <- knots * 1.1507794
                 } else if(unit == "mps"){
@@ -170,4 +191,5 @@ knots_to_speed <- function(knots, unit, round = 1) {
         }
         return(x)
 }
+
 
