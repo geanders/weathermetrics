@@ -76,7 +76,7 @@ norfolk
 data(angeles)
 angeles$TemperatureC <- convert_temperature(angeles$TemperatureK,
    old_metric = "kelvin", new_metric = "celsius")
-angeles$DewpointC <- convert_temperature(angeles$DewpointC, 
+angeles$DewpointC <- convert_temperature(angeles$DewpointK, 
    old_metric = "kelvin", new_metric = "celsius")
 angeles
 ```
