@@ -2,11 +2,8 @@
 
 export(celsius.to.fahrenheit)
 export(celsius.to.kelvin)
-<<<<<<< HEAD
-=======
 export(convert_precip)
 export(convert_temperature)
->>>>>>> 46bb9ea8147fe862dd29d672b8368ccfe0933e6a
 export(convert_wind_speed)
 export(dewpoint.to.humidity)
 export(fahrenheit.to.celsius)
