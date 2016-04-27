@@ -8,9 +8,10 @@ Authors@R: c(person("Brooke", "Anderson",
     person("Roger", "Peng", email = "rdpeng@gmail.com", role = c("aut")),
     person("Joshua", "Ferreri", email = "joshua.m.ferreri@gmail.com",
     role = c("aut")))
-Description: Functions to convert between Celsius
-    and Fahrenheit, to convert between dew point temperature and relative
-    humidity, and to calculate heat index.
+Description: Functions to convert between weather metrics, including conversions
+    for metrics of temperature, air moisture, wind speed, and precipitation.
+    This package also includes functions to calculate the heat index from
+    air temperature and air moisture.
 URL: https://github.com/geanders/weathermetrics/
 BugReports: https://github.com/geanders/weathermetrics/issues
 License: MIT + file LICENSE

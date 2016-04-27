@@ -4,22 +4,30 @@
 \alias{inches_to_metric}
 \title{Convert from inches to standard metric units of measure for precipitation}
 \usage{
+<<<<<<< HEAD
 inches_to_metric(inches, unit, round = TRUE)
+=======
+inches_to_metric(inches, unit, round = 2)
+>>>>>>> 46bb9ea8147fe862dd29d672b8368ccfe0933e6a
 }
 \arguments{
 \item{inches}{Numeric vector of precipitation (in inches)}
 
-\item{unit}{Character specifying the metric precipitation unit to convert to
-from inches.
+\item{unit}{Character specifying the metric precipitation unit besides inches.
 Possible values are:
   \itemize{
     \item \code{mm}: Millimeters
     \item \code{cm}: Centimeters
   }}
 
+<<<<<<< HEAD
 \item{round}{Variable indicating whether or not to round results.
 Possible values are \code{TRUE} or \code{FALSE}. Default value is
 \code{TRUE}. If \code{TRUE}, then the value will be rounded 2 spaces.}
+=======
+\item{round}{An integer indicating the number of decimal places to
+round converted value.}
+>>>>>>> 46bb9ea8147fe862dd29d672b8368ccfe0933e6a
 }
 \value{
 A numeric vector of precipitation (in specified metric unit)
@@ -41,7 +49,11 @@ Equations are from the source code for the National Weather Service
 data(breck)
 breck$Precip.mm <- inches_to_metric(breck$Precip.in,
                                     unit = "mm",
+<<<<<<< HEAD
                                     round = TRUE)
+=======
+                                    round = 2)
+>>>>>>> 46bb9ea8147fe862dd29d672b8368ccfe0933e6a
 breck
 
 }

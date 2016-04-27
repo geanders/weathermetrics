@@ -9,7 +9,7 @@ fahrenheit.to.kelvin(T.fahrenheit, round = 2)
 \arguments{
 \item{T.fahrenheit}{Numeric vector of temperatures in Fahrenheit.}
 
-\item{round}{Integer indicating the number of decimal places to
+\item{round}{An integer indicating the number of decimal places to
 round converted value.}
 }
 \value{

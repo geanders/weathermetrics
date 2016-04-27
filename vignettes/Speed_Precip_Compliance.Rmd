@@ -105,6 +105,43 @@ kmph
 
 The value from the above example using the `speed_to_knots` and `knots_to_speed` functions to convert from 10 mph to kmph, `r kmph` kmph, complies with that obtained using the NOAA converter, which returns a value of 16.1 kmph for a value of 10 mph.
 
-#Compliance of Precipitation Conversions
+#Check the `convert_wind_speed` funciton:
 
+```{r}
+#knots to all
+convert_wind_speed(10, "knots", "mph")
+convert_wind_speed(10, "knots", "mps")
+convert_wind_speed(10, "knots", "kmph")
+convert_wind_speed(10, "knots", "ftps")
+#mph to all
+convert_wind_speed(10, "mph", "knots")
+convert_wind_speed(10, "mph", "mps")
+convert_wind_speed(10, "mph", "kmph")
+convert_wind_speed(10, "mph", "ftps")
+#mps to all
+convert_wind_speed(10, "mps", "knots")
+convert_wind_speed(10, "mps", "mph")
+convert_wind_speed(10, "mps", "kmph")
+convert_wind_speed(10, "mps", "ftps")
+#kmph to all
+convert_wind_speed(10, "kmph", "knots")
+convert_wind_speed(10, "kmph", "mph")
+convert_wind_speed(10, "kmph", "mps")
+convert_wind_speed(10, "kmph", "ftps")
+#ftps to all
+convert_wind_speed(10, "ftps", "knots")
+convert_wind_speed(10, "ftps", "mph")
+convert_wind_speed(10, "ftps", "mps")
+convert_wind_speed(10, "ftps", "kmph")
+```
+
+#Compliance of Precipitation Conversions
+```{r}
+inches_to_metric(10, "mm")
+inches_to_metric(10, "cm")
+metric_to_inches(10, "mm")
+metric_to_inches(10, "cm")
+convert_precip(254, "mm", "cm")
+convert_precip(25.4, "cm", "mm")
+```
 

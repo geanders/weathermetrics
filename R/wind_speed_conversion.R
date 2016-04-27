@@ -61,7 +61,10 @@ convert_wind_speed <-
         {
                 if(length(df[df < 0])){
                         df[df < 0] <- NA
-                        warning("For some observations, wind speed was a negative value. Since wind speed cannot have a negative value, wind speed for these observations were set to 'NA'.")
+                        warning(paste("Some of the observations in the data gave",
+                                      "negative wind speeds. Since wind speed",
+                                      "cannot have a negative value, these",
+                                      "observations were set to 'NA'."))
                 }
                 if(unit == "mph" & to.knots == TRUE & round == TRUE){
                         knots = df * 0.8689762

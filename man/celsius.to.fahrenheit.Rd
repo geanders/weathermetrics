@@ -9,7 +9,7 @@ celsius.to.fahrenheit(T.celsius, round = 2)
 \arguments{
 \item{T.celsius}{Numeric vector of temperatures in Celsius.}
 
-\item{round}{Integer indicating the number of decimal places to
+\item{round}{An integer indicating the number of decimal places to
 round converted value.}
 }
 \value{

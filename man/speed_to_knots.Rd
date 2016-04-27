@@ -4,12 +4,12 @@
 \alias{speed_to_knots}
 \title{Convert between standard units of measure for wind speed}
 \usage{
-speed_to_knots(x, unit, round.out = TRUE, round = 1)
+speed_to_knots(x, unit, round = 1)
 }
 \arguments{
 \item{x}{Numeric vector of wind speeds, in units specified by \code{unit}}
 
-\item{unit}{Character specifying the speed unit to convert to from knots.
+\item{unit}{Character specifying the speed unit other than knots.
 Possible values are:
   \itemize{
     \item \code{mph}: Miles per hour
@@ -18,11 +18,8 @@ Possible values are:
     \item \code{kmph}: Kilometers per hour
   }}
 
-\item{round.out}{Variable with the indicating whether or not to round results.
-Possible values are TRUE or FALSE. Default value is TRUE.}
-
-\item{round}{Integer indicating the number of decimal places to
-round converted value. Default value is 1.}
+\item{round}{An integer indicating the number of decimal places to
+round converted value.}
 }
 \value{
 A numeric vector of speeds (in knots)
@@ -43,7 +40,7 @@ Equations are from the source code for the National Oceanic and
 }
 \examples{
 data(beijing)
-beijing$knots <- speed_to_knots(beijing$kmph, "kmph", round.out = TRUE)
+beijing$knots <- speed_to_knots(beijing$kmph, unit = "kmph", round = 2)
 beijing
 
 }
