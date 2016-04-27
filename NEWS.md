@@ -9,7 +9,7 @@ output: html_document
 
 Added new functions to convert wind speed and precipitation:
 
-- **`convert_wind_speed`:** Convert a vector of wind speed measurements (in miles per hour, meters per second, feet per second, or kilometers per hour) to or from knots
-- **`inches_to_metric`:** Convert a vector of precipitation measurements in inches to measures in metric units (millimeters or centimeters)
-- **`metric_to_inches`:** Convert a vector of precipitation measurements in metric units to measures in inches
+- **`convert_wind_speed`:** Convert a vector of wind speed measurements between common units of wind speed measure (in knots, miles per hour, meters per second, feet per second, and kilometers per hour).
+- **`convert_precip`:** Convert a vector of precipitation measurements between common units of precipitation measure (in inches, millimeters, and centimeters).
+- **`convert_temperature`:** Convert a vector of temperature values between common units of temperature measure (in degrees Celsius, Fahrenheit, and Kelvins)
 
