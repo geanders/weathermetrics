@@ -4,35 +4,61 @@ Package contents
 
 The `weathermetrics` package provides the following functions to calculate or convert between several weather metrics:
 
--   Temperature conversions:
-    -   **`convert_temperature`:** A wrapper function that allows the user to convert a vector of temperatures in degrees Celsius, Fahrenheit, or Kelvins, to another temperature measure.
-    -   **`celsius.to.fahrenheit`:** Convert a vector of temperatures in degrees Celsius to degrees Fahrenheit
-    -   **`fahrenheit.to.celsius`:** Convert a vector of temperatures in degrees Fahrenheit to degrees Celsius
-    -   **`celsius.to.kelvin`:** Convert a vector of temperatures in degrees Celsius to Kelvins
-    -   **`kelvin.to.celsius`:** Convert a vector of temperatures in Kelvins to degrees Celsius
-    -   **`fahrenheit.to.kelvin`:** Convert a vector of temperatures in degrees Fahrenheit to Kelvins
-    -   **`kelvin.to.fahrenheit`:** Convert a vector of temperatures in Kelvins to degrees Fahrenheit
--   Air moisture conversions
-    -   **`dewpoint.to.humidity`:** Calculate a vector of relative humidity values from vectors of air temperature and dew point temperature
-    -   **`humidity.to.dewpoint`:** Calculate a vector of dew point temperatures from vectors of air temperature and relative humidity
--   Heat index calculation
-    -   **`heat.index`:** Calculate a vector of heat index values from vectors of air temperature and either dew point temperature or relative humidity
--   Wind speed conversions
-    -   **`convert_wind_speed`**: A wrapper function for wind speed conversions. Convert a vector of wind speed values between specified wind speed units
-    -   **`speed_to_knots`:** Convert a vector of wind speed values to knots
-    -   **`knots_to_speed`:** Convert a vector of wind speed values in knots to a specified wind speed unit
--   Precipitation conversions
-    -   **`inches_to_metric`:** Convert a vector of precipitation measurements in inches to measures in metric units (millimeters or centimeters)
-    -   **`metric_to_inches`:** Convert a vector of precipitation measurements in metric units to measures in inches
+<table style="width:79%;">
+<colgroup>
+<col width="25%" />
+<col width="30%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Weather variable</th>
+<th align="left">Function</th>
+<th align="left">Input and / or output metric choices</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Temperature</td>
+<td align="left"><code>convert_temperature</code></td>
+<td align="left"><code>&quot;kelvin&quot;</code>, <code>&quot;celsius&quot;</code>, <code>&quot;fahrenheit&quot;</code></td>
+</tr>
+<tr class="even">
+<td align="left">Wind speed</td>
+<td align="left"><code>convert_wind_speed</code></td>
+<td align="left"><code>&quot;knots&quot;</code>, <code>&quot;mph&quot;</code>, <code>&quot;mps&quot;</code>, <code>&quot;ftps&quot;</code>, <code>&quot;kmph&quot;</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Precipitation</td>
+<td align="left"><code>convert_precip</code></td>
+<td align="left"><code>&quot;inches&quot;</code>, <code>&quot;mm&quot;</code>, <code>&quot;cm&quot;</code></td>
+</tr>
+<tr class="even">
+<td align="left">Dew point temperature</td>
+<td align="left"><code>humidity.to.dewpoint</code></td>
+<td align="left"><code>&quot;celsius&quot;</code>, <code>&quot;fahrenheit&quot;</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Relative humidity</td>
+<td align="left"><code>dewpoint.to.humidity</code></td>
+<td align="left"><code>&quot;celsius&quot;</code>, <code>&quot;fahrenheit&quot;</code></td>
+</tr>
+<tr class="even">
+<td align="left">Heat index</td>
+<td align="left"><code>heat.index</code></td>
+<td align="left"><code>&quot;celsius&quot;</code>, <code>&quot;fahrenheit&quot;</code></td>
+</tr>
+</tbody>
+</table>
 
-All algorithms for heat index and wind speed are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015) and the National Oceanic and Atmospheric Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
+Algorithms for heat index and wind speed are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015) and the National Oceanic and Atmospheric Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
 
 Converting or calculating weather metrics
 -----------------------------------------
 
 ### Converting between temperature measurements
 
-This package includes a function, `convert_temperature`, that allows you to convert between common temperature measures including degrees Celsius, Fahrenheit, and Kelvin. As examples, the `lyon` data set (air temperatures `lyon$TemperatureC` and dew point temperature `lyon$DewpointC`, both in degrees Celsius) for Lyon, France, for the week of June 18, 2000, the `norfolk`data set (air temperatures `norfolk$TemperatureF` and dew point temperature `norfolk$DewpointF`, both in degrees Fahrenheit) for Norfok, VA, for the week of March 12, 2006, and the `angeles` data (air temperature `angeles$TemperatureK` and dew point temperature `angeles$DewpointK`, both in degrees Kelvin) in Los Angeles, CA, for the week of December 19, 2010, included with this package.
+This package includes a function, `convert_temperature`, that allows you to convert between common temperature measures including degrees Celsius, Fahrenheit, and Kelvin. The following examples show the use of this function for three example datasets:
 
 To convert between degrees Celsius, Fahrenheit, and Kelvin, use the `convert_temperature` function:
 
@@ -40,9 +66,9 @@ To convert between degrees Celsius, Fahrenheit, and Kelvin, use the `convert_tem
 #Convert from degrees Celsius to degress Fahrenheit
 data(lyon)
 lyon$TemperatureF <- convert_temperature(lyon$TemperatureC,
-   old_metric = "c", new_metric = "f")
+   old_metric = "celsius", new_metric = "fahrenheit")
 lyon$DewpointF <- convert_temperature(lyon$DewpointC, 
-   old_metric = "c", new_metric = "f")
+   old_metric = "celsius", new_metric = "fahrenheit")
 lyon
 #>         Date TemperatureC DewpointC TemperatureF DewpointF
 #> 1 2000-06-18           22        13         71.6      55.4
@@ -84,7 +110,7 @@ angeles
 #> 7 2010-12-25       285.93    283.15        12.78     10.00
 ```
 
-You can specify whether air temperature and dew point temperature inputs are in degrees Celsius, Fahrenheit, or Kelvin using the `old_metric` and `new_metric` options (possible values are `'celsius'`, `'fahrenheit'`, `'kelvin'`, or `'c'`, `'f'`, and `'k'` for the same). The input for `old_metric` should be the temperature measure that you want to convert from, and the input for `new_metric` should be the temperature measure you wish to convert to. These inputs must be different.
+You can specify whether air temperature and dew point temperature inputs are in degrees Celsius, Fahrenheit, or Kelvin using the `old_metric` and `new_metric` options (possible values are `'celsius'`, `'fahrenheit'`, `'kelvin'`, or `'c'`, `'f'`, and `'k'` for the same). The input for `old_metric` should be the temperature measure that you want to convert from, and the input for `new_metric` should be the temperature measure you wish to convert to.
 
 The `convert_temperature` function is a wrapper function for a variety of individual temperature conversion functions, including: `celsius.to.fahrenheit`, `fahrenheit.to.celsius`, `celsius.to.kelvin`, `kelvin.to.celsius`, `fahrenheit.to.kelvin`, and `kelvin.to.fahrenheit` functions, which you can use individually if you would like.
 
@@ -92,7 +118,7 @@ The `convert_temperature` function is a wrapper function for a variety of indivi
 
 The `weathermetrics` package includes two functions for converting between air temperature, dew point temperature, and relative humidity: `dewpoint.to.humidity` and `humidity.to.dewpoint`.
 
-For example, the `lyon` data set includes daily values of both air temperature (`lyon\TemperatureC`) and dew point temperature (`lyon$DewpointC`) in Lyon, France, for the week of June 18, 2000. Since this data set includes both air temperature and dew point temperature, you can calculate relative humidity using the `dewpoint.to.humidity` function:
+For example, the `lyon` data set includes daily values of both air temperature (`lyon$TemperatureC`) and dew point temperature (`lyon$DewpointC`). Since this data set includes both air temperature and dew point temperature, you can calculate relative humidity using the `dewpoint.to.humidity` function:
 
 ``` r
 data(lyon)
@@ -110,9 +136,9 @@ lyon
 #> 7 2000-06-24           16        11 72.40572
 ```
 
-You can specify whether air temperature and dew point temperature inputs are in degrees Fahrenheit or Celsius using the `temperature.metric` option (possible values are `'fahrenheit'` and `'celsius'`). If input values for temperature and dew point temperature are in different metrics (i.e., one is in degrees Fahrenheit and the other in degrees Celsius), you must convert one of the inputs using either `celsius.to.fahrenheit` or `fahrenheit.to.celsius` before you can input the values to the `dewpoint.to.humidity` function.
+You should specify whether air temperature and dew point temperature inputs are in degrees Fahrenheit or Celsius using the `temperature.metric` argument (possible values are `'fahrenheit'` and `'celsius'`). If input values for temperature and dew point temperature are in different metrics (i.e., one is in degrees Fahrenheit and the other in degrees Celsius), you must convert one of the inputs using either `celsius.to.fahrenheit` or `fahrenheit.to.celsius` before you can input the values to the `dewpoint.to.humidity` function.
 
-As an example of calculating dew point temperature, the `newhaven` data set gives daily values of air temperature in degrees Fahrenheit (`newhaven$TemperatureF`) and relative humidity in % (`newhaven$Relative.Humidity`) for New Haven, CT, for the week of October 19, 2008. Since this data set includes values for both temperature and relative humidity, you can calculate dew point temperature using the `humidity.to.dewpoint` function:
+As an example of calculating dew point temperature, the `newhaven` data set gives daily values of air temperature in degrees Fahrenheit (`newhaven$TemperatureF`) and relative humidity in % (`newhaven$Relative.Humidity`). Since this data set includes values for both temperature and relative humidity, you can calculate dew point temperature using the `humidity.to.dewpoint` function:
 
 ``` r
 data(newhaven)
@@ -130,14 +156,14 @@ newhaven
 #> 7 2008-10-25           56                84 51.18
 ```
 
-Relative humidity must be input as %, and you must specify the metric of air temperature using the `temperature.metric` option (possible values: `'fahrenheit'` or `'celsius'`). The dew point temperature will be calculated using the same metric as the air temperature input to the function. If you wish to get dew point temperature in a different metric than air temperature, you can use on of the functions that converts between Celsius and Fahrenheit. For example:
+Relative humidity must be input as %, and you must specify the metric of air temperature using the `temperature.metric` argument (possible values: `'fahrenheit'` or `'celsius'`). The dew point temperature will be calculated using the same metric as the air temperature input to the function. If you wish to get dew point temperature in a different metric than air temperature, you can use the `convert_temperature` function. For example:
 
 ``` r
 data(newhaven)
 newhaven$DP <- humidity.to.dewpoint(t = newhaven$TemperatureF,
                                     rh = newhaven$Relative.Humidity,
                                     temperature.metric = "fahrenheit")
-newhaven$DP_C <- fahrenheit.to.celsius(newhaven$DP)
+newhaven$DP_C <- convert_temperature(newhaven$DP, old_metric = "f", new_metric = "c")
 newhaven
 #>         Date TemperatureF Relative.Humidity    DP  DP_C
 #> 1 2008-10-19           46                57 31.47 -0.29
@@ -172,9 +198,9 @@ suffolk
 #> 7 1998-07-18           81                78 86
 ```
 
-You must specify whether the air temperature input to the function is in degrees Celsius or Fahrenheit using the `temperature.metric` option (possible values: `'fahrenheit'` or `'celsius'`). You can choose which metric for heat index to be calculated in using using the `output.metric` option (the default is to give heat index in the same metric as the air temperature values input to the function).
+You must specify whether the air temperature input to the function is in degrees Celsius or Fahrenheit using the `temperature.metric` option (possible values: `'fahrenheit'` or `'celsius'`). You can choose which metric for heat index output using using the `output.metric` option (the default is to give heat index in the same metric as the air temperature values input to the function).
 
-As another example, the `lyon` data set gives daily values of air temperature (`lyon$TemperatureC`) and dew point temperature (`lyon$DewpointC`), both in degrees Celsius, for Lyon, France, for the week of June 18, 2000. You can use this data to calculate daily heat index values in degrees Fahrenheit using:
+As another example, the `lyon` data set gives daily values of air temperature (`lyon$TemperatureC`) and dew point temperature (`lyon$DewpointC`), both in degrees Celsius. You can use this data to calculate daily heat index values in degrees Fahrenheit using:
 
 ``` r
 data(lyon)
@@ -193,13 +219,13 @@ lyon
 #> 7 2000-06-24           16        11   60
 ```
 
-When calculating heat index from air temperature and dew point temperature, both must be in the same metric (either degrees Fahrenheit or degrees Celsius) when they are input to the `heat.index` function. If this is not the case, you can use either `celsius.to.fahrenheit` or `fahrenheit.to.celsius` to convert one of the metrics before using `heat.index`.
+When calculating heat index from air temperature and dew point temperature, both must be input in the same metric (either degrees Fahrenheit or degrees Celsius). If this is not the case, you can use `convert_temperature` to convert one of the metrics before using `heat.index`.
 
-The algorithm for the function is adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). Therefore, results will agree with results from the US National Weather Service online calculator. However, heat index is sometimes calculated using a simpler algorithm. Therefore, heat index values from the function will sometimes differ by one or two degrees compared to other heat index calculators or charts.
+The algorithm for calculating heat index is adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). Therefore, results should agree with results from the US National Weather Service online calculator. However, heat index is sometimes calculated using a simpler algorithm. Therefore, heat index values from the function will sometimes differ by one or two degrees compared to other heat index calculators or charts.
 
 ### Converting between units of wind speed
 
-The `weathermetrics` package includes a function, `convert_wind_speed`, that allows you to convert a vector of wind speed values in a specific unit between common units of wind speed measure including: knots (`'knots'`), miles per hour(`'mph'`), meters per second (`'mps'`), feet per second (`'ftps'`), and kilometers per hour (`'kmph'`). For example, the `beijing` data set included with this package gives daily values of wind speed in: miles per hour (`beijing$MPH`), meters per second (`beijing$mps`), feet per second (`beijing$ftps`), and kilometers per hour (`beijing$kmph`) for Beijing, China, for the week of January 10, 2015. Also, the `foco` data set included with this package gives daily values of wind speed in knots (`foco$knots`) for Fort Collins, Colorado, for the week of October 11, 2015. Using these data sets, you can convert between common units of wind speed measure using the `convert_wind_speed` funciton:
+The `weathermetrics` package includes a function, `convert_wind_speed`, that allows you to convert wind speed values between several common units of wind speed: knots (`'knots'`), miles per hour(`'mph'`), meters per second (`'mps'`), feet per second (`'ftps'`), and kilometers per hour (`'kmph'`). The following code shows examples of applying this function to several sample datasets:
 
 ``` r
 data(beijing)
@@ -237,11 +263,7 @@ You must specify the unit of wind speed that you wish to convert from using the 
 
 ### Converting between precipitation measurements
 
-The `weathermetrics` package includes a function, `convert_precip`, that allows you to convert a vector of precipitation measurement values between inches (`'inches'`), millimeters (`'mm'`), and centimeters (`'cm'`).
-
-For example, the `breck` data set included with this package gives daily values of precipitation in inches (`breck$Precip.in`) for Breckenridge, CO, for the week of June 28, 2015. Also, the `loveland` data set included with this package gives daily values of precipitation in millimeters (`loveland$Precip.mm`) for Loveland, CO, for the week of September 08, 2013.
-
-To convert daily precipitation values between inches, millimeters, and centimeters, use the `convert_precip` function:
+The `weathermetrics` package includes a function, `convert_precip`, that allows you to convert a vector of precipitation measurement values between inches (`'inches'`), millimeters (`'mm'`), and centimeters (`'cm'`). For example:
 
 ``` r
 data(breck)
@@ -273,9 +295,9 @@ loveland
 #> 7 2013-09-14      6.60 0.2598425     0.660
 ```
 
-You must specify the unit of precipitation measure that you wish to convert from using the `old_metric` option, and the unit of precipitation measure you wish to convert to using the `new_metric` option (possible values: `'inches'`, `'mm'`, and `'cm'`). The unit for `old_metric` cannot be the same as the unit for `new_metric`. You can specify the number of decimal places you wish to round to using the `round` argument. The default value for `round` is 2. When `round` is set to `NULL`, the output value will not be rounded.
+You must specify the unit of precipitation measure that you wish to convert from using the `old_metric` option, and the unit of precipitation measure you wish to convert to using the `new_metric` option (possible values: `'inches'`, `'mm'`, and `'cm'`). You can specify the number of decimal places you wish to round to using the `round` argument. The default value for `round` is 2. When `round` is set to `NULL`, the output value will not be rounded.
 
-Calculations between inches and metric units for precipitation measures are based on algorithms used by the United States National Weather Service's [Meteorological Conversions](http://www.srh.noaa.gov/ama/?n=conversions) (accessed March 20, 2016). These are approximations rather than exact conversions.
+Calculations between inches and metric units for precipitation measures use the algorithms used by the United States National Weather Service's [Meteorological Conversions](http://www.srh.noaa.gov/ama/?n=conversions) (accessed March 20, 2016).
 
 Handling missing or impossible weather values
 ---------------------------------------------
@@ -317,12 +339,14 @@ Additionally, the function returns a warning to alert the user that the input da
 Rounding output values
 ----------------------
 
-All functions have defaults for rounding that are consistent with the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015). For several of the functions, you may also specify that outputs are rounded to a different number of digits using the `round` option. For example:
+All functions have defaults for rounding that are consistent with the algorithms used by the United States National Weather Service's online converters. For several of the functions, you may also specify that outputs are rounded to a different number of digits using the `round` option. For example:
 
 ``` r
 data(suffolk)
-suffolk$TempC <- fahrenheit.to.celsius(suffolk$TemperatureF,
-                                       round = 5)
+suffolk$TempC <- convert_temperature(suffolk$TemperatureF,
+                                     old_metric = "f",
+                                     new_metric = "c",
+                                     round = 5)
 suffolk$HI <- heat.index(t = suffolk$TemperatureF, 
                          rh = suffolk$Relative.Humidity,
                          round = 3)
@@ -342,7 +366,7 @@ Citation for package
 
 For conversions other than heat index, cite this package as:
 
-G. Brooke Anderson, Roger D. Peng, and Joshua M. Ferreri. 2016. `weathermetrics`: Functions to Convert Between Weather Metrics. R package version 1.2.1.9000.
+G. Brooke Anderson, Roger D. Peng, and Joshua M. Ferreri. 2016. `weathermetrics`: Functions to Convert Between Weather Metrics. R package version 1.2.2.
 
 To cite this package when calculating the heat index, use:
 
