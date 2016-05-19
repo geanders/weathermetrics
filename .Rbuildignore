@@ -6,6 +6,5 @@ TODO
 ^README\.Rmd$
 ^README-.*\.png$
 ^README\.md$
-^NEWS\.md$
 ^vignettes/Speed_Precip_Compliance\.Rmd$
 ^Speed_Precip_Compliance$
