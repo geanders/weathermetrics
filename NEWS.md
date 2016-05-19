@@ -5,7 +5,7 @@ date: "April 10, 2016"
 output: html_document
 ---
 
-# Version 1.2.2
+# weathermetrics version 1.2.2
 
 Added new functions to convert wind speed and precipitation:
 
