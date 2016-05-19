@@ -50,7 +50,7 @@ dewpoint.to.humidity <-
                   temperature.metric = "fahrenheit")
         {
                 if (!(temperature.metric %in% c("celsius", "fahrenheit"))) {
-                        stop("The 'temperature.metric' option can onnly by 'celsius' or 'fahrenheit'.")
+                        stop("The 'temperature.metric' option can only by 'celsius' or 'fahrenheit'.")
                 }
                 if (length(dp) != length(t)) {
                         stop("The vectors for temperature('t') and dewpoint temperature ('dp') must have the same length.")
