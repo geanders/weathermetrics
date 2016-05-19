@@ -9,6 +9,9 @@ metric_to_inches(metric, unit.from, round = 2)
 \arguments{
 \item{metric}{Numeric vector of precipitation (in millimeters or centimeters)}
 
+\item{unit.from}{A character string with the current units of the
+observations (i.e., the units from which you want to convert)}
+
 \item{round}{An integer indicating the number of decimal places to
 round the converted value.}
 }
@@ -19,10 +22,6 @@ A numeric vector of precipitation in inches.
 \code{metric_to_inches} creates a numeric vector of precipitation measures in
   inches from a numeric vector of precipitation in common metric units
   (millimeters or centimeters).
-}
-\details{
-The numeric vector specified for unit.from must be in the units
-   provided as a character specified by unit.from.
 }
 \note{
 Equations are from the source code for the National Weather Service

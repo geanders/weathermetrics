@@ -121,13 +121,12 @@ inches_to_metric <- function(inches, unit, round = 2) {
 #'   (millimeters or centimeters).
 #'
 #' @param metric Numeric vector of precipitation (in millimeters or centimeters)
+#' @param unit.from A character string with the current units of the
+#'    observations (i.e., the units from which you want to convert)
 #' @inheritParams inches_to_metric
 #' @inheritParams convert_temperature
 #'
 #' @return A numeric vector of precipitation in inches.
-#'
-#' @details The numeric vector specified for unit.from must be in the units
-#'    provided as a character specified by unit.from.
 #'
 #' @note Equations are from the source code for the National Weather Service
 #'    Forecast Office \url{http://www.srh.noaa.gov/ama/?n=conversions}
