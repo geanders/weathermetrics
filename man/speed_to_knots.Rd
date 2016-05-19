@@ -19,7 +19,7 @@ Possible values are:
   }}
 
 \item{round}{An integer indicating the number of decimal places to
-round converted value.}
+round the converted value.}
 }
 \value{
 A numeric vector of speeds (in knots)
@@ -27,10 +27,6 @@ A numeric vector of speeds (in knots)
 \description{
 \code{speed_to_knots} creates a numeric vector of speed in knots from a
   numeric vector of speed in the specified unit.
-}
-\details{
-The numeric vector specified for x must be in the units provided as a
-  character specified by unit.
 }
 \note{
 Equations are from the source code for the National Oceanic and
@@ -45,8 +41,8 @@ beijing
 
 }
 \author{
-Brooke Anderson \email{brooke.anderson@colostate.edu},
-Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
+Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
+Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
 \references{
 \url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}

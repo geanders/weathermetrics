@@ -6,21 +6,21 @@
 #' @param temperature A numeric vector of temperatures to be converted.
 #' @param old_metric The metric from which you want to convert. Possible options are:
 #' \itemize{
-#' \item "fahrenheit", "f"
-#' \item "kelvin", "k"
-#' \item "celsius", "c"
+#' \item \code{fahrenheit}, \code{f}
+#' \item \code{kelvin}, \code{k}
+#' \item \code{celsius}, \code{c}
 #' }
 #' @param new_metric The metric to which you want to convert. The same options
 #'    are possible as for \code{old_metric}.
 #' @param round An integer indicating the number of decimal places to
-#'     round converted value.
+#'     round the converted value.
 #'
 #' @return A numeric vector with temperature converted to the metric specified
 #'    by the argument \code{new_metric}.
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @examples
 #' data(lyon)
@@ -158,8 +158,8 @@ fahrenheit.to.celsius <-
 #'     temperature converter}.
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @seealso \code{\link{kelvin.to.celsius}}
 #'
@@ -193,8 +193,8 @@ celsius.to.kelvin <-
 #'     temperature converter}.
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @seealso \code{\link{celsius.to.kelvin}}
 #'
@@ -228,8 +228,8 @@ kelvin.to.celsius <-
 #'     temperature converter}.
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' #' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @seealso \code{\link{kelvin.to.fahrenheit}}
 #'
@@ -263,8 +263,8 @@ fahrenheit.to.kelvin <-
 #'     temperature converter}.
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @seealso \code{\link{fahrenheit.to.kelvin}}
 #'

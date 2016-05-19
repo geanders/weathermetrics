@@ -10,7 +10,7 @@ metric_to_inches(metric, unit.from, round = 2)
 \item{metric}{Numeric vector of precipitation (in millimeters or centimeters)}
 
 \item{round}{An integer indicating the number of decimal places to
-round converted value.}
+round the converted value.}
 }
 \value{
 A numeric vector of precipitation in inches.
@@ -37,8 +37,8 @@ loveland
 
 }
 \author{
-Brooke Anderson \email{brooke.anderson@colostate.edu},
-Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
+Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
+Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
 \references{
 \url{http://www.srh.noaa.gov/ama/?n=conversions}

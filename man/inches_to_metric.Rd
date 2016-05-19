@@ -17,7 +17,7 @@ Possible values are:
   }}
 
 \item{round}{An integer indicating the number of decimal places to
-round converted value.}
+round the converted value.}
 }
 \value{
 A numeric vector of precipitation (in specified metric unit)
@@ -26,10 +26,6 @@ A numeric vector of precipitation (in specified metric unit)
 \code{inches_to_metric} creates a numeric vector of precipitation in
   common metric units (millimeters or centimeters) from a numeric vector of
   precipitation in inches.
-}
-\details{
-The numeric vector specified for unit must be in the units provided
-   as a character specified by unit.
 }
 \note{
 Equations are from the source code for the National Weather Service
@@ -44,8 +40,8 @@ breck
 
 }
 \author{
-Brooke Anderson \email{brooke.anderson@colostate.edu},
-Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
+Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
+Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
 \references{
 \url{http://www.srh.noaa.gov/ama/?n=conversions}

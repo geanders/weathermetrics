@@ -17,8 +17,8 @@
 #'    by the argument \code{new_metric}.
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @examples
 #'
@@ -73,15 +73,12 @@ convert_precip <- function(precip, old_metric, new_metric, round = 2){
 #'
 #' @return A numeric vector of precipitation (in specified metric unit)
 #'
-#' @details The numeric vector specified for unit must be in the units provided
-#'    as a character specified by unit.
-#'
 #' @note Equations are from the source code for the National Weather Service
 #'    Forecast Office \url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @seealso \code{\link{metric_to_inches}}
 #'
@@ -136,8 +133,8 @@ inches_to_metric <- function(inches, unit, round = 2) {
 #'    Forecast Office \url{http://www.srh.noaa.gov/ama/?n=conversions}
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @seealso \code{\link{inches_to_metric}}
 #'

@@ -18,7 +18,7 @@
 #'
 #' @details Include air temperature (\code{t}) and either dew point
 #'    temperature (\code{dp}) or relative humdity (\code{rh}). You cannot
-#'    specify both dew point temperature and relative humidity- this will
+#'    specify both dew point temperature and relative humidity-- this will
 #'    return an error. Heat index is calculated as \code{NA} when impossible
 #'    values of dew point temperature or humidity are input (e.g., humidity
 #'    above 100\% or below 0\%, dew point temperature above air temperature).
@@ -38,7 +38,7 @@
 #'
 #' @references
 #' Anderson GB, Bell ML, Peng RD. 2013. Methods to calculate the heat index
-#'    as an exposure Metric in environmental health research.
+#'    as an exposure metric in environmental health research.
 #'    Environmental Health Perspectives 121(10):1111-1119.
 #'
 #' National Weather Service Hydrometeorological Prediction

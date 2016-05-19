@@ -11,9 +11,8 @@
 #'
 #' @details Dew point temperature and temperature must be in the same
 #'    metric (i.e., either both in Celsius or both in Fahrenheit). If
-#'    necessary, use \code{\link{fahrenheit.to.celsius}} or
-#'    \code{\link{celsius.to.fahrenheit}} to convert before using this
-#'    function.
+#'    necessary, use \code{\link{convert_temperature}} to convert before
+#'    using this function.
 #'
 #' @return A numeric vector of relative humidity (in \%)
 #'
@@ -33,7 +32,8 @@
 #'
 #' @seealso \code{\link{humidity.to.dewpoint},
 #'    \link{fahrenheit.to.celsius},
-#'    \link{celsius.to.fahrenheit}}
+#'    \link{celsius.to.fahrenheit}},
+#'    \link{convert_temperature}
 #'
 #' @examples # Calculate relative humidity from air temperature and
 #' # dew point temperature.

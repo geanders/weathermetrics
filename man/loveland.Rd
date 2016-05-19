@@ -16,7 +16,7 @@
 loveland
 }
 \description{
-Daily values of precipitation (millimeters) for the week of September 08,
+Daily values of precipitation (millimeters) for the week of September 8,
 2013, in Loveland, CO.
 }
 \keyword{datasets}

@@ -25,9 +25,8 @@ A numeric vector of relative humidity (in \%)
 \details{
 Dew point temperature and temperature must be in the same
    metric (i.e., either both in Celsius or both in Fahrenheit). If
-   necessary, use \code{\link{fahrenheit.to.celsius}} or
-   \code{\link{celsius.to.fahrenheit}} to convert before using this
-   function.
+   necessary, use \code{\link{convert_temperature}} to convert before
+   using this function.
 }
 \note{
 Equations are from the source code for the US National Weather
@@ -58,6 +57,7 @@ National Weather Service Hydrometeorological Prediction
 \seealso{
 \code{\link{humidity.to.dewpoint},
    \link{fahrenheit.to.celsius},
-   \link{celsius.to.fahrenheit}}
+   \link{celsius.to.fahrenheit}},
+   \link{convert_temperature}
 }
 

@@ -19,7 +19,7 @@ Possible values are:
   }}
 
 \item{round}{An integer indicating the number of decimal places to
-round converted value.}
+round the converted value.}
 }
 \value{
 A numeric vector of speeds (in the specified unit)
@@ -47,8 +47,8 @@ foco
 
 }
 \author{
-Brooke Anderson \email{brooke.anderson@colostate.edu},
-Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
+Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
+Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
 \references{
 \url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}

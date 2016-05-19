@@ -10,7 +10,7 @@ fahrenheit.to.celsius(T.fahrenheit, round = 2)
 \item{T.fahrenheit}{Numeric vector of temperatures in Fahrenheit.}
 
 \item{round}{An integer indicating the number of decimal places to
-round converted value.}
+round the converted value.}
 }
 \value{
 A numeric vector of temperature values in Celsius.

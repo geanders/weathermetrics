@@ -20,8 +20,8 @@
 #'    by the argument \code{new_metric}.
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @examples
 #'
@@ -80,17 +80,14 @@ convert_wind_speed <- function(wind_speed, old_metric, new_metric, round = 1){
 #'
 #' @return A numeric vector of speeds (in knots)
 #'
-#' @details The numeric vector specified for x must be in the units provided as a
-#'   character specified by unit.
-#'
 #' @note Equations are from the source code for the National Oceanic and
 #'    and Atmospheric Administration's
 #'    \href{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}{online wind speed
 #'    converter}
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @seealso \code{\link{knots_to_speed}}
 #'
@@ -148,8 +145,8 @@ speed_to_knots <- function(x, unit, round = 1) {
 #'   converter}
 #'
 #' @author
-#' Brooke Anderson \email{brooke.anderson@@colostate.edu},
-#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@@gmail.com},
+#' Brooke Anderson \email{brooke.anderson@@colostate.edu}
 #'
 #' @seealso \code{\link{speed_to_knots}}
 #'

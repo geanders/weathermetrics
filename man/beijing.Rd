@@ -21,7 +21,7 @@ beijing
 }
 \description{
 A dataset containing daily values of mean temperature (Fahrenheit) and mean
-wind speed (in miles per hour, meters per second, feet per secons, and
+wind speed (in miles per hour, meters per second, feet per seconds, and
 kilometers per hour) for the week of January 10, 2015, in Beijing, China.
 }
 \keyword{datasets}

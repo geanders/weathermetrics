@@ -77,7 +77,7 @@
 #' Weather in Beijing, China
 #'
 #' A dataset containing daily values of mean temperature (Fahrenheit) and mean
-#' wind speed (in miles per hour, meters per second, feet per secons, and
+#' wind speed (in miles per hour, meters per second, feet per seconds, and
 #' kilometers per hour) for the week of January 10, 2015, in Beijing, China.
 #'
 #' @source \href{http://www.wunderground.com}{Weather Underground}
@@ -139,7 +139,7 @@
 
 #' Precipitation in Loveland, CO
 #'
-#' Daily values of precipitation (millimeters) for the week of September 08,
+#' Daily values of precipitation (millimeters) for the week of September 8,
 #' 2013, in Loveland, CO.
 #'
 #' @source \href{http://www.wunderground.com/}{Weather Underground}

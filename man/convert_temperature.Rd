@@ -11,16 +11,16 @@ convert_temperature(temperature, old_metric, new_metric, round = 2)
 
 \item{old_metric}{The metric from which you want to convert. Possible options are:
 \itemize{
-\item "fahrenheit", "f"
-\item "kelvin", "k"
-\item "celsius", "c"
+\item \code{fahrenheit}, \code{f}
+\item \code{kelvin}, \code{k}
+\item \code{celsius}, \code{c}
 }}
 
 \item{new_metric}{The metric to which you want to convert. The same options
 are possible as for \code{old_metric}.}
 
 \item{round}{An integer indicating the number of decimal places to
-round converted value.}
+round the converted value.}
 }
 \value{
 A numeric vector with temperature converted to the metric specified
@@ -48,7 +48,7 @@ angeles
 
 }
 \author{
-Brooke Anderson \email{brooke.anderson@colostate.edu},
-Joshua Ferreri \email{joshua.m.ferreri@gmail.com}
+#' Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
+Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
 
