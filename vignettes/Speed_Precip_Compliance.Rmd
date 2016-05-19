@@ -23,7 +23,7 @@ The following examples convert from 10 knots to mph, mps, fps, and kmph.
 
 ```{r}
 #knots to mph
-mph <- knots_to_speed(10, "mph", round.out = TRUE)
+mph <- knots_to_speed(10, "mph", round = 3)
 mph
 ```
 
@@ -31,7 +31,7 @@ The value from the above example using the `knots_to_speed` function, `r mph` mp
 
 ```{r}
 #knots to mps
-mps <- knots_to_speed(10, "mps", round.out = TRUE)
+mps <- knots_to_speed(10, "mps", round = 1)
 mps
 ```
 
@@ -39,7 +39,7 @@ The value from the above example using the `knots_to_speed` function, `r mps`mps
 
 ```{r}
 #knots to ftps
-ftps <- knots_to_speed(10, "ftps", round.out = TRUE)
+ftps <- knots_to_speed(10, "ftps", round = 1)
 ftps
 ```
 
@@ -47,7 +47,7 @@ The value from the above example using the `knots_to_speed` function, `r ftps` f
 
 ```{r}
 #knots to kmph
-kmph <- knots_to_speed(10, "kmph", round.out = TRUE)
+kmph <- knots_to_speed(10, "kmph", round = 3)
 kmph
 ```
 
@@ -61,7 +61,7 @@ The following examples convert from 10 mph, mps, fps, and kmph, to knots.
 
 ```{r}
 #mph to knots
-knots <- speed_to_knots(10, "mph", round.out = TRUE)
+knots <- speed_to_knots(10, "mph", round = 2)
 knots
 ```
 
@@ -69,7 +69,7 @@ The value from the above example using the `speed_to_knots` function, `r knots` 
 
 ```{r}
 #mps to knots
-knots <- speed_to_knots(10, "mps", round.out = TRUE)
+knots <- speed_to_knots(10, "mps", round = 1)
 knots
 ```
 
@@ -77,7 +77,7 @@ The value from the above example using the `speed_to_knots` function, `r knots` 
 
 ```{r}
 #ftps to knots
-knots <- speed_to_knots(10, "ftps", round.out = TRUE)
+knots <- speed_to_knots(10, "ftps", round = 2)
 knots
 ```
 
@@ -85,7 +85,7 @@ The value from the above example using the `speed_to_knots` function, `r knots` 
 
 ```{r}
 #kmph to knots
-knots <- speed_to_knots(10, "kmph", round.out = TRUE)
+knots <- speed_to_knots(10, "kmph", round = 2)
 knots
 ```
 
@@ -98,8 +98,8 @@ Testing compliance of Wind Speed conversions for common wind speed units (mph, m
 The following examples converts 10 mph to kmph, converting through knots.
 
 ```{r}
-knots <- speed_to_knots(10, "mph", round.out = FALSE)
-kmph <- knots_to_speed(knots, "kmph", round.out = TRUE)
+knots <- speed_to_knots(10, "mph", round = 1)
+kmph <- knots_to_speed(knots, "kmph", round = 1)
 kmph
 ```
 
