@@ -1,55 +1,19 @@
+[![Build Status](https://travis-ci.org/geanders/weathermetrics.svg?branch=master)](https://travis-ci.org/geanders/weathermetrics)
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 Package contents
 ----------------
 
 The `weathermetrics` package provides the following functions to calculate or convert between several weather metrics:
 
-<table style="width:79%;">
-<colgroup>
-<col width="25%" />
-<col width="30%" />
-<col width="23%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Weather variable</th>
-<th align="left">Function</th>
-<th align="left">Input and / or output metric choices</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Temperature</td>
-<td align="left"><code>convert_temperature</code></td>
-<td align="left"><code>&quot;kelvin&quot;</code>, <code>&quot;celsius&quot;</code>, <code>&quot;fahrenheit&quot;</code></td>
-</tr>
-<tr class="even">
-<td align="left">Wind speed</td>
-<td align="left"><code>convert_wind_speed</code></td>
-<td align="left"><code>&quot;knots&quot;</code>, <code>&quot;mph&quot;</code>, <code>&quot;mps&quot;</code>, <code>&quot;ftps&quot;</code>, <code>&quot;kmph&quot;</code></td>
-</tr>
-<tr class="odd">
-<td align="left">Precipitation</td>
-<td align="left"><code>convert_precip</code></td>
-<td align="left"><code>&quot;inches&quot;</code>, <code>&quot;mm&quot;</code>, <code>&quot;cm&quot;</code></td>
-</tr>
-<tr class="even">
-<td align="left">Dew point temperature</td>
-<td align="left"><code>humidity.to.dewpoint</code></td>
-<td align="left"><code>&quot;celsius&quot;</code>, <code>&quot;fahrenheit&quot;</code></td>
-</tr>
-<tr class="odd">
-<td align="left">Relative humidity</td>
-<td align="left"><code>dewpoint.to.humidity</code></td>
-<td align="left"><code>&quot;celsius&quot;</code>, <code>&quot;fahrenheit&quot;</code></td>
-</tr>
-<tr class="even">
-<td align="left">Heat index</td>
-<td align="left"><code>heat.index</code></td>
-<td align="left"><code>&quot;celsius&quot;</code>, <code>&quot;fahrenheit&quot;</code></td>
-</tr>
-</tbody>
-</table>
+| Weather variable      | Function               | Input and / or output metric choices            |
+|-----------------------|------------------------|-------------------------------------------------|
+| Temperature           | `convert_temperature`  | `"kelvin"`, `"celsius"`, `"fahrenheit"`         |
+| Wind speed            | `convert_wind_speed`   | `"knots"`, `"mph"`, `"mps"`, `"ftps"`, `"kmph"` |
+| Precipitation         | `convert_precip`       | `"inches"`, `"mm"`, `"cm"`                      |
+| Dew point temperature | `humidity.to.dewpoint` | `"celsius"`, `"fahrenheit"`                     |
+| Relative humidity     | `dewpoint.to.humidity` | `"celsius"`, `"fahrenheit"`                     |
+| Heat index            | `heat.index`           | `"celsius"`, `"fahrenheit"`                     |
 
 Algorithms for heat index and wind speed are adapted for R from the algorithms used by the United States National Weather Service's [online heat index calculator](http://www.wpc.ncep.noaa.gov/html/heatindex.shtml) (accessed December 18, 2015) and the National Oceanic and Atmospheric Administration's [online wind speed conversion](http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert) (accessed February 22, 2016).
 
