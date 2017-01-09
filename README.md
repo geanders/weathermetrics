@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/geanders/weathermetrics.svg?branch=master)](https://travis-ci.org/geanders/weathermetrics)
+[![Build Status](https://travis-ci.org/geanders/weathermetrics.svg?branch=master)](https://travis-ci.org/geanders/weathermetrics) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/weathermetrics)](https://cran.r-project.org/package=weathermetrics)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 Package contents
