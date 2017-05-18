@@ -22,4 +22,3 @@ wind speed (in knots) for the week of October 11, 2015, in Fort
 Collins, CO.
 }
 \keyword{datasets}
-

@@ -20,4 +20,3 @@ Daily values of precipitation (inches) for the week of June 28, 2015, in
 Breckenridge, CO.
 }
 \keyword{datasets}
-

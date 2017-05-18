@@ -31,11 +31,10 @@ lyon$TemperatureF <- celsius.to.fahrenheit(lyon$TemperatureC)
 lyon
 
 }
+\seealso{
+\code{\link{fahrenheit.to.celsius}}
+}
 \author{
 Brooke Anderson \email{brooke.anderson@colostate.edu},
 Roger Peng \email{rdpeng@gmail.com}
 }
-\seealso{
-\code{\link{fahrenheit.to.celsius}}
-}
-

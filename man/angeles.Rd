@@ -21,4 +21,3 @@ Daily values of mean temperature (Kelvin) and mean dew point
 temperature (Kelvin) for the week of December 19, 2010, in Los Angeles, CA.
 }
 \keyword{datasets}
-

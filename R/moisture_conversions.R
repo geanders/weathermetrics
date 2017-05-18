@@ -55,7 +55,7 @@ dewpoint.to.humidity <-
                 if (length(dp) != length(t)) {
                         stop("The vectors for temperature('t') and dewpoint temperature ('dp') must have the same length.")
                 }
-                if (length(dp[dp > t & !is.na(dp) & !is.na(t)]) > 0) {
+                if (any(dp > t & !is.na(dp) & !is.na(t))) {
                         dp[dp > t] <- NA
                         warning("For some observations, dew point temperature was higher than temperature. Since dew point temperature cannot be higher than air temperature, relative humidty for these observations was set to 'NA'.")
                 }
@@ -127,7 +127,7 @@ humidity.to.dewpoint <-
                 if (length(rh) != length(t)) {
                         stop("The vectors for temperature('t') and relative humidity ('rh') must have the same length.")
                 }
-                if (length(rh[!is.na(rh) & (rh < 0 | rh > 100)]) > 0) {
+                if (any(!is.na(rh) & (rh < 0 | rh > 100))) {
                         rh[!is.na(rh) & (rh < 0 | rh > 100)] <- NA
                         warning("For some observations, relative humidity was below 0% or above 100%. Since these values are impossible for relative humidity, dew point temperature for these observations was set to 'NA'.")
                 }

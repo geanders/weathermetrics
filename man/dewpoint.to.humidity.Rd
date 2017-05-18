@@ -44,10 +44,6 @@ lyon$RH <- dewpoint.to.humidity(t = lyon$TemperatureC,
 lyon
 
 }
-\author{
-Brooke Anderson \email{brooke.anderson@colostate.edu},
-Roger Peng \email{rdpeng@gmail.com}
-}
 \references{
 National Weather Service Hydrometeorological Prediction
    Center Web Team. Heat Index Calculator. 30 Jan 2015.
@@ -60,4 +56,7 @@ National Weather Service Hydrometeorological Prediction
    \link{celsius.to.fahrenheit}},
    \link{convert_temperature}
 }
-
+\author{
+Brooke Anderson \email{brooke.anderson@colostate.edu},
+Roger Peng \email{rdpeng@gmail.com}
+}

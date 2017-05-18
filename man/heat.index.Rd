@@ -69,10 +69,6 @@ lyon$heat.index <- heat.index(t = lyon$TemperatureC,
 lyon
 
 }
-\author{
-Brooke Anderson \email{brooke.anderson@colostate.edu},
-Roger Peng \email{rdpeng@gmail.com}
-}
 \references{
 Anderson GB, Bell ML, Peng RD. 2013. Methods to calculate the heat index
    as an exposure metric in environmental health research.
@@ -91,4 +87,7 @@ R. Steadman, 1979. The assessment of sultriness. Part I: A
    temperature-humidity index based on human physiology and clothing
    science. Journal of Applied Meteorology, 18(7):861--873.
 }
-
+\author{
+Brooke Anderson \email{brooke.anderson@colostate.edu},
+Roger Peng \email{rdpeng@gmail.com}
+}

@@ -32,11 +32,10 @@ lyon$TemperatureK <- celsius.to.kelvin(lyon$TemperatureC)
 lyon
 
 }
+\seealso{
+\code{\link{kelvin.to.celsius}}
+}
 \author{
 Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
 Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
-\seealso{
-\code{\link{kelvin.to.celsius}}
-}
-

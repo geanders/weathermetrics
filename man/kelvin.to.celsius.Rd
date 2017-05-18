@@ -32,11 +32,10 @@ angeles$TemperatureC <- kelvin.to.celsius(angeles$TemperatureK)
 angeles
 
 }
+\seealso{
+\code{\link{celsius.to.kelvin}}
+}
 \author{
 Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
 Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
-\seealso{
-\code{\link{celsius.to.kelvin}}
-}
-

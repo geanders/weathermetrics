@@ -21,4 +21,3 @@ Daily values of mean temperature (Fahrenheit) and mean wind speed (miles per
 hour) for the week of August 02, 2015, in San Jose, Costa Rica.
 }
 \keyword{datasets}
-

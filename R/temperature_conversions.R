@@ -43,7 +43,7 @@ convert_temperature <- function(temperature, old_metric, new_metric,
                                 round = 2){
 
         possible_metrics <- c("fahrenheit", "celsius", "kelvin", "f", "c", "k")
-        if(!(old_metric %in% possible_metrics) |
+        if(!(old_metric %in% possible_metrics) ||
            !(new_metric %in% possible_metrics)){
                 stop(paste0("The arguments `old_metric` and `new_metric` can only ",
                            "have one of the following values: `",
@@ -235,7 +235,7 @@ kelvin.to.celsius <-
 #'
 #' @examples # Convert from Fahrenheit to Kelvin.
 #' data(norfolk)
-#' norfolk$TempuratureK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
+#' norfolk$TemperatureK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
 #' norfolk
 #'
 #' @export

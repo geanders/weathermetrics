@@ -48,10 +48,6 @@ newhaven$DP <- humidity.to.dewpoint(t = newhaven$TemperatureF,
 newhaven
 
 }
-\author{
-Brooke Anderson \email{brooke.anderson@colostate.edu},
-Roger Peng \email{rdpeng@gmail.com}
-}
 \references{
 National Weather Service Hydrometeorological Prediction
    Center Web Team. Heat Index Calculator. 30 Jan 2015.
@@ -63,4 +59,7 @@ National Weather Service Hydrometeorological Prediction
    \link{fahrenheit.to.celsius},
    \link{celsius.to.fahrenheit}}
 }
-
+\author{
+Brooke Anderson \email{brooke.anderson@colostate.edu},
+Roger Peng \email{rdpeng@gmail.com}
+}

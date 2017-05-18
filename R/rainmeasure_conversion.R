@@ -35,7 +35,7 @@
 #' loveland
 #' @export
 convert_precip <- function(precip, old_metric, new_metric, round = 2){
-        if(length(precip[precip < 0])){
+        if(any(precip < 0)){
                 precip[precip < 0] <- NA
                 warning(paste("Some of the observations in the data gave",
                               "negative precipitation. Since precipitation",
@@ -94,7 +94,7 @@ convert_precip <- function(precip, old_metric, new_metric, round = 2){
 #'
 #' @export
 inches_to_metric <- function(inches, unit, round = 2) {
-                if(length(inches[inches < 0])){
+                if(any(inches < 0)){
                         inches[inches < 0] <- NA
                         warning(paste("Some of the observations in the data gave",
                                 "negative precipitation. Since precipitation",
@@ -149,7 +149,7 @@ inches_to_metric <- function(inches, unit, round = 2) {
 #'
 #' @export
 metric_to_inches <- function(metric, unit.from, round = 2) {
-                if(length(metric[metric < 0])){
+                if(any(metric < 0)){
                         metric[metric < 0] <- NA
                         warning(paste("Some of the observations in the data gave",
                                 "negative precipitation. Since precipitation",

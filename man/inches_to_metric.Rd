@@ -39,14 +39,13 @@ breck$Precip.mm <- inches_to_metric(breck$Precip.in,
 breck
 
 }
-\author{
-Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
-Brooke Anderson \email{brooke.anderson@colostate.edu}
-}
 \references{
 \url{http://www.srh.noaa.gov/ama/?n=conversions}
 }
 \seealso{
 \code{\link{metric_to_inches}}
 }
-
+\author{
+Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
+Brooke Anderson \email{brooke.anderson@colostate.edu}
+}
