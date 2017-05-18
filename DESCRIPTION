@@ -8,7 +8,7 @@ Authors@R: c(person("Brooke", "Anderson",
     person("Roger", "Peng", email = "rdpeng@gmail.com", role = c("aut")),
     person("Joshua", "Ferreri", email = "joshua.m.ferreri@gmail.com",
     role = c("aut")),
-    person("Doug", "Friedman", role = "ctb"))
+    person("Doug", "Friedman", email = "doug.nhp@gmail.com", role = "ctb"))
 Description: Functions to convert between weather metrics, including conversions
     for metrics of temperature, air moisture, wind speed, and precipitation.
     This package also includes functions to calculate the heat index from
