@@ -235,7 +235,7 @@ kelvin.to.celsius <-
 #'
 #' @examples # Convert from Fahrenheit to Kelvin.
 #' data(norfolk)
-#' norfolk$TempuratureK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
+#' norfolk$TemperatureK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
 #' norfolk
 #'
 #' @export
