@@ -32,11 +32,10 @@ norfolk$TempuratureK <- fahrenheit.to.kelvin(norfolk$TemperatureF)
 norfolk
 
 }
+\seealso{
+\code{\link{kelvin.to.fahrenheit}}
+}
 \author{
 #' Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
 Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
-\seealso{
-\code{\link{kelvin.to.fahrenheit}}
-}
-

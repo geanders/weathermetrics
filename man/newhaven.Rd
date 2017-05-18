@@ -21,4 +21,3 @@ Daily values of mean temperature (Fahrenheit) and mean relative humidity
 (\%) for the week of October 19, 2008, in New Haven, CT.
 }
 \keyword{datasets}
-

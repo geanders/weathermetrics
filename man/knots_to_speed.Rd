@@ -46,14 +46,13 @@ foco$kmph <- knots_to_speed(foco$knots, unit = "kmph")
 foco
 
 }
-\author{
-Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
-Brooke Anderson \email{brooke.anderson@colostate.edu}
-}
 \references{
 \url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
 }
 \seealso{
 \code{\link{speed_to_knots}}
 }
-
+\author{
+Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
+Brooke Anderson \email{brooke.anderson@colostate.edu}
+}

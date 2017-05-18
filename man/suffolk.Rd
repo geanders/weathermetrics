@@ -21,4 +21,3 @@ Daily values of mean temperature (Fahrenheit) and mean relative humidity
 (\%) for the week of July 12, 1998, in Suffolk, VA.
 }
 \keyword{datasets}
-

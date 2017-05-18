@@ -49,4 +49,3 @@ loveland
 Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
 Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
-

@@ -21,4 +21,3 @@ Daily values of mean temperature (Celsius) and mean dew point temperature
 (Celsius) for the week of June 18, 2000, in Lyon, France.
 }
 \keyword{datasets}
-

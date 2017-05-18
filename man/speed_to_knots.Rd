@@ -40,14 +40,13 @@ beijing$knots <- speed_to_knots(beijing$kmph, unit = "kmph", round = 2)
 beijing
 
 }
-\author{
-Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
-Brooke Anderson \email{brooke.anderson@colostate.edu}
-}
 \references{
 \url{http://www.srh.noaa.gov/epz/?n=wxcalc_windconvert}
 }
 \seealso{
 \code{\link{knots_to_speed}}
 }
-
+\author{
+Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
+Brooke Anderson \email{brooke.anderson@colostate.edu}
+}

@@ -35,14 +35,13 @@ loveland$Precip.in <- metric_to_inches(loveland$Precip.mm,
 loveland
 
 }
-\author{
-Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
-Brooke Anderson \email{brooke.anderson@colostate.edu}
-}
 \references{
 \url{http://www.srh.noaa.gov/ama/?n=conversions}
 }
 \seealso{
 \code{\link{inches_to_metric}}
 }
-
+\author{
+Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
+Brooke Anderson \email{brooke.anderson@colostate.edu}
+}

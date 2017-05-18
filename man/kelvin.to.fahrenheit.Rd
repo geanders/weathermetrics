@@ -32,11 +32,10 @@ angeles$TemperatureF <- kelvin.to.fahrenheit(angeles$TemperatureK)
 angeles
 
 }
+\seealso{
+\code{\link{fahrenheit.to.kelvin}}
+}
 \author{
 Joshua Ferreri \email{joshua.m.ferreri@gmail.com},
 Brooke Anderson \email{brooke.anderson@colostate.edu}
 }
-\seealso{
-\code{\link{fahrenheit.to.kelvin}}
-}
-
