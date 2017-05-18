@@ -41,7 +41,7 @@
 #'
 #' @export
 convert_wind_speed <- function(wind_speed, old_metric, new_metric, round = 1){
-        if(length(wind_speed[wind_speed < 0])){
+        if(any(wind_speed < 0)){
                 wind_speed[wind_speed < 0] <- NA
                 warning(paste("Some of the observations in the data gave",
                               "negative wind speeds. Since wind speed",
@@ -101,7 +101,7 @@ convert_wind_speed <- function(wind_speed, old_metric, new_metric, round = 1){
 #'
 #' @export
 speed_to_knots <- function(x, unit, round = 1) {
-                if(length(x[x < 0])){
+                if(any(x < 0)){
                         x[x < 0] <- NA
                         warning(paste("Some of the observations in the data gave",
                                 "negative wind speeds. Since wind speed",
@@ -164,7 +164,7 @@ speed_to_knots <- function(x, unit, round = 1) {
 #' @export
 
 knots_to_speed <- function(knots, unit, round = 1) {
-                if(length(knots[knots < 0])){
+                if(any(knots < 0)){
                         knots[knots < 0] <- NA
                         warning(paste("Some of the observations in the data gave",
                                 "negative wind speeds. Since wind speed",
